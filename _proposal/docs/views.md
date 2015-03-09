@@ -4,7 +4,7 @@
 ![new-session]
 
 ## Feed / Index
-![index_feed]
+![index-feed]
 
 ## View User
 ![user-view]
@@ -28,7 +28,7 @@
 ![search-results]
 
 [new-session]: ./wireframes/new_session.png
-[feed-index]: ./wireframes/index_feed.png
+[index-feed]: ./wireframes/index_feed.png
 [user-view]: ./wireframes/user_view.png
 [blog-show]: ./wireframes/view_blog.png
 [log-show]: ./wireframes/view_log.png
