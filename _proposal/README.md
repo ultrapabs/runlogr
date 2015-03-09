@@ -32,9 +32,9 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 
 Add user sign up and sign in. Then, add initial blog, log, and shoe model creation. At the end of the day a user will be able to sign up and create each of the different features.
 
-### Phase 2: Viewing Blogs and Logs, Commenting (~2 days)
+### Phase 2: Viewing Blogs and Logs, Commenting (~1 day)
 
-Create  views of all the different parts of a user's account. Add commenting feature to both logs and blogs, with ability to edit/delete comments.
+Create views of blogs and logs. Add commenting feature to both, with ability to edit (author)/delete (author/blog or log owner) comments.
 
 ### Phase 3: User Profile View (~1 day)
 
@@ -48,7 +48,7 @@ Add user search so that users can find and follow/unfollow users of their choosi
 
 Create landing page after sign in. User will see a feed of blogs and logs of the users they follow.
 
-### Phase 6: Refine Views
+### Phase 6: Refine Views (~1 day)
 
 Clean and homogenize all views of blogs, logs, feeds, and comments. Refine heaeder/footer.
 
