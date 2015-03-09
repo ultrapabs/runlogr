@@ -27,7 +27,7 @@
 ## User Search
 ![search-results]
 
-[new-session]: ./wireframes/new_session.png
+[new-session]: ./wireframes/sign_in_up.png
 [index-feed]: ./wireframes/index_feed.png
 [user-view]: ./wireframes/user_view.png
 [blog-show]: ./wireframes/view_blog.png
