@@ -20,7 +20,7 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 - [ ] Search for users by username
 
 ## Design Docs
-* [View Wireframes][views]
+* [Wireframes][views]
 * [DB schema][schema]
 
 [views]: ./docs/views.md
@@ -58,7 +58,7 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 - [ ] Blog, log, and route tags
 - [ ] Blog, log, comment, and route "likes"
 - [ ] Manipulate log data into different views/charts
-- [ ]
+- [ ] Log type classification and sorting (race, workout, training run)
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
