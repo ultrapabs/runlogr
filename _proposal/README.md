@@ -32,26 +32,37 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 
 Add user sign up and sign in. Then, add initial blog, log, and shoe model creation. At the end of the day a user will be able to sign up and create each of the different features.
 
+[Details][phase1]
+
 ### Phase 2: Viewing Blogs and Logs, Commenting (~1 day)
 
 Create views of blogs and logs. Add commenting feature to both, with ability to edit (author)/delete (author/blog or log owner) comments.
+
+[Details][phase2]
 
 ### Phase 3: User Profile View (~1 day)
 
 Create view that other users will see, as well as editing capabilities if you view your own profile. User will see a feed of the user's blogs and logs.
 
+[Details][phase3]
+
 ### Phase 4: Searching for Users, Following/Unfollowing (~1 day)
 
 Add user search so that users can find and follow/unfollow users of their choosing. Add follow/unfollow buttons to user view.
 
+[Details][phase4]
+
 ### Phase 5: Feed / Index View (~2 days)
 
-Create landing page after sign in. User will see a feed of blogs and logs of the users they follow.
+Create landing page after sign in. User will see a feed of blogs and logs of the users they follow. Clean and homogenize all views of blogs, logs, feeds, and comments. Refine heaeder/footer.
 
-### Phase 6: Refine Views (~1 day)
+[Details][phase5]
 
-Clean and homogenize all views of blogs, logs, feeds, and comments. Refine heaeder/footer.
-
+[phase1]: ./docs/phases/phase1.md
+[phase2]: ./docs/phases/phase2.md
+[phase3]: ./docs/phases/phase3.md
+[phase4]: ./docs/phases/phase4.md
+[phase5]: ./docs/phases/phase5.md
 
 ### Bonus Features (TBD)
 - [ ] Users create custom running maps/routes

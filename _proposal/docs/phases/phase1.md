@@ -8,11 +8,11 @@
 * Shoe
 
 ### Controllers
-* UsersController (create, new)
+* UsersController (create, new, edit, update)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
-* ShoesController (create, new)
+* BlogsController (create, new, show, edit, update, destroy)
+* PostsController (create, new, show, edit, update, destroy)
+* ShoesController (create, new, destroy)
 
 ### Views
 * users/new.html.erb
