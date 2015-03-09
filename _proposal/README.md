@@ -5,8 +5,9 @@
 INSERT HEROKU LINK
 
 ## Minimum Viable Product
-Run(b)logr is a clone of [Flotrackr][http://www.flotrack.org/page/Flotrackr] built on Rails and Backbone with social and blogging components added. Users can:
+Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with social and blogging components added. Users can:
 
+[flotrack]: http://www.flotrack.org/page/Flotrackr
 
 - [ ] Create accounts
 - [ ] Create sessions (log in)
