@@ -1,26 +1,38 @@
-# View Wireframes
+# Wireframes
 
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Feed / Index
+![feed_index]
 
-## Blog Show
+## View User
+![user-view]
+
+## View Blog
 ![blog-show]
 
-## Post Show
-![post-show]
+## View Log
+![log-show]
 
-## Post Form
-![post-form]
+## Add Blog
+![blog-add]
 
-## Search Results
+## Add Log
+![log-add]
+
+## Add Shoe
+![shoe-add]
+
+## User Search
 ![search-results]
 
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[feed-index]: ./wireframes/feed_index.png
+[user-view]: ./wireframes/user_view.png
+[blog-show]: ./wireframes/view_blog.png
+[log-show]: ./wireframes/view_log.png
+[blog-add]: ./wireframes/add_blog.png
+[log-add]: ./wireframes/add_log.png
+[shoe-add]: ./wireframes/add_shoe.png
+[search-results]: ./wireframes/user_search.png
