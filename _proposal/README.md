@@ -28,30 +28,30 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, Blog, Log, Shoe Creation (~1 day)
 
+Add user sign up and sign in. Then, add initial blog, log, and shoe model creation. At the end of the day a user will be able to sign up and create each of the different features.
 
-[Details][phase-one]
+### Phase 2: Viewing Blogs and Logs, Commenting (~2 days)
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
+Create  views of all the different parts of a user's account. Add commenting feature to both logs and blogs, with ability to edit/delete comments.
 
+### Phase 3: User Profile View (~1 day)
 
-[Details][phase-two]
+Create view that other users will see, as well as editing capabilities if you view your own profile. User will see a feed of the user's blogs and logs.
 
-### Phase 3: Editing and Displaying Posts (~2 days)
+### Phase 4: Searching for Users, Following/Unfollowing (~1 day)
 
+Add user search so that users can find and follow/unfollow users of their choosing. Add follow/unfollow buttons to user view.
 
-[Details][phase-three]
+### Phase 5: Feed / Index View (~2 days)
 
-### Phase 4: User Feeds (~1-2 days)
+Create landing page after sign in. User will see a feed of blogs and logs of the users they follow.
 
+### Phase 6: Refine Views
 
-[Details][phase-four]
+Clean and homogenize all views of blogs, logs, feeds, and comments. Refine heaeder/footer.
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-
-
-[Details][phase-five]
 
 ### Bonus Features (TBD)
 - [ ] Users create custom running maps/routes
@@ -59,9 +59,4 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 - [ ] Blog, log, comment, and route "likes"
 - [ ] Manipulate log data into different views/charts
 - [ ] Log type classification and sorting (race, workout, training run)
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+- [ ] ???
