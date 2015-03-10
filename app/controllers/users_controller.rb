@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_filter :require_login, only: [:create]
+
   def index
     @users = User.all
     render :index
@@ -9,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      log_in!(user)
+      log_in!(@user)
       redirect_to users_url
     else
       redirect_to new_sessions_url
