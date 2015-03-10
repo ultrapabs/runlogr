@@ -70,4 +70,5 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 - [ ] Blog, log, comment, and route "likes"
 - [ ] Manipulate log data into different views/charts
 - [ ] Log type classification and sorting (race, workout, training run)
+- [ ] Add metric distance conversion
 - [ ] ???

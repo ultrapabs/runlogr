@@ -2,10 +2,19 @@
 <html>
 <head>
   <title>FinalProjectProposal</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<section>
+  <% if logged_in? %>
+    <form action="<%= sessions_url %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <button>Log Out</button>
+    </form>
+  <% end %>
+</section>
 <body>
 
 <%= yield %>
