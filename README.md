@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-INSERT HEROKU LINK
+[heroku]: http://runlogr.herokuapp.com/
 
 ## Minimum Viable Product
 Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with social and blogging components added. Users can:
