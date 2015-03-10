@@ -23,8 +23,8 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 * [Wireframes][views]
 * [DB schema][schema]
 
-[views]: ._proposal/docs/views.md
-[schema]: ._proposal/docs/schema.md
+[views]: ./_proposal/docs/views.md
+[schema]: ./_proposal/docs/schema.md
 
 ## Implementation Timeline
 
@@ -58,11 +58,11 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 
 [Details][phase5]
 
-[phase1]: ._proposal/docs/phases/phase1.md
-[phase2]: ._proposal/docs/phases/phase2.md
-[phase3]: ._proposal/docs/phases/phase3.md
-[phase4]: ._proposal/docs/phases/phase4.md
-[phase5]: ._proposal/docs/phases/phase5.md
+[phase1]: ./_proposal/docs/phases/phase1.md
+[phase2]: ./_proposal/docs/phases/phase2.md
+[phase3]: ./_proposal/docs/phases/phase3.md
+[phase4]: ./_proposal/docs/phases/phase4.md
+[phase5]: ./_proposal/docs/phases/phase5.md
 
 ### Bonus Features (TBD)
 - [ ] Users create custom running maps/routes
