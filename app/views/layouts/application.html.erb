@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<section>
+<section class="header">
   <h1>Run(b)logr</h1>
     <% if logged_in? %>
       <form action="<%= sessions_url %>" method="POST">
@@ -15,11 +15,25 @@
         <button>Log Out</button>
       </form>
     <% end %>
+---------------------------------------
 
 </section>
-<body>
+<body class="main-content">
 
 <%= yield %>
 
 </body>
+<content class="footer">
+
+---------------------------------------
+<ul class="footer-links-main">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+</ul>
+<ul class="footer-links-add">
+  <li><a href="#">Add Log</a></li>
+  <li><a href="#">Add Blog</a></li>
+  <li><a href="#">Add Shoe</a></li>
+</ul>
+</content>
 </html>

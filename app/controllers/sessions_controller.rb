@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   skip_before_filter :require_login
-  # before_action :redirect_if_logged_in
+  before_action :redirect_if_logged_in, only: [:new]
 
   def new
     @user = User.new
