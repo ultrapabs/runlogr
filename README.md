@@ -9,8 +9,8 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 
 [flotrack]: http://www.flotrack.org/page/Flotrackr
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Create blogs, running logs, and comments
 - [ ] Import/export running log data to CSV
 - [ ] Add shoes to logs, track mileage on shoes
@@ -28,7 +28,7 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog, Log, Shoe Creation (~1 day)
+### Phase 1: User Authentication, Blog, Log, Shoe Creation (~2 days)
 
 Add user sign up and sign in. Then, add initial blog, log, and shoe model creation. At the end of the day a user will be able to sign up and create each of the different features.
 

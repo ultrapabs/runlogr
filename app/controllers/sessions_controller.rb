@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   skip_before_filter :require_login
+  before_action :redirect_if_logged_in
 
   def new
     @user = User.new
@@ -21,6 +22,11 @@ class SessionsController < ApplicationController
   def destroy
     log_out!
     redirect_to users_url
+  end
+
+  private
+  def redirect_if_logged_in
+    redirect_to users_url if logged_in?
   end
 
 

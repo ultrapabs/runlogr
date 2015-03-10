@@ -8,7 +8,7 @@
 * Shoe
 
 ### Controllers
-* UsersController (create, new, edit, update)
+* UsersController (create, edit, update)
 * SessionsController (create, new, destroy)
 * BlogsController (create, new, show, edit, update, destroy)
 * PostsController (create, new, show, edit, update, destroy)

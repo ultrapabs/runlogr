@@ -5,11 +5,6 @@ class UsersController < ApplicationController
     render :index
   end
 
-  # def new
-  #   @user = User.new
-  #   render :new
-  # end
-
   def create
     @user = User.new(user_params)
 
@@ -17,8 +12,7 @@ class UsersController < ApplicationController
       log_in!(user)
       redirect_to users_url
     else
-      fail
-      render :new
+      redirect_to new_sessions_url
     end
   end
 
