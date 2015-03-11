@@ -1,7 +1,7 @@
 Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
 
   routes: {
-    '' : 'runlogrIndex',
+    '' : 'runlogrHome',
     'blogs' : 'blogIndex',
     'blogs/new' : 'blogNew',
     'blogs/:id' : 'blogShow'
@@ -13,8 +13,10 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this.blogs.fetch();
   },
 
-  runlogrIndex: function () {
+  runlogrHome: function () {
     var blogView = new Runlogr.Views.BlogIndex({collection: this.blogs});
+
+    this._swapView(blogView);
   },
 
   blogIndex: function() {
@@ -23,7 +25,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   blogNew: function() {
-
+    var blogView = new Runlogr.Views.BlogNew({collection: this.blogs});
+    this._swapView(blogView);
   },
 
   blogShow: function() {
