@@ -1,0 +1,11 @@
+<h1>Recent Blogs</h1>
+<ul class="blog-list">
+  <% blogs.each( function(blog) { %>
+    <li class="blog-list-item">
+      <%= blog.escape('title') %>
+      <%= blog.escape('author_id') %>
+      <%= blog.escape('created_at') %>
+      <%= blog.escape('preview') %>
+    </li>
+  <% }) %>
+</ul>

@@ -19,22 +19,24 @@
 ---------------------------------------
 
 </section>
-<body class="main-content">
+<body>
 
 <%= yield %>
 
 </body>
-<content class="footer">
+<section class="footer">
 
 ---------------------------------------
-<ul class="footer-links-main">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-</ul>
-<ul class="footer-links-add">
-  <li><a href="#">Add Log</a></li>
-  <li><a href="#">Add Blog</a></li>
-  <li><a href="#">Add Shoe</a></li>
-</ul>
-</content>
+  <% if logged_in? %>
+    <ul class="footer-links-main">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+    <ul class="footer-links-add">
+      <li><a href="#">Add Log</a></li>
+      <li><a href="#">Add Blog</a></li>
+      <li><a href="#">Add Shoe</a></li>
+    </ul>
+  <% end %>
+</section>
 </html>

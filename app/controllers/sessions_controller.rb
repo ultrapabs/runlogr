@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:login], params[:user][:password])
 
     if log_in!(@user)
-      redirect_to users_url
+      redirect_to root_url
     else
       flash[:error] = ["Invalid Login"]
       redirect_to new_sessions_url
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   private
   def redirect_if_logged_in
-    redirect_to users_url if logged_in?
+    redirect_to root_url if logged_in?
   end
 
 

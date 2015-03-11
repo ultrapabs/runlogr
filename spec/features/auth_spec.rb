@@ -38,7 +38,7 @@ end
 feature "redirects depending on session status" do
 
   scenario "redirects to sign in/up on visiting any page if logged out" do
-    visit users_url
+    visit root_url
     expect(page).to have_content "Sign In"
     expect(page).to have_content "Sign Up"
 
