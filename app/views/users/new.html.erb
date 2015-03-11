@@ -1,23 +1,20 @@
+<br>
 <h1>Sign Up</h1>
-
+<% unless flash[:errors].nil? %>
+  <ul class="errors">
+    <% flash[:errors].each do |message| %>
+      <li class="error-message"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <form class="sign-up" action="<%= users_url %>" method="post">
   <%= auth_token %>
   <label>
-    Username: <input type="string" name="user[username]" value="">
+    Username: <input type="string" name="user[username]" value="<%= @user.username %>">
   </label>
   <br>
   <label>
-    Photo URL: <input type="string" name="user[photo_url]" value="">
-  </label>
-  <br>
-  <label>
-    Description:
-    <textarea name="user[description]" rows="8" cols="40"></textarea>
-  </label>
-  <br>
-  <br>
-  <label>
-    Email: <input type="string" name="user[email]" value="">
+    Email: <input type="string" name="user[email]" value="<%= @user.email %>">
   </label>
   <br>
   <label>
@@ -25,5 +22,3 @@
   </label>
   <br>
   <button>Sign Up</button>
-
-</form>

@@ -46,7 +46,7 @@ Create view that other users will see, as well as editing capabilities if you vi
 
 [Details][phase3]
 
-### Phase 4: Searching for Users, Following/Unfollowing (~1 day)
+### Phase 4: Searching for Users, Following/Unfollowing, Importing Logs (~1 day)
 
 Add user search so that users can find and follow/unfollow users of their choosing. Add follow/unfollow buttons to user view.
 

@@ -9,12 +9,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:login], params[:user][:password])
+    @user = User.find_by_credentials(params[:user][:login], params[:user][:password])
 
-    if log_in!(user)
+    if log_in!(@user)
       redirect_to users_url
     else
-      render :new
+      flash[:error] = ["Invalid Login"]
+      redirect_to new_sessions_url
     end
 
   end

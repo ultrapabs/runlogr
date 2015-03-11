@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       log_in!(@user)
       redirect_to users_url
     else
+      flash[:errors] = @user.errors.full_messages
       redirect_to new_sessions_url
     end
   end
