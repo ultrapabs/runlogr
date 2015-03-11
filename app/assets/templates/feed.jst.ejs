@@ -1,0 +1,32 @@
+<section class="blog-feed">
+  <h1>Recent Blogs</h1>
+  <ul class="blog-feed-list">
+    <% blogs.each( function(blog) { %>
+      <li class="blog-feed-list-item">
+        <%= blog.escape('title') %>
+        <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
+        <br>
+        <%= blog.escape('preview') %>
+      </li>
+      <br>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="log-feed">
+  <h1>Recent Logs</h1>
+  <ul class="log-feed-list">
+    <% logs.each( function(log) { %>
+      <li class="log-feed-list-item">
+        <%= log.escape('title') %>
+        <br>
+        <%= log.escape('user_id') %> - <%= log.escape('date') %>
+        <br>
+        <%= log.escape('distance') %>mi -
+        <%= log.escape('duration') %>sec -
+        <%= (log.attributes.duration / 60) / log.attributes.distance %>min/mi
+      </li>
+      <br>
+    <% }) %>
+  </ul>
+</section>

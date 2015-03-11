@@ -8,6 +8,7 @@ class Api::BlogsController < ApplicationController
   def create
     @blog = current_user.blogs.new(blog_params)
     @blog.author_id = current_user.id
+
     if @blog.save
       render json: @blog
     else
@@ -21,9 +22,11 @@ class Api::BlogsController < ApplicationController
   def update
   end
 
+  def destroy
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:title, :body, :preview)
   end
-
 end

@@ -7,7 +7,7 @@ Runlogr.Views.BlogNew = Backbone.View.extend ({
   template: JST['blog_new'],
 
   render: function () {
-    var content = this.template({post: this.model});
+    var content = this.template();
     this.$el.html(content);
 
     return this;

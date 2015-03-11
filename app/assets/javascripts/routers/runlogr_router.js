@@ -4,19 +4,27 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     '' : 'runlogrHome',
     'blogs' : 'blogIndex',
     'blogs/new' : 'blogNew',
-    'blogs/:id' : 'blogShow'
+    'blogs/:id' : 'blogShow',
+    'logs' : 'logIndex',
+    'logs/new' : 'logNew',
+    'logs/:id' : 'logShow',
   },
 
   initialize: function (rootEl) {
     this.$rootEl = rootEl;
     this.blogs = new Runlogr.Collections.Blogs();
     this.blogs.fetch();
+    this.logs = new Runlogr.Collections.Logs();
+    this.logs.fetch();
   },
 
   runlogrHome: function () {
-    var blogView = new Runlogr.Views.BlogIndex({collection: this.blogs});
+    var feedView = new Runlogr.Views.Feed({
+                     blogs: this.blogs,
+                     logs: this.logs
+                   });
 
-    this._swapView(blogView);
+    this._swapView(feedView);
   },
 
   blogIndex: function() {
@@ -25,11 +33,25 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   blogNew: function() {
-    var blogView = new Runlogr.Views.BlogNew({collection: this.blogs});
+    var logView = new Runlogr.Views.LogNew({collection: this.blogs});
     this._swapView(blogView);
   },
 
   blogShow: function() {
+
+  },
+
+  logIndex: function() {
+    var logView = new Runlogr.Views.LogIndex({collection: this.logs});
+    this._swapView(logView);
+  },
+
+  logNew: function() {
+    var logView = new Runlogr.Views.LogNew({collection: this.logs});
+    this._swapView(logView);
+  },
+
+  logShow: function() {
 
   },
 

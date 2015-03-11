@@ -3,9 +3,10 @@
   <% blogs.each( function(blog) { %>
     <li class="blog-list-item">
       <%= blog.escape('title') %>
-      <%= blog.escape('author_id') %>
-      <%= blog.escape('created_at') %>
+      <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
+      <br>
       <%= blog.escape('preview') %>
     </li>
+    <br>
   <% }) %>
 </ul>

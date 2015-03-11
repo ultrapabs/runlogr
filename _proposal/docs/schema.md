@@ -24,8 +24,8 @@ preview     | text      |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
+user_id     | integer   | not null, foreign key (references users)
+title       | string    | 
 date        | date      | not null
 distance    | float     | not null
 duration    | float     | not null
