@@ -33,7 +33,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   blogNew: function() {
-    var logView = new Runlogr.Views.LogNew({collection: this.blogs});
+    var blogView = new Runlogr.Views.BlogNew({collection: this.blogs});
     this._swapView(blogView);
   },
 
