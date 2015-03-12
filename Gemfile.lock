@@ -72,9 +72,6 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
-    coffee-rails (4.1.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
     coffee-script (2.3.0)
       coffee-script-source
       execjs
@@ -266,7 +263,6 @@ DEPENDENCIES
   binding_of_caller
   byebug
   capybara
-  coffee-rails (~> 4.1.0)
   factory_girl_rails
   faker
   guard-rspec
