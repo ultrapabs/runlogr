@@ -1,7 +1,8 @@
 class Api::ShoesController < ApplicationController
 
   def index
-    render json: current_user.shoes.all
+    render json: current_user.shoes
+
   end
 
   def create

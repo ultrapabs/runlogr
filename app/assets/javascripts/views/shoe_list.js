@@ -11,8 +11,10 @@ Runlogr.Views.ShoeList = Backbone.View.extend ({
     this.$el.html(content);
 
     return this;
+  },
+
+  totalDistance: function () {
+    
   }
-
-
 
 });

@@ -65,7 +65,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   shoeList: function() {
-    var shoeView = new Runlogr.Views.ShoeList({collection: this.shoes});
+    var shoeView = new Runlogr.Views.ShoeList({collection: this.shoes, logs: this.logs});
     this._swapView(shoeView);
   },
 
