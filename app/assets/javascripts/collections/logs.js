@@ -13,10 +13,10 @@ Runlogr.Collections.Logs = Backbone.Collection.extend ({
     var log = this.get(id);
     var logs = this;
 
-    if (!blog) {
+    if (!log) {
       log = new Runlogr.Models.Log({id: id});
-      post.fetch( {
-        success: function () { blogs.add(log) }
+      log.fetch( {
+        success: function () { logs.add(log) }
       });
     } else {
       log.fetch();

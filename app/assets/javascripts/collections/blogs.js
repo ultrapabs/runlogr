@@ -15,7 +15,7 @@ Runlogr.Collections.Blogs = Backbone.Collection.extend ({
 
     if (!blog) {
       blog = new Runlogr.Models.Blog({id: id});
-      post.fetch( {
+      blog.fetch( {
         success: function () { blogs.add(blog) }
       });
     } else {

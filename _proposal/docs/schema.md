@@ -25,7 +25,8 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users)
-title       | string    | 
+shoe_id     | integer   | foreign key, (references shoes)
+title       | string    |
 date        | date      | not null
 distance    | float     | not null
 duration    | float     | not null
@@ -37,7 +38,7 @@ column name  | data type | details
 id           | integer   | not null, primary key
 user_id      | integer   | not null, foreign key (references users)
 name         | string    | not null
-init_mileage | float     |
+distance     | float     |
 
 ## comments
 column name | data type | details
@@ -46,7 +47,6 @@ id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 type_id     | integer   | not null, foreign key (references log OR blog)
 type        | string    | not null, [blog, log]
-title       | string    |
 body        | text      | not null
 
 ## followings

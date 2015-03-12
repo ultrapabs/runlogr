@@ -2,7 +2,7 @@
 <ul class="blog-list">
   <% blogs.each( function(blog) { %>
     <li class="blog-list-item">
-      <%= blog.escape('title') %>
+      <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
       <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
       <br>
       <%= blog.escape('preview') %>

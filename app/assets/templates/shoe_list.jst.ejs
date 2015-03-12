@@ -1,0 +1,10 @@
+<h1>Your Shoes</h1>
+
+<ul class="shoe-list">
+  <% shoes.each( function (shoe) { %>
+    <li class="shoe-list-item">
+    <%= shoe.escape('name') %> - <%= shoe.escape('distance') %>mi
+    </li>
+  <br>
+  <% }) %>
+</ul>

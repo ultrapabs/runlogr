@@ -10,5 +10,12 @@ class Log < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
   )
-  
+
+  has_one(
+    :shoe,
+    class_name: "Shoe",
+    foreign_key: :shoe_id,
+    primary_key: :id
+  )
+
 end

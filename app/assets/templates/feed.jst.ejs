@@ -1,9 +1,9 @@
 <section class="blog-feed">
-  <h1>Recent Blogs</h1>
+  <h1 class="blog-feed-title">Recent Blogs</h1>
   <ul class="blog-feed-list">
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
-        <%= blog.escape('title') %>
+        <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
         <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
         <br>
         <%= blog.escape('preview') %>
@@ -14,11 +14,11 @@
 </section>
 
 <section class="log-feed">
-  <h1>Recent Logs</h1>
+  <h1 class="blog-feed-title">Recent Logs</h1>
   <ul class="log-feed-list">
     <% logs.each( function(log) { %>
       <li class="log-feed-list-item">
-        <%= log.escape('title') %>
+        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
         <br>
         <%= log.escape('user_id') %> - <%= log.escape('date') %>
         <br>

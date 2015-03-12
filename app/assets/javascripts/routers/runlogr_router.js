@@ -8,6 +8,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     'logs' : 'logIndex',
     'logs/new' : 'logNew',
     'logs/:id' : 'logShow',
+    'shoes' : 'shoeList',
+    'shoes/new' : 'shoeNew'
   },
 
   initialize: function (rootEl) {
@@ -16,6 +18,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this.blogs.fetch();
     this.logs = new Runlogr.Collections.Logs();
     this.logs.fetch();
+    this.shoes = new Runlogr.Collections.Shoes();
+    this.shoes.fetch();
   },
 
   runlogrHome: function () {
@@ -37,8 +41,10 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this._swapView(blogView);
   },
 
-  blogShow: function() {
-
+  blogShow: function(id) {
+    var blog = this.blogs.getOrFetch(id);
+    var blogView = new Runlogr.Views.BlogShow({model: blog});
+    this._swapView(blogView);
   },
 
   logIndex: function() {
@@ -51,8 +57,21 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this._swapView(logView);
   },
 
-  logShow: function() {
+  logShow: function(id) {
+    var log = this.logs.getOrFetch(id);
+    var logView = new Runlogr.Views.LogShow({model: log});
 
+    this._swapView(logView);
+  },
+
+  shoeList: function() {
+    var shoeView = new Runlogr.Views.ShoeList({collection: this.shoes});
+    this._swapView(shoeView);
+  },
+
+  shoeNew: function() {
+    var shoeView = new Runlogr.Views.ShoeNew({collection: this.shoes});
+    this._swapView(shoeView);
   },
 
   _swapView: function(view) {

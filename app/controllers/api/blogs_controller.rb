@@ -7,7 +7,6 @@ class Api::BlogsController < ApplicationController
 
   def create
     @blog = current_user.blogs.new(blog_params)
-    @blog.author_id = current_user.id
 
     if @blog.save
       render json: @blog
@@ -17,6 +16,8 @@ class Api::BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
+    render json: @blog
   end
 
   def update

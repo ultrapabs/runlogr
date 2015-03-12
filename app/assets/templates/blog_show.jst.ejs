@@ -1,0 +1,8 @@
+<h1 class="blog-title"><%= blog.escape('title') %></h1>
+<h2 class="blog-author">
+  by <a href="#"><%= blog.escape('author_id') %></a>
+  on <%= blog.escape('created_at') %>
+</h2>
+<p class="blog-body">
+<%= blog.escape('body') %>
+</p>

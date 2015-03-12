@@ -2,7 +2,7 @@
 <ul class="log-list">
   <% logs.each( function(log) { %>
     <li class="log-list-item">
-      <%= log.escape('title') %>
+      <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
       <br>
       <%= log.escape('user_id') %> - <%= log.escape('date') %>
       <br>

@@ -1,5 +1,5 @@
 Runlogr.Models.Log = Backbone.Model.extend ({
 
-  urlRoot: 'api/logs',
+  urlRoot: 'api/logs'
 
 });

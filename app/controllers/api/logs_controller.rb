@@ -7,7 +7,6 @@ class Api::LogsController < ApplicationController
 
   def create
     @log = current_user.logs.new(log_params)
-    @log.user_id = current_user.id
     @log.title = "untitled" if @log.title == ""
 
     if @log.save
@@ -18,6 +17,8 @@ class Api::LogsController < ApplicationController
   end
 
   def show
+    @log = Log.find(params[:id])
+    render json: @log
   end
 
   def update
@@ -28,6 +29,6 @@ class Api::LogsController < ApplicationController
 
   private
   def log_params
-    params.require(:log).permit(:title, :date, :distance, :duration, :notes)
+    params.require(:log).permit(:title, :date, :distance, :duration, :notes, :shoe_id)
   end
 end

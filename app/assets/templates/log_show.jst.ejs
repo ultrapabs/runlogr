@@ -1,0 +1,14 @@
+<h1 class="log-title"><%= log.escape('title') %></h1>
+<h2 class="blog-author">
+  <a href="#"><%= log.escape('user_id') %></a>
+  - <%= log.escape('date') %>
+</h2>
+<ul class="log-show">
+  <li>Distance: <%= log.escape('distance') %>mi</li>
+  <li>Duration: <%= log.escape('distance') %>sec</li>
+  <li>Pace: <%= (log.attributes.duration / 60) / log.attributes.distance %>min/mi</li>
+  <li>Shoe: <%= log.escape('shoe_id') %></li>
+</ul>
+<p class="log-notes">
+  <%= log.escape('notes') %>
+</p>
