@@ -6,8 +6,8 @@ Runlogr.Views.Feed = Backbone.View.extend ({
     this.blogs = options.blogs;
     this.logs = options.logs;
 
-    this.listenTo(this.blogs, "sync add", this.render);
-    this.listenTo(this.logs, "sync add", this.render);
+    this.listenTo(this.blogs, 'sync add', this.render);
+    this.listenTo(this.logs, 'sync add', this.render);
 
   },
 

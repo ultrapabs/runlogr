@@ -1,0 +1,53 @@
+<h1><%= user.escape('username') %></h1>
+<section class="user-profile">
+<img src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+<ul class="user-profile-list">
+  <li class="user-profile-list-item"><%= user.escape('description') %></li>
+  <br>
+  <li class="user-profile-list-item">Total miles: </li>
+</ul>
+
+</section>
+
+<section class="blog-feed">
+  <h1 class="blog-feed-title">Recent Blogs</h1>
+  <ul class="blog-feed-list">
+    <% blogs.each( function(blog) { %>
+      <li class="blog-feed-list-item">
+        <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
+        <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
+        <br>
+        <%= blog.escape('preview') %>
+      </li>
+      <br>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="log-feed">
+  <h1 class="blog-feed-title">Recent Logs</h1>
+  <ul class="log-feed-list">
+    <% logs.each( function(log) { %>
+      <li class="log-feed-list-item">
+        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
+        <br>
+        <%= log.escape('user_id') %> - <%= log.escape('date') %>
+        <br>
+        <%= log.escape('distance') %>mi -
+        <%= log.escape('duration') %>sec -
+        <%= (log.attributes.duration / 60) / log.attributes.distance %>min/mi
+      </li>
+      <br>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="user-shoes">
+  <h1 class="user-shoes-title">Shoes</h1>
+  <ul class="user-shoes-list">
+    <% shoes.each( function(shoe) { %>
+      <li><%= shoe.escape('name')%> - <% shoe.escape('distance') %>mi</li>
+      <br>
+    <% }) %>
+  </ul>
+</section>

@@ -11,7 +11,7 @@ class Log < ActiveRecord::Base
     primary_key: :id
   )
 
-  has_one(
+  belongs_to(
     :shoe,
     class_name: "Shoe",
     foreign_key: :shoe_id,
