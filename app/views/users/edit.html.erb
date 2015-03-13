@@ -1,0 +1,33 @@
+<h1>Edit Your Profile</h1>
+<% unless flash[:errors].nil? %>
+  <ul class="errors">
+    <% flash[:errors].each do |message| %>
+      <li class="error-message"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<form class="edit-profile" action="<%= users_url %>" method="post">
+  <%= auth_token %>
+  <label>
+    Username: <input type="string" name="user[username]" value="<%= @user.username %>">
+  </label>
+  <br>
+  <label>
+    Email: <input type="string" name="user[email]" value="<%= @user.email %>">
+  </label>
+  <br>
+  <label>Description:
+    <br>
+    <textarea name="name" rows="20" cols="40"><%= @user.description %></textarea>
+  </label>
+  <br>
+  <label>
+    New Password: <input type="password" name="pass1" value="">
+  </label>
+  <br>
+  <label>
+    Confirm Password: <input type="password" name="pass2" value="">
+  </label>
+  <br>
+  <button>Sign Up</button>
+</form>
