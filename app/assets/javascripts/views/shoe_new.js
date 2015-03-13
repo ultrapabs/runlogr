@@ -23,7 +23,8 @@ Runlogr.Views.ShoeNew = Backbone.View.extend ({
     newShoe.save({}, {
       success: function () {
         shoes.add(newShoe);
-        Backbone.history.navigate('#shoes', {trigger: true});
+        var userHome = '#users/' + newShoe.escape('user_id');
+        Backbone.history.navigate(userHome, {trigger: true});
       },
       error: function () { console.log('shoe create error'); }
     });

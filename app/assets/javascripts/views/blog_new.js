@@ -23,7 +23,8 @@ Runlogr.Views.BlogNew = Backbone.View.extend ({
     newBlog.save({}, {
       success: function () {
         blogs.add(newBlog);
-        Backbone.history.navigate('', {trigger: true});
+        var userHome = '#users/' + newBlog.escape('author_id');
+        Backbone.history.navigate(userHome, {trigger: true});
       },
       error: function () { console.log('blog create error') }
     })

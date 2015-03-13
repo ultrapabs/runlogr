@@ -4,7 +4,7 @@
 <ul class="user-profile-list">
   <li class="user-profile-list-item"><%= user.escape('description') %></li>
   <br>
-  <li class="user-profile-list-item">Total miles: </li>
+  <li class="user-profile-list-item">Total Miles Logged: <%= miles %></li>
 </ul>
 
 <section class="blog-feed">
@@ -44,7 +44,7 @@
   <h1 class="user-shoes-title">Shoes</h1>
   <ul class="user-shoes-list">
     <% shoes.each( function(shoe) { %>
-      <li><%= shoe.escape('name')%> - <% shoe.escape('distance') %>mi</li>
+      <li><%= shoe.escape('name')%> - <%= shoe.escape('distance') %>mi</li>
       <br>
     <% }) %>
   </ul>

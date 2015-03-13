@@ -10,7 +10,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     'logs/:id' : 'logShow',
     'shoes' : 'shoeList',
     'shoes/new' : 'shoeNew',
-    'users/:id' : 'userShow'
+    'users/:id' : 'userShow',
+    'search' : 'userSearch'
   },
 
   initialize: function (rootEl) {
@@ -80,6 +81,11 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   userShow: function(id) {
     var user = this.users.getOrFetch(id);
     var userView = new Runlogr.Views.UserShow({model: user});
+    this._swapView(userView);
+  },
+
+  userSearch: function () {
+    var userView = new Runlogr.Views.UserSearch({collection: this.users});
     this._swapView(userView);
   },
 

@@ -30,7 +30,8 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
     newLog.save({}, {
       success: function () {
         logs.add(newLog);
-        Backbone.history.navigate('', {trigger: true});
+        var userHome = '#users/' + newLog.escape('user_id');
+        Backbone.history.navigate(userHome, {trigger: true});
       },
       error: function () { console.log('log create error') }
     })

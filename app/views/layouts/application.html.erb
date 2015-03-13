@@ -7,15 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <nav class="header">
-  <h1>Run(b)logr</h1>
+  <h1 class="app-title">Run(b)logr</h1>
     <% if logged_in? %>
       Welcome, <%= current_user.username %>
-      <form action="<%= sessions_url %>" method="POST">
+      <form class="log-out" action="<%= sessions_url %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <button>Log Out</button>
       </form>
     <% end %>
+  <br>
+  <a href="#search">Find Users</a>
+  <br>
 ---------------------------------------
 
 </nav>
@@ -29,8 +32,8 @@
 ---------------------------------------
   <% if logged_in? %>
     <ul class="footer-links-main">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
+      <li><a href="#">Feed</a></li>
+      <li><a href="#users/<%= current_user.id.to_s %>">Profile</a></li>
     </ul>
     <ul class="footer-links-add">
       <li><a href="#logs/new">Add Log</a></li>
