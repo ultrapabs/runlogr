@@ -80,7 +80,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
 
   userShow: function(id) {
     var user = this.users.getOrFetch(id);
-    var userView = new Runlogr.Views.UserShow({model: user});
+    var userView = new Runlogr.Views.UserShow({model: user, collection: this.users});
     this._swapView(userView);
   },
 

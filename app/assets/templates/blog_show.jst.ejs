@@ -1,8 +1,36 @@
-<h1 class="blog-title"><%= blog.escape('title') %></h1>
-<h2 class="blog-author">
-  by <a href="#"><%= blog.escape('author_id') %></a>
-  on <%= blog.escape('created_at') %>
-</h2>
-<p class="blog-body">
-<%= blog.escape('body') %>
-</p>
+<h1 class="blog-title"><%= blog.escape('title') %>
+<% if (blog.attributes.current_user_is_author) { %>
+  <button class="edit-blog-button">Edit Blog</button>
+  <button class="discard-changes hidden">Discard Changes</button>
+</h1>
+  <section class="blog-edit hidden">
+    <form class="blog-form">
+      <label "blog-label">Title:
+        <input type="string" name="blog[title]" value="<%= blog.escape('title') %>">
+      </label>
+      <br>
+      <label "blog-label">Body:
+      <br>
+        <textarea name="blog[body]" rows="20" cols="50"><%= blog.escape('body') %></textarea>
+      </label>
+      <br>
+      <label "blog-label">Preview:
+      <br>
+        <textarea name="blog[preview]" rows="2" cols="50"><%= blog.escape('preview') %></textarea>
+      </label>
+      <br>
+      <button>Save Changes</button>
+    </form>
+  </section>
+<% } else { %>
+  </h1>
+<% } %>
+<section class="blog-show">
+  <h2 class="blog-author">
+    by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
+    on <%= blog.escape('created_at') %>
+  </h2>
+  <p class="blog-body">
+  <%= blog.escape('body') %>
+  </p>
+</section>

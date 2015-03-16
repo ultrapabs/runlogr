@@ -17,10 +17,17 @@ class Api::BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    render json: @blog
+    render :show
   end
 
   def update
+    @blog = Blog.find(params[:id])
+
+    if @blog.author_id === current_user.id && @blog.update!(blog_params)
+      render json: @blog
+    else
+      render json: @blog.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy

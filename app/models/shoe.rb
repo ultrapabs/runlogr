@@ -17,6 +17,8 @@ class Shoe < ActiveRecord::Base
     primary_key: :id
   )
 
-  
+  def total_distance
+    self.distance + self.logs.sum(:distance)
+  end
 
 end

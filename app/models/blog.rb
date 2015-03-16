@@ -11,4 +11,8 @@ class Blog < ActiveRecord::Base
     primary_key: :id
   )
 
+  def author_name
+    self.author.username
+  end
+
 end

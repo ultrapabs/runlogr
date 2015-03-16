@@ -44,6 +44,10 @@ Runlogr.Models.User = Backbone.Model.extend ({
     }
 
     return response;
+  },
+
+  toJSON: function () {
+    return { user: _.clone(this.attributes) };
   }
 
 });

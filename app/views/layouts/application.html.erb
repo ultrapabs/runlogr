@@ -11,7 +11,6 @@
   <% if logged_in? %>
     Welcome, <%= current_user.username %>
     <br>
-    <a href="users/<%= current_user.id %>/edit">Edit Profile</a>
     <form class="log-out" action="<%= sessions_url %>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

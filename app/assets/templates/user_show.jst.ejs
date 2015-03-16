@@ -1,11 +1,50 @@
-<h1><%= user.escape('username') %></h1>
-<section class="user-profile">
-<img src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
-<ul class="user-profile-list">
-  <li class="user-profile-list-item"><%= user.escape('description') %></li>
+<h1 class="username"><%= user.escape('username') %>
+<% if (user.attributes.is_current_user) { %>
+  <button class="edit-profile-button">Edit Profile</button>
+  <button class="discard-changes hidden">Discard Changes</button>
+</h1>
   <br>
-  <li class="user-profile-list-item">Total Miles Logged: <%= miles %></li>
-</ul>
+  <form class="edit-profile-form hidden">
+    <label>Username:
+      <input type="text" name="user[username]" value="<%= user.escape('username')%>">
+    </label>
+    <br>
+    <label>Email:
+      <input type="text" name="user[email]" value="<%= user.escape('email')%>">
+    </label>
+    <br>
+    <label>New Password:
+      <input type="password" name="user[pw1]" value="">
+    </label>
+    <br>
+    <label>Confirm New Password:
+      <input type="password" name="user[pw2]" value="">
+    </label>
+    <br>
+    <label>Upload Photo:
+      <input type="text" name="user[photo_url]" value="<%= user.escape('photo_url')%>">
+    </label>
+    <br>
+    <label>Description:
+      <br>
+      <textarea name="user[description]" rows="6" cols="50"><%= user.escape('description')%></textarea>
+    </label>
+    <br>
+    <button>Save Changes</button>
+  </form>
+<% } else { %>
+</h1>
+<% } %>
+
+<section class="view-user-profile">
+  <img src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+  <ul class="user-profile-list">
+    <li class="user-profile-list-item">Joined: <%= user.escape('join_month') %>/<%= user.escape('join_year') %></li>
+    <li class="user-profile-list-item"><%= user.escape('description') %></li>
+    <br>
+    <li class="user-profile-list-item">Total Miles Logged: <%= user.escape('total_distance') %></li>
+  </ul>
+</section>
 
 <section class="blog-feed">
   <h1 class="blog-feed-title">Recent Blogs</h1>
@@ -13,7 +52,7 @@
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
         <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
-        <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
+        <br><%= blog.escape('author_name') %> - <%= blog.escape('created_at') %>
         <br>
         <%= blog.escape('preview') %>
       </li>
@@ -29,11 +68,11 @@
       <li class="log-feed-list-item">
         <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
         <br>
-        <%= log.escape('user_id') %> - <%= log.escape('date') %>
+        <%= log.escape('username') %> - <%= log.escape('date') %>
         <br>
         <%= log.escape('distance') %>mi -
-        <%= log.escape('duration') %>sec -
-        <%= (log.attributes.duration / 60) / log.attributes.distance %>min/mi
+        <%= log.escape('duration') %> -
+        <%= log.escape('pace') %>min/mi
       </li>
       <br>
     <% }) %>
@@ -44,11 +83,8 @@
   <h1 class="user-shoes-title">Shoes</h1>
   <ul class="user-shoes-list">
     <% shoes.each( function(shoe) { %>
-      <li><%= shoe.escape('name')%> - <%= shoe.escape('distance') %>mi</li>
+      <li><%= shoe.escape('name')%> - <%= shoe.escape('total_distance') %>mi</li>
       <br>
     <% }) %>
   </ul>
-</section>
-
-
 </section>

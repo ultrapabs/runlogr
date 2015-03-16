@@ -52,7 +52,7 @@ log1 = user1.logs.create!(title: "Tempo Run",
 log2 = user1.logs.create!(title: "Long Run",
   date: Date.new(2014, 8, 6),
   distance: 21.2,
-  duration: (12.2 * 6.5 * 60),
+  duration: (21.2 * 6.5 * 60),
   notes: "Crushed it.",
   shoe_id: shoe1.id
 )

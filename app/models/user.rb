@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   validates :email, :username, :session_token, :pw_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :description, length: { maximum: 300 }
 
   attr_reader :password
 
@@ -55,11 +56,13 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.pw_digest).is_password?(password)
   end
 
+  def total_distance
+    self.logs.sum(:distance)
+  end
+
   private
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token
   end
-
-
 
 end

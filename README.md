@@ -40,7 +40,7 @@ Create views of blogs and logs. Add commenting feature to both, with ability to 
 
 [Details][phase2]
 
-### Phase 3: User Profile View (~1 day)
+### Phase 3: User Profile View (~2 days)
 
 Create view that other users will see, as well as editing capabilities if you view your own profile. User will see a feed of the user's blogs and logs.
 
@@ -72,4 +72,5 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 - [ ] Log type classification and sorting (race, workout, training run)
 - [ ] Add metric distance conversion
 - [ ] Add shoe archive to store "retired" shoes
+- [ ] Add pace/time/total runs to shoes
 - [ ] ???
