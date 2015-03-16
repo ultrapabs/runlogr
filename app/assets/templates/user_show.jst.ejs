@@ -41,7 +41,6 @@
   <ul class="user-profile-list">
     <li class="user-profile-list-item">Joined: <%= user.escape('join_month') %>/<%= user.escape('join_year') %></li>
     <li class="user-profile-list-item"><%= user.escape('description') %></li>
-    <br>
     <li class="user-profile-list-item">Total Miles Logged: <%= user.escape('total_distance') %></li>
   </ul>
 </section>
@@ -52,9 +51,10 @@
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
         <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
-        <br><%= blog.escape('author_name') %> - <%= blog.escape('created_at') %>
         <br>
         <%= blog.escape('preview') %>
+        <br>
+        <%= blog.escape('created_at') %>
       </li>
       <br>
     <% }) %>
@@ -66,13 +66,12 @@
   <ul class="log-feed-list">
     <% logs.each( function(log) { %>
       <li class="log-feed-list-item">
-        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
-        <br>
-        <%= log.escape('username') %> - <%= log.escape('date') %>
+        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a> -
+        <%= log.escape('date') %>
         <br>
         <%= log.escape('distance') %>mi -
         <%= log.escape('duration') %> -
-        <%= log.escape('pace') %>min/mi
+        <%= log.escape('pace') %>/mi
       </li>
       <br>
     <% }) %>

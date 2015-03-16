@@ -12,8 +12,7 @@ json.join_month @user.created_at.month
 json.join_year @user.created_at.year
 json.total_distance @user.total_distance
 
-json.blogs do
-  json.array! @blogs.each do |blog|
+json.blogs @blogs.each do |blog|
 
     json.title blog.title
     json.preview blog.preview
@@ -21,12 +20,9 @@ json.blogs do
     json.author_name blog.author_name
     json.created_at blog.created_at
     json.id blog.id
-
-  end
 end
 
-json.logs do
-  json.array! @logs.each do |log|
+json.logs @logs.each do |log|
 
     json.title log.title
     json.date log.date
@@ -37,15 +33,9 @@ json.logs do
     json.shoe_id log.shoe_id
     json.pace log.pace
     json.id log.id
-
-  end
 end
 
-json.shoes do
-  json.array! @shoes.each do |shoe|
-
+json.shoes @shoes.each do |shoe|
     json.name shoe.name
     json.total_distance shoe.total_distance
-
-  end
 end

@@ -31,7 +31,20 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
 
   saveChanges: function (event) {
     event.preventDefault();
+    var that = this;
+    var blogAttrs = $(event.currentTarget).serializeJSON().blog;
+    var url = "#blogs/" + this.model.id;
+    this.model.set(blogAttrs);
 
+    this.model.save({}, {
+      success: function () {
+        that.collection.add(that.model, { merge: true });
+        Backbone.history.navigate(url, { trigger: true });
+      },
+      error: function () {
+        console.log("blog save error");
+      }
+    });
   },
 
   discardChanges: function (event) {

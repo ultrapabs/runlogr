@@ -1,7 +1,7 @@
 Runlogr.Views.LogNew = Backbone.View.extend ({
 
   events: {
-    "submit .create-log": "createLog"
+    "submit .log-form": "createLog"
   },
 
   template: JST['log_new'],
@@ -24,6 +24,11 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
     var logAttrs = $(event.target).serializeJSON().log;
     var newLog = new Runlogr.Models.Log(logAttrs);
     newLog.set({duration: duration});
+
+    var shoeId = $(event.target).serializeJSON().shoeId;
+    if (shoeId > 0) {
+      newLog.set({shoe_id: shoeId})
+    }
 
     var logs = this.collection;
 

@@ -4,9 +4,11 @@
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
         <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
-        <br><%= blog.escape('author_id') %> - <%= blog.escape('created_at') %>
         <br>
         <%= blog.escape('preview') %>
+        <br>
+        <a href="#users/<%= blog.escape('author_id')%>"><%= blog.escape('author_name') %></a> -
+        <%= blog.escape('created_at') %>
       </li>
       <br>
     <% }) %>
@@ -20,11 +22,12 @@
       <li class="log-feed-list-item">
         <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
         <br>
-        <%= log.escape('user_id') %> - <%= log.escape('date') %>
-        <br>
         <%= log.escape('distance') %>mi -
-        <%= log.escape('duration') %>sec -
-        <%= (log.attributes.duration / 60) / log.attributes.distance %>min/mi
+        <%= log.escape('duration_string') %> -
+        <%= log.escape('pace') %>/mi
+        <br>
+        <a href="#users/<%= log.escape('user_id')%>"><%= log.escape('username') %></a> -
+        <%= log.escape('date') %>
       </li>
       <br>
     <% }) %>

@@ -1,8 +1,8 @@
 class Api::BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.all
-    render json: @blogs
+    @blogs = Blog.includes(:author)
+    render :index
   end
 
   def create
@@ -16,14 +16,14 @@ class Api::BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    @blog = Blog.includes(:author).find(params[:id])
     render :show
   end
 
   def update
-    @blog = Blog.find(params[:id])
+    @blog = current_user.blogs.find(params[:id])
 
-    if @blog.author_id === current_user.id && @blog.update!(blog_params)
+    if !@blog.nil? && @blog.update!(blog_params)
       render json: @blog
     else
       render json: @blog.errors.full_messages, status: :unprocessable_entity

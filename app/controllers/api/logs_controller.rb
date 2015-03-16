@@ -1,8 +1,8 @@
 class Api::LogsController < ApplicationController
 
   def index
-    @logs = Log.all
-    render json: @logs
+    @logs = Log.includes(:user)
+    render :index
   end
 
   def create
@@ -17,11 +17,22 @@ class Api::LogsController < ApplicationController
   end
 
   def show
-    @log = Log.find(params[:id])
-    render json: @log
+    @log = Log.includes({:user => :shoes}, :shoe).find(params[:id])
+    if (@log.user_id == current_user.id)
+      @shoes = current_user.shoes
+    end
+
+    render :show
   end
 
   def update
+    @log = current_user.logs.find(params[:id])
+
+    if !@log.nil? && @log.update!(log_params)
+      render json: @log
+    else
+      render json: @log.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy

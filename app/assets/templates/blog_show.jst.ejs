@@ -5,16 +5,16 @@
 </h1>
   <section class="blog-edit hidden">
     <form class="blog-form">
-      <label "blog-label">Title:
+      <label class="blog-label">Title:
         <input type="string" name="blog[title]" value="<%= blog.escape('title') %>">
       </label>
       <br>
-      <label "blog-label">Body:
+      <label class="blog-label">Body:
       <br>
         <textarea name="blog[body]" rows="20" cols="50"><%= blog.escape('body') %></textarea>
       </label>
       <br>
-      <label "blog-label">Preview:
+      <label class="blog-label">Preview:
       <br>
         <textarea name="blog[preview]" rows="2" cols="50"><%= blog.escape('preview') %></textarea>
       </label>
@@ -33,4 +33,9 @@
   <p class="blog-body">
   <%= blog.escape('body') %>
   </p>
+  <% if (blog.attributes.current_user_is_author) { %>
+    <p class="blog-preview">
+      Preview: <%= blog.escape('preview') %>
+    </p>
+  <% } %>
 </section>

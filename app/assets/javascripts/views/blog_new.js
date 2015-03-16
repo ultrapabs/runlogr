@@ -1,7 +1,7 @@
 Runlogr.Views.BlogNew = Backbone.View.extend ({
 
   events: {
-    "submit .create-blog": "createBlog"
+    "submit .blog-form": "createBlog"
   },
 
   template: JST['blog_new'],

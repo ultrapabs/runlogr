@@ -41,6 +41,23 @@ class Log < ActiveRecord::Base
     convert_time_to_string(hours, minutes, seconds)
   end
 
+  def log_hours
+    (self.duration / 3600).floor
+  end
+
+  def log_minutes
+    ((self.duration % 3600).floor / 60).floor
+  end
+
+  def log_seconds
+    (self.duration % 3600).floor % 60
+  end
+
+  def shoe_name
+    return "" if self.shoe_id.nil?
+    self.shoe.name
+  end
+
   def convert_time_to_string(h, m, s)
     h < 10 ? hour = "0" + h.to_s : hour = h.to_s
     m < 10 ? min = "0" + m.to_s : min = m.to_s
@@ -50,7 +67,11 @@ class Log < ActiveRecord::Base
   end
 
   def pace
-    (self.duration / (60 * self.distance)).round(2)
+    min = (self.duration / (60 * self.distance)).round(2)
+    sec = (min - min.floor) * 60
+    sec_string = sec.floor.to_i.to_s
+    sec_string = "0" + sec_string if sec_string.length == 1
+    min.floor.to_s + ":" + sec_string
   end
 
 end
