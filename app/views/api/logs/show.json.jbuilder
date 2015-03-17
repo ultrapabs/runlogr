@@ -16,7 +16,9 @@ json.hours @log.log_hours
 json.minutes @log.log_minutes
 json.seconds @log.log_seconds
 json.notes @log.notes
+
 json.shoe_name @log.shoe_name
 json.shoe_id @log.shoe_id
+
 json.pace @log.pace
 json.id @log.id

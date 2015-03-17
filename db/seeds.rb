@@ -16,9 +16,6 @@ user2 = User.create!(email: 'user2@test.com',
   photo_url: 'http://www.runnersworld.com/sites/default/files/hall-keflezighiwide-usolyt12500.jpg'
 )
 
-user1.generate_none_shoe
-user2.generate_none_shoe
-
 blog1 = user1.blogs.create!(title: "Hills",
   body: "Hill repeats, long hills, slow hills, steep hills, etc.",
   preview: "I love hills."

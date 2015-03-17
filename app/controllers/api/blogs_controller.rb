@@ -24,7 +24,7 @@ class Api::BlogsController < ApplicationController
     @blog = current_user.blogs.find(params[:id])
 
     if !@blog.nil? && @blog.update!(blog_params)
-      render json: @blog
+      render :show
     else
       render json: @blog.errors.full_messages, status: :unprocessable_entity
     end

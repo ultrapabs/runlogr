@@ -60,10 +60,6 @@ class User < ActiveRecord::Base
     self.logs.sum(:distance)
   end
 
-  def generate_none_shoe
-    self.shoes.create!(name: "None Selected", distance: 0)
-  end
-
   private
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token

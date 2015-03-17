@@ -20,6 +20,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this.logs = new Runlogr.Collections.Logs();
     this.logs.fetch();
     this.users = new Runlogr.Collections.Users();
+    this.shoes = new Runlogr.Collections.Shoes();
+    this.shoes.fetch();
   },
 
   runlogrHome: function () {
@@ -53,7 +55,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   logNew: function() {
-    var logView = new Runlogr.Views.LogNew({collection: this.logs});
+    var logView = new Runlogr.Views.LogNew({collection: this.logs, shoes: this.shoes});
     this._swapView(logView);
   },
 

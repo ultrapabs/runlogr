@@ -6,8 +6,13 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
 
   template: JST['log_new'],
 
+  initialize: function(options) {
+    this.shoes = options.shoes;
+    this.listenTo(this.shoes, "sync", this.render)
+  },
+
   render: function () {
-    var content = this.template();
+    var content = this.template({shoes: this.shoes});
     this.$el.html(content);
 
     return this;
@@ -24,11 +29,6 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
     var logAttrs = $(event.target).serializeJSON().log;
     var newLog = new Runlogr.Models.Log(logAttrs);
     newLog.set({duration: duration});
-
-    var shoeId = $(event.target).serializeJSON().shoeId;
-    if (shoeId > 0) {
-      newLog.set({shoe_id: shoeId})
-    }
 
     var logs = this.collection;
 

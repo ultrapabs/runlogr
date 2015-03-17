@@ -54,7 +54,7 @@ class Log < ActiveRecord::Base
   end
 
   def shoe_name
-    return "" if self.shoe_id.nil?
+    return "" if self.shoe.nil?
     self.shoe.name
   end
 

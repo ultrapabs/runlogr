@@ -27,9 +27,10 @@ class Api::LogsController < ApplicationController
 
   def update
     @log = current_user.logs.find(params[:id])
+    @log.shoe_id = nil unless is_users_shoe?(@log)
 
     if !@log.nil? && @log.update!(log_params)
-      render json: @log
+      render :show
     else
       render json: @log.errors.full_messages, status: :unprocessable_entity
     end
@@ -41,5 +42,15 @@ class Api::LogsController < ApplicationController
   private
   def log_params
     params.require(:log).permit(:title, :date, :distance, :duration, :notes, :shoe_id)
+  end
+
+  def is_users_shoe?(log)
+    shoes = current_user.shoes.select('id').to_a
+    id_arr = []
+    shoes.each do |shoe|
+      id_arr << shoe.id
+    end
+
+    id_arr.include?(log.shoe_id)
   end
 end

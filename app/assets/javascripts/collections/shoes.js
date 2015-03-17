@@ -5,7 +5,7 @@ Runlogr.Collections.Shoes = Backbone.Collection.extend ({
   url: 'api/shoes',
 
   comparator: function(shoe) {
-    return shoe.escape('distance') * -1;
+    return -shoe.get('total_distance');
   },
 
   getOrFetch: function (id) {
