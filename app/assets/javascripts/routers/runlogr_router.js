@@ -60,7 +60,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   userSearch: function () {
-    var userView = new Runlogr.Views.UserSearch({collection: this.users});
+    var userView = new Runlogr.Views.UserSearch();
     this._swapView(userView);
   },
 

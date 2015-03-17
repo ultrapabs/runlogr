@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :shoes, only: [:index, :create, :destroy, :edit]
     resources :users, only: [:index, :show, :update]
     resources :follows, only: [:create, :destroy]
-
+    resources :searches, only: [:index]
   end
 
 end

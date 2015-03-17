@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  include PgSearch
+  pg_search_scope :search_by_username_or_desc, :against => [:username, :description]
+
   validates :email, :username, :session_token, :pw_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :description, length: { maximum: 300 }
@@ -44,7 +47,6 @@ class User < ActiveRecord::Base
   )
 
   has_many :followers, through: :follows_leads
-
   has_many :leaders, through: :follows_follows
 
   has_many :followed_blogs, through: :follows_follows, source: :leader_blogs
