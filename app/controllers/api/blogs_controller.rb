@@ -1,7 +1,7 @@
 class Api::BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.includes(:author)
+    @blogs = current_user.followed_blogs.includes(:author)
     render :index
   end
 

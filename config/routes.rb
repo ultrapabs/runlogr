@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :logs, except: [:new]
     resources :shoes, only: [:index, :create, :destroy, :edit]
     resources :users, only: [:index, :show, :update]
+    resources :follows, only: [:create, :destroy]
 
   end
 

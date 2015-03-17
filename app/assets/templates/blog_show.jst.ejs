@@ -1,5 +1,5 @@
 <h1 class="blog-title"><%= blog.escape('title') %>
-<% if (blog.attributes.current_user_is_author) { %>
+<% if (blog.get('current_user_is_author')) { %>
   <button class="edit-blog-button">Edit Blog</button>
   <button class="discard-changes hidden">Discard Changes</button>
 </h1>
@@ -33,7 +33,7 @@
   <p class="blog-body">
   <%= blog.escape('body') %>
   </p>
-  <% if (blog.attributes.current_user_is_author) { %>
+  <% if (blog.get('current_user_is_author')) { %>
     <p class="blog-preview">
       Preview: <%= blog.escape('preview') %>
     </p>

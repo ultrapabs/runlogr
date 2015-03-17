@@ -13,9 +13,9 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 - [x] Create sessions (log in)
 - [x] Create/view/edit blogs and running logs
 - [ ] Import/export running log data to CSV
-- [ ] Add shoes to logs, track mileage on shoes
+- [x] Add shoes to logs, track mileage on shoes
 - [ ] Create/delete comments on blogs and logs
-- [ ] Follow/unfollow other users
+- [x] Follow/unfollow other users
 - [ ] View a feed of followed users and their blogs/logs
 - [ ] Search for users by username
 

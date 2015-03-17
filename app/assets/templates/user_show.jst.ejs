@@ -1,5 +1,5 @@
 <h1 class="username"><%= user.escape('username') %>
-<% if (user.attributes.is_current_user) { %>
+<% if (user.get('is_current_user')) { %>
   <button class="edit-profile-button">Edit Profile</button>
   <button class="discard-changes hidden">Discard Changes</button>
 </h1>
@@ -33,6 +33,7 @@
     <button>Save Changes</button>
   </form>
 <% } else { %>
+  <button class="follow"></section>
 </h1>
 <% } %>
 

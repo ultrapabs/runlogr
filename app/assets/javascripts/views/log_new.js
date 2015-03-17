@@ -29,7 +29,7 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
     var logAttrs = $(event.target).serializeJSON().log;
     var newLog = new Runlogr.Models.Log(logAttrs);
     newLog.set({duration: duration});
-    debugger;
+
     var logs = this.collection;
 
     newLog.save({}, {

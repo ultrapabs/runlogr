@@ -1,6 +1,13 @@
-json.is_current_user current_user.id == @user.id
+json.is_current_user @current_user.id == @user.id
 
-if current_user.id == @user.id
+if @user.followed_by?(@current_user)
+  json.followed_by_current_user true
+  json.follow_id @user.follows_leads.find_by_follower_id(@current_user.id).id
+else
+  json.followed_by_current_user false
+end
+
+if @current_user.id == @user.id
   json.email @user.email
 end
 

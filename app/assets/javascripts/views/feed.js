@@ -3,8 +3,10 @@ Runlogr.Views.Feed = Backbone.View.extend ({
   template: JST['feed'],
 
   initialize: function (options) {
-    this.blogs = options.blogs;
-    this.logs = options.logs;
+    this.blogs = new Runlogr.Collections.Blogs();
+    this.blogs.fetch();
+    this.logs = new Runlogr.Collections.Logs();
+    this.logs.fetch();
 
     this.listenTo(this.blogs, 'sync add', this.render);
     this.listenTo(this.logs, 'sync add', this.render);

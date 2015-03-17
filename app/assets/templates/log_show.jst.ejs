@@ -1,5 +1,5 @@
 <h1 class="log-title"><%= log.escape('title') %>
-  <% if (log.attributes.current_user_is_user) { %>
+  <% if (log.get('current_user_is_user')) { %>
     <button class="edit-log-button">Edit Log</button>
     <button class="discard-changes hidden">Discard Changes</button>
 </h1>

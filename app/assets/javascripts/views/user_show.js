@@ -6,6 +6,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     "click .edit-profile-button" : "editProfile",
     "submit .edit-profile-form" : "saveChanges",
     "click .discard-changes" : "discardChanges",
+    "click .follow" : "changeFollow"
   },
 
   initialize: function () {
@@ -19,7 +20,15 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
       logs: this.model.logs(),
       shoes: this.model.shoes(),
     });
+
     this.$el.html(content);
+
+    if (this.model.get('followed_by_current_user')) {
+      this.$el.find('.follow').html('Unfollow');
+    } else {
+      this.$el.find('.follow').html('Follow');
+    }
+
     return this;
   },
 
@@ -68,6 +77,45 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   discardChanges: function (event) {
     event.preventDefault();
     this.render();
+  },
+
+  changeFollow: function (event) {
+    event.preventDefault();
+    var userUrl = 'users/' + this.model.id;
+    var postUrl = 'api/follows/';
+    var deleteUrl = postUrl + this.model.get('follow_id');
+    var that = this;
+
+    if (this.model.get('followed_by_current_user')) {
+      this.$el.find('.follow').addClass('hidden');
+
+      $.ajax({ url: deleteUrl,
+        type: 'DELETE',
+        success: function(data) {
+          that.model.set({ followed_by_current_user: false });
+          that.$el.find('.follow').removeClass('hidden');
+          that.render();
+          },
+        error: function () { console.log("unfollow error") }
+      });
+    } else {
+      this.$el.find('.follow').addClass('hidden');
+
+      $.ajax({ url: 'api/follows',
+        type: 'POST',
+        data: { leader_id: this.model.id },
+        dataType: "json",
+        success: function(data) {
+          that.model.set({follow_id: data.id,
+            followed_by_current_user: true
+          });
+          that.$el.find('.follow').removeClass('hidden');
+          that.render();
+        },
+        error: function () { console.log("follow error") }
+      });
+    }
+
   }
 
 

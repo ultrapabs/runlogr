@@ -6,10 +6,15 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes({:logs => :user}, {:blogs => :author}, {:shoes => :logs}).find(params[:id])
+    @user = User.includes( {:logs => :user},
+                           {:blogs => :author},
+                           {:shoes => :logs},
+                           :follows_leads
+                          ).find(params[:id])
     @blogs = @user.blogs
     @logs = @user.logs
     @shoes = @user.shoes
+    @current_user = current_user
 
     render :show
   end
@@ -17,7 +22,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = current_user
 
-    if @user.id === current_user.id && @user.update!(user_params)
+    if @user.id == current_user.id && @user.update!(user_params)
       render :show
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity

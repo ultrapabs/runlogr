@@ -29,6 +29,27 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :follows_follows,
+    class_name: "Follow",
+    foreign_key: :follower_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :follows_leads,
+    class_name: "Follow",
+    foreign_key: :leader_id,
+    primary_key: :id
+  )
+
+  has_many :followers, through: :follows_leads
+
+  has_many :leaders, through: :follows_follows
+
+  has_many :followed_blogs, through: :follows_follows, source: :leader_blogs
+  has_many :followed_logs, through: :follows_follows, source: :leader_logs
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
@@ -58,6 +79,10 @@ class User < ActiveRecord::Base
 
   def total_distance
     self.logs.sum(:distance)
+  end
+
+  def followed_by?(user)
+    self.followers.include?(user)
   end
 
   private
