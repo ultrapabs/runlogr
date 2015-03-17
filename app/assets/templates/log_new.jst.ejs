@@ -22,7 +22,7 @@
     <select class="shoes-select" name="log[shoe_id]">
       <option value="none"></option>
       <% shoes.each( function (shoe) {%>
-       <option value="<%= shoe.escape('shoe_id') %>"><%= shoe.escape('name') %></option>
+       <option value="<%= shoe.escape('id') %>"><%= shoe.escape('name') %></option>
       <% }) %>
     </select>
   </label>
