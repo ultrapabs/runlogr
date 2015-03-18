@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
 
   include PgSearch
-  pg_search_scope :search_by_username_or_desc, :against => [:username, :description]
+  pg_search_scope :search_by_username_or_desc,
+                  against: [:username, :description],
+                  using: { tsearch: {prefix: true} }
 
   validates :email, :username, :session_token, :pw_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }

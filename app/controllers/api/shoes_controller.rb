@@ -15,6 +15,9 @@ class Api::ShoesController < ApplicationController
   end
 
   def destroy
+    @shoe = current_user.shoes.find(params[:id])
+    @shoe.destroy!
+    render "api/users/index"
   end
 
   private

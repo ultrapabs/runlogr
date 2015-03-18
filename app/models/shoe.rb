@@ -3,6 +3,8 @@ class Shoe < ActiveRecord::Base
   validates :user_id, :name, :distance, presence: true
   validates :name, length: { maximum: 30 }
 
+  before_destroy :remove_from_logs
+
   belongs_to(
     :user,
     class_name: "User",
@@ -19,6 +21,13 @@ class Shoe < ActiveRecord::Base
 
   def total_distance
     self.distance + self.logs.sum(:distance)
+  end
+
+  private
+  def remove_from_logs
+    self.logs.each do |log|
+      log.shoe_id = nil
+    end
   end
 
 end

@@ -50,5 +50,6 @@ unless @shoes.nil?
   json.shoes @shoes.each do |shoe|
       json.name shoe.name
       json.total_distance shoe.total_distance
+      json.id shoe.id
   end
 end

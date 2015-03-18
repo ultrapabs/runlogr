@@ -3,13 +3,20 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   template: JST['user_show'],
 
   events: {
-    "click .edit-profile-button" : "editProfile",
-    "submit .edit-profile-form" : "saveChanges",
-    "click .discard-changes" : "discardChanges",
-    "click .follow" : "changeFollow"
+    'click .edit-profile-button' : 'editProfile',
+    'submit .edit-profile-form' : 'saveChanges',
+    'click .discard-changes' : 'discardChanges',
+    'click .follow' : 'changeFollow',
+    'click .remove-shoes' : 'showDeleteButtons',
+    'click .done-editing' : 'hideDeleteButtons',
+    'click .delete-shoe' : 'showConfirmCancel',
+    'click .delete-shoe-cancel' : 'deleteCancel',
+    'click .delete-shoe-confirm' : 'deleteConfirm'
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.shoes = options.shoes;
+    this.listenTo(this.shoes, "remove", this.render)
     this.listenTo(this.model, "sync", this.render)
   },
 
@@ -18,7 +25,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     var content = this.template({user: this.model,
       blogs: this.model.blogs(),
       logs: this.model.logs(),
-      shoes: this.model.shoes(),
+      shoes: this.shoes,
     });
 
     this.$el.html(content);
@@ -115,8 +122,46 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
         error: function () { console.log("follow error") }
       });
     }
+  },
 
+  showDeleteButtons: function (event) {
+    event.preventDefault();
+    this.$el.find('.delete-shoe').removeClass('hidden');
+    this.$el.find('.done-editing').removeClass('hidden');
+    this.$el.find('.remove-shoes').addClass('hidden');
+  },
+
+  hideDeleteButtons: function (event) {
+    event.preventDefault();
+    this.$el.find('.delete-shoe').addClass('hidden');
+    this.$el.find('.done-editing').addClass('hidden');
+    this.$el.find('.remove-shoes').removeClass('hidden');
+    this.$el.find('.delete-shoe-cancel').addClass('hidden');
+    this.$el.find('.delete-shoe-confirm').addClass('hidden');
+    this.$el.find('.delete-shoe').addClass('hidden');
+  },
+
+  showConfirmCancel: function (event) {
+    event.preventDefault();
+    var shoeId = $(event.currentTarget).data('id');
+    this.$el.find(".delete-shoe-cancel[data-id='" + shoeId + "']").removeClass('hidden');
+    this.$el.find(".delete-shoe-confirm[data-id='" + shoeId + "']").removeClass('hidden');
+    this.$el.find(".delete-shoe[data-id='" + shoeId + "']").addClass('hidden');
+  },
+
+  deleteCancel: function (event) {
+    event.preventDefault();
+    var shoeId = $(event.currentTarget).data('id');
+    this.$el.find(".delete-shoe-cancel[data-id='" + shoeId + "']").addClass('hidden');
+    this.$el.find(".delete-shoe-confirm[data-id='" + shoeId + "']").addClass('hidden');
+    this.$el.find(".delete-shoe[data-id='" + shoeId + "']").removeClass('hidden');
+  },
+
+  deleteConfirm: function (event) {
+    event.preventDefault();
+    var shoeId = $(event.currentTarget).data('id');
+    var shoe = this.shoes.get(shoeId);
+    shoe.destroy();
   }
-
 
 });
