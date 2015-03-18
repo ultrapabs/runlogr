@@ -17,7 +17,7 @@ Run(b)logr is a clone of [Flotrackr][flotrack] built on Rails and Backbone with 
 - [ ] Create/delete comments on blogs and logs
 - [x] Follow/unfollow other users
 - [x] View a feed of followed users and their blogs/logs
-- [ ] Search for users by username
+- [X] Search for users by username and description
 
 ## Design Docs
 * [Wireframes][views]
@@ -65,6 +65,7 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 [phase5]: ./_proposal/docs/phases/phase5.md
 
 ### Bonus Features (TBD)
+- [ ] Users can sign in with Twitter
 - [ ] Users create custom running maps/routes
 - [ ] Blog, log, and route tags
 - [ ] Blog, log, comment, and route "likes"

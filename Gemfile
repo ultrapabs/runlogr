@@ -17,6 +17,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pg_search'
 gem 'kaminari'
 
+gem 'figaro'
+gem 'paperclip', '~> 4.2'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
