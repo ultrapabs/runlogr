@@ -27,7 +27,6 @@ class SessionsController < ApplicationController
 
   def omniauth
     @user = User.find_or_create_by_auth_hash(auth_hash)
-    fail
 
     if @user.email
       log_in!(@user)
@@ -45,7 +44,7 @@ class SessionsController < ApplicationController
 
   protected
   def auth_hash
-    request.env['omniauth']
+    request.env['omniauth.auth']
   end
 
 end

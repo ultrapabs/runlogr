@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) unless @user
 
+    if params[:user][:provider] && params[:user][:uid]
+      @user.provider = params[:user][:provider]
+      @user.uid = params[:user][:uid]
+    end
+
     if @user.save
       log_in!(@user)
       redirect_to root_url

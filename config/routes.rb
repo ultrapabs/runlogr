@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     resources :searches, only: [:index]
   end
 
-  get "/auth/:provider/callback", to: "sessions/#omniauth"
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 
 end

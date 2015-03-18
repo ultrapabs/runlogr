@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
-  def self.find_or_create_by_auth_hash
+  def self.find_or_create_by_auth_hash(auth_hash)
     user = User.find_by(
       provider: auth_hash[:provider],
       uid: auth_hash[:uid]
@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
       user = User.new(
         provider: auth_hash[:provider],
         uid: auth_hash[:uid],
-        username: auth_hash[:nickname]
+        username: auth_hash[:info][:nickname]
       )
     end
 

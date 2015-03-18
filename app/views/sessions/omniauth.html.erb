@@ -11,6 +11,9 @@ Please fill in the missing information to continue.
 </p>
 <form class="sign-up" action="<%= users_url %>" method="post">
   <%= auth_token %>
+  <input type="hidden" name="user[provider]" value="<%= @user.provider %>">
+  <input type="hidden" name="user[uid]" value="<%= @user.uid %>">
+
   <label>
     Username: <input type="string" name="user[username]" value="<%= @user.username %>">
   </label>
