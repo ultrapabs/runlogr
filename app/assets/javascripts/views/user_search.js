@@ -4,26 +4,28 @@ Runlogr.Views.UserSearch = Backbone.View.extend ({
 
   events: {
     "click .all-users" : "getAll",
-    "click .search-users" : "searchUsers"
+    "submit .search-users" : "searchUsers"
   },
 
   initialize: function () {
     this.userResults = new Runlogr.Collections.UserSearchResults();
-
-    this.listenTo(this.userResults, "sync add", this.render)
+    this.allUsers = new Runlogr.Collections.Users();
+    this.listenTo(this.userResults, "sync add", this.renderUserResults)
+    this.listenTo(this.allUsers, "sync add", this.render)
   },
 
   render: function () {
-    var content = this.template({users: this.userResults});
+    var content = this.template({users: this.allUsers});
     this.$el.html(content);
-
-    this.renderUserResults();
 
     return this;
   },
 
   renderUserResults: function () {
-    var results = this.$(".search-results");
+    var content = this.template({users: this.userResults});
+    this.$el.html(content);
+
+    return this;
   },
 
   searchUsers: function (event) {
@@ -37,8 +39,7 @@ Runlogr.Views.UserSearch = Backbone.View.extend ({
   },
 
   getAll: function () {
-    this.userResults = new Runlogr.Collections.Users();
-    this.userResults.fetch();
+    this.allUsers.fetch();
   }
 
 });

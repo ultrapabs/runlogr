@@ -27,7 +27,6 @@
           <select class="shoes-select" name="log[shoe_id]">
             <% if (log.escape('shoe_id')) { %>
               <option value="<%= log.escape('shoe_id') %>"><%= log.escape('shoe_name') %></option>
-              <option value="none">Remove Selection</option>
             <% } else { %>
               <option value="none">Select One</option>
             <% } %>
@@ -36,6 +35,7 @@
                <option value="<%= shoe.escape('shoe_id') %>"><%= shoe.escape('name') %></option>
               <% } %>
             <% }) %>
+            <option value="none">Remove Selection</option>
           </select>
         </label>
         <br>
