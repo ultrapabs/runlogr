@@ -5,6 +5,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   events: {
     'click .edit-profile-button' : 'editProfile',
     'submit .edit-profile-form' : 'saveChanges',
+    'change .new-profile-pic' : 'updateProfilePic',
     'click .discard-changes' : 'discardChanges',
     'click .follow' : 'changeFollow',
     'click .remove-shoes' : 'showDeleteButtons',
@@ -62,13 +63,12 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
         this.model.set(userAttrs);
         this.model.set({password: userAttrs.pw1});
       } else {
-        alert('Passwords do not match.');
+        console.log("passwords do not match");
         return;
       }
     } else {
       this.model.set(userAttrs);
     }
-
 
     this.model.save({}, {
       success: function () {
@@ -81,8 +81,21 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     });
   },
 
+  updateProfilePic: function (event) {
+    var profilePic = event.currentTarget.files[0];
+    var fileReader = new FileReader();
+
+    var that = this;
+    fileReader.onloadend = function() {
+      that.model.set("profile_pic", fileReader.result);
+    };
+
+    fileReader.readAsDataURL(profilePic);
+  },
+
   discardChanges: function (event) {
     event.preventDefault();
+    this.model.unset('profile_pic');
     this.render();
   },
 

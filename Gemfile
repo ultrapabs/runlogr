@@ -19,6 +19,7 @@ gem 'kaminari'
 
 gem 'figaro'
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'byebug'

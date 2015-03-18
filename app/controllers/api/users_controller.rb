@@ -6,11 +6,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes( {:logs => :user},
-                           {:blogs => :author},
-                           {:shoes => :logs},
-                           :follows_leads
-                          ).find(params[:id])
+    @user = User.includes(
+      {:logs => :user},
+      {:blogs => :author},
+      {:shoes => :logs},
+      :follows_leads
+    ).find(params[:id])
     @blogs = @user.blogs
     @logs = @user.logs
     @shoes = @user.shoes
@@ -21,8 +22,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
+    @current_user = @user
 
-    if @user.id == current_user.id && @user.update!(user_params)
+    if @user.update!(user_params)
       render :show
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
@@ -32,7 +34,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password, :description, :photo_url)
+    params.require(:user).permit(:username, :email, :password, :description, :profile_pic)
   end
 
 end

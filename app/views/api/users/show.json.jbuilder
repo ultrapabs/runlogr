@@ -14,7 +14,7 @@ end
 json.id @user.id
 json.username @user.username
 json.description @user.description
-json.photo_url @user.photo_url
+json.photo_url image_url(@user.profile_pic.url(:main))
 json.join_month @user.created_at.month
 json.join_year @user.created_at.year
 json.total_distance @user.total_distance

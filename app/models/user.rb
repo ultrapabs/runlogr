@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :description, length: { maximum: 300 }
 
+  has_attached_file :profile_pic, styles: { main: "200x200", feed: "80x80" }
+  validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
   attr_reader :password
 
   after_initialize :ensure_session_token
