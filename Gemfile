@@ -21,6 +21,8 @@ gem 'figaro'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk'
 
+gem 'omniauth-twitter'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'

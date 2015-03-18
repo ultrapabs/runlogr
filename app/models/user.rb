@@ -68,6 +68,23 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
+  def self.find_or_create_by_auth_hash
+    user = User.find_by(
+      provider: auth_hash[:provider],
+      uid: auth_hash[:uid]
+    )
+
+    unless user
+      user = User.new(
+        provider: auth_hash[:provider],
+        uid: auth_hash[:uid],
+        username: auth_hash[:nickname]
+      )
+    end
+
+    user
+  end
+
   def reset_session_token!
     self.session_token = self.class.generate_session_token
     self.save!

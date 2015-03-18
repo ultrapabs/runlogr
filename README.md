@@ -69,6 +69,7 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 - [ ] Users create custom running maps/routes
 - [ ] Blog, log, and route tags
 - [ ] Blog, log, comment, and route "likes"
+- [ ] Add user notifications
 - [ ] Manipulate log data into different views/charts
 - [ ] Log type classification and sorting (race, workout, training run)
 - [ ] Add metric distance conversion

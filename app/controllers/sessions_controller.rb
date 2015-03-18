@@ -25,10 +25,27 @@ class SessionsController < ApplicationController
     redirect_to new_sessions_url
   end
 
+  def omniauth
+    @user = User.find_or_create_by_auth_hash(auth_hash)
+    fail
+
+    if @user.email
+      log_in!(@user)
+      redirect_to root_url
+    else
+      render :omniauth
+    end
+
+  end
+
   private
   def redirect_if_logged_in
     redirect_to root_url if logged_in?
   end
 
+  protected
+  def auth_hash
+    request.env['omniauth']
+  end
 
 end

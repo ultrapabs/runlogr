@@ -3,14 +3,19 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:create]
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params) unless @user
 
     if @user.save
       log_in!(@user)
       redirect_to root_url
     else
       flash[:errors] = @user.errors.full_messages
-      redirect_to new_sessions_url
+      if @user.provider
+        render 'sessions/omniauth'
+      else
+        render 'sessions/new'
+      end
+
     end
   end
 
