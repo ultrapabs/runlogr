@@ -1,9 +1,18 @@
 json.current_user_is_user current_user.id == @log.user_id
 
-if !@shoes.nil?
+unless @shoes.nil?
   json.shoe_options @shoes do |shoe|
     json.name shoe.name
     json.shoe_id shoe.id
+  end
+end
+
+unless @comments.nil?
+  json.comments @comments do comment
+    json.id comment.id
+    json.author comment.author
+    json.body comment.body
+    json.created_at comment.created_at
   end
 end
 

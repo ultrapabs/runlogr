@@ -16,7 +16,7 @@ Runlogr.Collections.Logs = Backbone.Collection.extend ({
     if (!log) {
       log = new Runlogr.Models.Log({id: id});
       log.fetch( {
-        success: function () { logs.add(log) }
+        success: function () { logs.add(log); }
       });
     } else {
       log.fetch();

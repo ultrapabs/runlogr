@@ -1,8 +1,10 @@
 class Log < ActiveRecord::Base
 
   validates :user_id, :date, :distance, :duration, presence: true
-  validates :notes, length: { maximum: 200 }
+  validates :notes, length: { maximum: 300 }
   validates :title, length: { maximum: 30 }
+
+  has_many :comments, as: :commentable
 
   belongs_to(
     :user,

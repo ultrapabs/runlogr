@@ -4,7 +4,7 @@ class Api::LogsController < ApplicationController
     @logs = current_user.followed_logs.includes(:user)
     render :index
   end
-  
+
   def create
     @log = current_user.logs.new(log_params)
     @log.title = "untitled" if @log.title =~ /^\s*$/
@@ -18,6 +18,7 @@ class Api::LogsController < ApplicationController
 
   def show
     @log = Log.includes({:user => :shoes}, :shoe).find(params[:id])
+    @comments = @log.comments.includes(:author)
     if (@log.user_id == current_user.id)
       @shoes = current_user.shoes
     end

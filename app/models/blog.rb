@@ -4,6 +4,8 @@ class Blog < ActiveRecord::Base
   validates :preview, length: { maximum: 100 }
   validates :title, length: { maximum: 30 }
 
+  has_many :comments, as: :commentable
+
   belongs_to(
     :author,
     class_name: "User",

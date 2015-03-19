@@ -15,7 +15,7 @@ Runlogr.Collections.Shoes = Backbone.Collection.extend ({
     if (!shoe) {
       shoe = new Runlogr.Models.Shoe({id: id});
       shoe.fetch( {
-        success: function () { shoes.add(shoe) }
+        success: function () { shoes.add(shoe); }
       });
     } else {
       shoe.fetch();

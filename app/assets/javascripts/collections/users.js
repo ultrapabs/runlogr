@@ -13,7 +13,7 @@ Runlogr.Collections.Users = Backbone.Collection.extend ({
     if (!user) {
       user = new Runlogr.Models.User({id: id});
       user.fetch( {
-        success: function () { users.add(user) }
+        success: function () { users.add(user); }
       });
     } else {
       user.fetch();
