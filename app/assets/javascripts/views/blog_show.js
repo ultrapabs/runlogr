@@ -9,7 +9,6 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
     "click .add-new-comment" : "addComment",
     "click .discard-comment" : "discardComment",
     "submit .add-comment" : "saveComment"
-
   },
 
   initialize: function () {
