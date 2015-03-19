@@ -16,6 +16,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   },
 
   initialize: function (options) {
+    this.userShoes = options.userShoes;
     this.listenTo(this.model.shoes(), "sync remove add", this.render)
     this.listenTo(this.model, "sync", this.render)
   },
@@ -172,7 +173,11 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     event.preventDefault();
     var shoeId = $(event.currentTarget).data('id');
     var shoe = this.model.shoes().get(shoeId);
-    shoe.destroy();
+    var userShoes = this.userShoes;
+    shoe.destroy({
+      success: function () { userShoes.remove(shoe); }
+    }
+    );
   }
 
 });

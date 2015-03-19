@@ -4,12 +4,7 @@ class Api::LogsController < ApplicationController
     @logs = current_user.followed_logs.includes(:user)
     render :index
   end
-
-  def new
-    @shoes = current_user.shoes
-    render :new
-  end
-
+  
   def create
     @log = current_user.logs.new(log_params)
     @log.title = "untitled" if @log.title =~ /^\s*$/

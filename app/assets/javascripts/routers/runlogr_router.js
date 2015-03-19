@@ -16,8 +16,8 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this.blogs = new Runlogr.Collections.Blogs();
     this.logs = new Runlogr.Collections.Logs();
     this.users = new Runlogr.Collections.Users();
-    this.shoes = new Runlogr.Collections.Shoes();
-    this.shoes.fetch();
+    this.userShoes = new Runlogr.Collections.Shoes();
+    this.userShoes.fetch();
   },
 
   runlogrHome: function () {
@@ -37,7 +37,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   logNew: function() {
-    var logView = new Runlogr.Views.LogNew({shoes: this.shoes});
+    var logView = new Runlogr.Views.LogNew({shoes: this.userShoes});
     this._swapView(logView);
   },
 
@@ -49,13 +49,16 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
   },
 
   shoeNew: function() {
-    var shoeView = new Runlogr.Views.ShoeNew({collection: this.shoes});
+    var shoeView = new Runlogr.Views.ShoeNew({collection: this.userShoes});
     this._swapView(shoeView);
   },
 
   userShow: function(id) {
     var user = this.users.getOrFetch(id);
-    var userView = new Runlogr.Views.UserShow({model: user});
+    var userView = new Runlogr.Views.UserShow({
+      model: user,
+      userShoes: this.userShoes
+    });
     this._swapView(userView);
   },
 
