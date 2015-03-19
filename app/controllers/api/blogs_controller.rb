@@ -19,7 +19,6 @@ class Api::BlogsController < ApplicationController
   def show
     @blog = Blog.includes(:author).find(params[:id])
     @comments = @blog.comments.includes(:author)
-    
     render :show
   end
 

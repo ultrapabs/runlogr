@@ -39,3 +39,31 @@
     </p>
   <% } %>
 </section>
+<section class="blog-comments">
+  <h2 class="comments-header">Comments</h2>
+  <ul class="comments-list">
+    <% comments.each( function(comment) { %>
+      <li class="comments-list-item">
+        <h3 class="comment-author">
+          <a href="#users/<%= comment.escape('author_id')%>">
+            <%= comment.escape('author') %>
+          </a>
+           - <%= comment.escape('created_at') %>
+        </h3>
+        <p class="comment-body">
+          <%= comment.escape('body') %>
+        </p>
+      </li>
+    <% }) %>
+  </ul>
+  <br>
+  <button class="discard-comment hidden">Discard</button>
+  <button class="add-new-comment">Add Comment</button>
+  <form class="add-comment hidden">
+    <label class="comment-label">
+      <textarea name="comment[body]" rows="4" cols="50"></textarea>
+    </label>
+    <br>
+    <button>Submit</button>
+  </form>
+</section>

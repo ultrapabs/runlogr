@@ -1,4 +1,4 @@
-Runlogr.Collections.Comments = Backbone.Model.extend ({
+Runlogr.Collections.Comments = Backbone.Collection.extend ({
 
   model: Runlogr.Models.Comment,
 

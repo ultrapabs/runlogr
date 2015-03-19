@@ -9,9 +9,10 @@ json.author_id @blog.author_id
 json.created_at @blog.created_at
 
 unless @comments.nil?
-  json.comments @comments do comment
+  json.comments @comments do |comment|
     json.id comment.id
-    json.author comment.author
+    json.author_id comment.author_id
+    json.author comment.author_name
     json.body comment.body
     json.created_at comment.created_at
   end

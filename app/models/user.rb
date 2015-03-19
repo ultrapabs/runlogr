@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many(
+    :comments,
+    class_name: "Comment",
+    foreign_key: :author_id,
+    primary_key: :id
+  )
+
+  has_many(
     :blogs,
     class_name: "Blog",
     foreign_key: :author_id,

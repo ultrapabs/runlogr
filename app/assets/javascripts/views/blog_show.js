@@ -6,14 +6,23 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
     "click .edit-blog-button" : "editBlog",
     "submit .blog-form" : "saveChanges",
     "click .discard-changes" : "discardChanges",
+    "click .add-new-comment" : "addComment",
+    "click .discard-comment" : "discardComment",
+    "submit .add-comment" : "saveComment"
+
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync add', this.render);
+    this.listenTo(this.model.comments(), 'sync remove add', this.render);
   },
 
   render: function () {
-    var content = this.template({blog: this.model});
+
+    var content = this.template({
+      blog: this.model,
+      comments: this.model.comments()
+    });
     this.$el.html(content);
 
     return this;
@@ -50,6 +59,37 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
   discardChanges: function (event) {
     event.preventDefault();
     this.render();
+  },
+
+  addComment: function (event) {
+    event.preventDefault();
+    this.$el.find('.add-new-comment').addClass('hidden');
+    this.$el.find('.add-comment').removeClass('hidden');
+    this.$el.find('.discard-comment').removeClass('hidden');
+  },
+
+  discardComment: function (event) {
+    event.preventDefault();
+    this.render();
+  },
+
+  saveComment: function (event) {
+    event.preventDefault();
+
+    var commentBody = $(event.target).serializeJSON().comment;
+    var newComment = new Runlogr.Models.Comment(commentBody);
+    newComment.set('commentable_type', 'Blog');
+    newComment.set('commentable_id', this.model.id);
+    var url = '#blogs/' + this.model.id;
+    var blogComments = this.model.comments();
+
+    newComment.save({}, {
+      success: function () {
+        blogComments.add(newComment, { merge: true });
+        Backbone.history.navigate(url, {trigger: true});
+      },
+      error: function () { console.log('comment save error'); }
+    })
   }
 
 });
