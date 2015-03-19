@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318211828) do
+ActiveRecord::Schema.define(version: 20150319141716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20150318211828) do
 
   add_index "blogs", ["author_id"], name: "index_blogs_on_author_id", using: :btree
   add_index "blogs", ["title"], name: "index_blogs_on_title", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",             null: false
+    t.integer  "author_id",        null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
 
   create_table "follows", force: :cascade do |t|
     t.integer  "leader_id",   null: false
@@ -71,7 +82,6 @@ ActiveRecord::Schema.define(version: 20150318211828) do
     t.string   "pw_digest",                null: false
     t.string   "session_token",            null: false
     t.text     "description"
-    t.string   "photo_url"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "profile_pic_file_name"
@@ -82,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150318211828) do
     t.string   "uid"
   end
 
+  add_index "users", ["description"], name: "index_users_on_description", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

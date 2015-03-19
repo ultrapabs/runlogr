@@ -7,6 +7,7 @@ class Api::BlogsController < ApplicationController
 
   def create
     @blog = current_user.blogs.new(blog_params)
+    @blog.title = "untitled" if @blog.title =~ /^\s*$/
 
     if @blog.save
       render json: @blog

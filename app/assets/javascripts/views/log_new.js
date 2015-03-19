@@ -8,10 +8,11 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
 
   initialize: function(options) {
     this.shoes = options.shoes;
-    this.listenTo(this.shoes, "sync add", this.render)
+    this.listenTo(this.shoes, "sync add remove change", this.render)
   },
 
   render: function () {
+    debugger;
     var content = this.template({shoes: this.shoes});
     this.$el.html(content);
 

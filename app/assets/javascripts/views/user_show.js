@@ -16,17 +16,15 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   },
 
   initialize: function (options) {
-    this.shoes = options.shoes;
-    this.listenTo(this.shoes, "remove", this.render)
+    this.listenTo(this.model.shoes(), "sync remove add", this.render)
     this.listenTo(this.model, "sync", this.render)
   },
 
   render: function () {
-
     var content = this.template({user: this.model,
       blogs: this.model.blogs(),
       logs: this.model.logs(),
-      shoes: this.shoes,
+      shoes: this.model.shoes()
     });
 
     this.$el.html(content);
@@ -72,7 +70,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
 
     this.model.save({}, {
       success: function () {
-        that.collection.add(that.model, { merge: true });
+        // that.collection.add(that.model, { merge: true });
         Backbone.history.navigate(url, { trigger: true });
       },
       error: function () {
@@ -173,7 +171,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
   deleteConfirm: function (event) {
     event.preventDefault();
     var shoeId = $(event.currentTarget).data('id');
-    var shoe = this.shoes.get(shoeId);
+    var shoe = this.model.shoes().get(shoeId);
     shoe.destroy();
   }
 

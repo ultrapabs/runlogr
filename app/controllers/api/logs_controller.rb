@@ -5,9 +5,14 @@ class Api::LogsController < ApplicationController
     render :index
   end
 
+  def new
+    @shoes = current_user.shoes
+    render :new
+  end
+
   def create
     @log = current_user.logs.new(log_params)
-    @log.title = "untitled" if @log.title == ""
+    @log.title = "untitled" if @log.title =~ /^\s*$/
 
     if @log.save
       render json: @log
