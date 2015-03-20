@@ -1,23 +1,24 @@
-<h1>Add Training Log</h1>
+<h1 class="form-title">Add Training Log</h1>
 <form class="log-form">
   <label class="log-label">Title:
-    <input type="string" name="log[title]">
+    <input class="title-input" type="string" name="log[title]">
+    <p class="input-desc">(optional)</p>
   </label>
-  <br>
+
   <label class="log-label">Date:
-    <input type="date" name="log[date]">
+    <input class="date-input" type="date" name="log[date]">
   </label>
-  <br>
+
   <label class="log-label">Distance:
-    <input type="number" step="0.01" name="log[distance]">mi
+    <input class="distance-input" type="number" step="0.01" min="0" max="999.99" name="log[distance]">
+    <p class="input-desc">(mi)</p>
   </label>
-  <br>
+
   <label class="log-label">Duration:
-    <input type="number" name="duration[hours]">hrs
-    <input type="number" name="duration[minutes]">min
-    <input type="number" step="0.01" name="duration[seconds]">sec
+    <input class="time-input hour" type="number" min="0" max="99" value="0" name="duration[hours]">:<input class="time-input minute" type="number" min="0" max="59" value="0" name="duration[minutes]">:<input class="time-input" type="number" min="0" max="59.99" step="0.01" value="0" name="duration[seconds]">
+    <p class="input-desc">(hh:mm:ss.ss)</p>
   </label>
-  <br>
+
   <label class="log-label">Shoes:
     <select class="shoes-select" name="log[shoe_id]">
       <option value="none"></option>
@@ -25,12 +26,11 @@
        <option value="<%= shoe.escape('id') %>"><%= shoe.escape('name') %></option>
       <% }) %>
     </select>
+    <p class="input-desc">(optional)</p>
   </label>
-  <br>
-  <label class="log-label">Notes:
-    <br>
+
+  <label class="log-label">Notes: <p class="input-desc">(optional)</p>
     <textarea name="log[notes]" rows="4" cols="50"></textarea>
   </label>
-  <br>
   <button>Add Log</button>
 </form>

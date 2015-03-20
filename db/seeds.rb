@@ -5,13 +5,13 @@ Shoe.destroy_all
 
 user1 = User.create!(
   email: 'user1@test.com',
-  username: 'user1',
+  username: 'TrailBro',
   password: 'password1',
   description: 'I run trails and mountains, and race ultras.'
 )
 user2 = User.create!(
   email: 'user2@test.com',
-  username: 'user2',
+  username: 'RoadRunner77',
   password: 'password2',
   description: 'I run fast road races up to the marathon distance.'
 )

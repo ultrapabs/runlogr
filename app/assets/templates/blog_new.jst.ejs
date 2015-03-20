@@ -1,18 +1,16 @@
-<h1>Create Blog</h1>
-<form class="blog-form">
+<h1 class="form-title">Create Blog</h1>
+<form class="blog-form group">
   <label class="blog-label">Title:
-    <input type="string" name="blog[title]">
+    <input class="title-input" type="string" name="blog[title]">
   </label>
-  <br>
+
   <label class="blog-label">Body:
-    <br>
     <textarea name="blog[body]" rows="20" cols="50"></textarea>
   </label>
-  <br>
-  <label class="blog-label">Preview:
-    <br>
+
+  <label class="blog-label">Preview: <p class="input-desc">(optional)</p>
     <textarea name="blog[preview]" rows="2" cols="50"></textarea>
   </label>
-  <br>
+
   <button>Post Blog</button>
 </form>

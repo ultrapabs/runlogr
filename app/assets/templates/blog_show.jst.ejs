@@ -1,8 +1,8 @@
 <h1 class="blog-title"><%= blog.escape('title') %>
 <% if (blog.get('current_user_is_author')) { %>
+</h1>
   <button class="edit-blog-button">Edit Blog</button>
   <button class="discard-changes hidden">Discard Changes</button>
-</h1>
   <section class="blog-edit hidden">
     <form class="blog-form">
       <label class="blog-label">Title:

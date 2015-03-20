@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :email, :username, :session_token, :pw_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :description, length: { maximum: 100 }
+  validates :username, length: { maximum: 15 }
+
 
   has_attached_file :profile_pic, styles: { main: "200x200", feed: "80x80" }, :default_url => "/images/:style/bears.png"
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/

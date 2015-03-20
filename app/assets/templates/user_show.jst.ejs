@@ -69,12 +69,12 @@
     <h1 class="user-shoes-title">Shoes</h1>
     <% if (user.get('is_current_user')) { %>
       <button class="remove-shoes">Edit</button>
-      <button class="done-editing hidden">Done Editing</button>
+      <button class="done-editing hidden">Cancel</button>
     <% } %>
     <ul class="user-shoes-list">
       <% shoes.each( function(shoe) { %>
         <li>
-          <%= shoe.escape('name')%> - <%= shoe.escape('total_distance') %>mi
+          <%= shoe.escape('name')%> (<%= shoe.escape('total_distance') %>mi)
           <% if (user.get('is_current_user')) { %>
             <button class="delete-shoe hidden" data-id="<%= shoe.escape('id') %>">Delete</button>
             <button class="delete-shoe-cancel hidden" data-id="<%= shoe.escape('id') %>">Cancel</button>
