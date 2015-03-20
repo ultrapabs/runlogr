@@ -35,6 +35,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
     this.$el.find('.discard-log-changes').removeClass('hidden');
     this.$el.find('.edit-log-button').addClass('hidden');
     this.$el.find('.log-show').addClass('hidden');
+    this.$el.find('.comments-wrapper').addClass('hidden');
   },
 
   saveChanges: function (event) {

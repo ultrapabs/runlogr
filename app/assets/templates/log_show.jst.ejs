@@ -3,26 +3,33 @@
 </h1>
     <button class="edit-log-button">Edit Log</button>
     <button class="discard-log-changes hidden">Discard Changes</button>
+    <h2 class="log-user">
+      <a href="#users/<%= log.escape('user_id') %>"><%= log.escape('username') %></a>
+      on <%= log.escape('date') %>
+    </h2>
     <section class="log-edit hidden">
       <form class="log-form">
         <label class="log-label">Title:
-          <input type="string" name="log[title]" value="<%= log.escape('title') %>">
+          <input class="title-input" type="string" name="log[title]" value="<%= log.escape('title') %>">
+          <p class="input-desc">(optional)</p>
         </label>
-        <br>
+
         <label class="log-label">Date:
-          <input type="date" name="log[date]" value="<%= log.escape('date') %>">
+          <input class="date-input" type="date" name="log[date]" value="<%= log.escape('date') %>">
         </label>
-        <br>
+
         <label class="log-label">Distance:
-          <input type="number" step="0.01" name="log[distance]" value="<%= log.escape('distance') %>">mi
+          <input class="distance-input" type="number" step="0.01" min="0" max="999.99" name="log[distance]" value="<%= log.escape('distance') %>">
+          <p class="input-desc">(mi)</p>
         </label>
-        <br>
+
+
         <label class="log-label">Duration:
-          <input type="number" name="log[hours]" value="<%= log.escape('hours') %>">hrs
-          <input type="number" name="log[minutes]" value="<%= log.escape('minutes') %>">min
-          <input type="number" step="0.01" name="log[seconds]" value="<%= log.escape('seconds') %>">sec
+          <input class="time-input hour" type="number" min="0" max="99" value="<%= log.escape('hours') %>" name="duration[hours]">:<input class="time-input minute" type="number" min="0" max="59" value="<%= log.escape('minutes') %>" name="duration[minutes]">:<input class="time-input" type="number" min="0" max="59.99" step="0.01" value="<%= log.escape('seconds') %>" name="duration[seconds]">
+          <p class="input-desc">(hh:mm:ss.ss)</p>
         </label>
-        <br>
+
+
         <label class="log-label">Shoes:
           <select class="shoes-select" name="log[shoe_id]">
             <% if (log.escape('shoe_id')) { %>
@@ -37,61 +44,75 @@
             <% }) %>
             <option value="none">Remove Selection</option>
           </select>
+          <p class="input-desc">(optional)</p>
         </label>
-        <br>
-        <label class="log-label">Notes:
-          <br>
+
+        <label class="log-label">Notes: <p class="input-desc">(optional)</p>
           <textarea name="log[notes]" rows="4" cols="50"><%= log.escape('notes') %></textarea>
         </label>
         <br>
           <button>Save Changes</button>
       </form>
     </section>
+
   <% } else { %>
 </h1>
+<h2 class="log-user">
+  <a href="#users/<%= log.escape('user_id') %>"><%= log.escape('username') %></a>
+  on <%= log.escape('date') %>
+</h2>
   <% } %>
-  <h2 class="log-user">
-    <a href="#users/<%= log.escape('user_id') %>"><%= log.escape('username') %></a>
-    on <%= log.escape('date') %>
-  </h2>
+
 <section class="log-show">
-  <ul class="log-show">
-    <li>Distance: <%= log.escape('distance') %>mi</li>
-    <li>Duration: <%= log.escape('duration_string') %></li>
-    <li>Pace: <%= log.escape('pace') %>min/mi</li>
-    <li>Shoe: <%= log.escape('shoe_name') %></li>
+  <ul class="log-show-list">
+    <li class="log-show-list-item">Distance:
+      <p class="log-list-item-desc"><%= log.escape('distance') %>mi</p>
+    </li>
+    <li class="log-show-list-item">Duration:
+      <p class="log-list-item-desc"><%= log.escape('duration_string') %></p>
+    </li>
+    <li class="log-show-list-item">Pace:
+      <p class="log-list-item-desc"><%= log.escape('pace') %>min/mi</p>
+    </li>
+    <li class="log-show-list-item">Shoe:
+      <p class="log-list-item-desc"><%= log.escape('shoe_name') %></p>
+    </li>
   </ul>
+
+  <h2 class="log-notes-title">Notes:</h2>
   <p class="log-notes">
     <%= log.escape('notes') %>
   </p>
 </section>
-<h2 class="comments-header">Comments</h2>
-<section class="log-comments">
+<section class="comments-wrapper">
+  <h2 class="comments-header">Comments</h2>
+  <section class="log-comments">
 
-  <ul class="comments-list">
-    <% comments.each( function(comment) { %>
-      <li class="comments-list-item">
-        <h3 class="comment-author">
-          <a href="#users/<%= comment.escape('author_id')%>">
-            <%= comment.escape('author') %>
-          </a>
-          wrote:
-        </h3>
-        <p class="comment-body">
-          <%= comment.escape('body') %>
-        </p>
-        <p class="comment-date">
-          on <%= comment.escape('created_at') %>
-        </p>
-      </li>
-    <% }) %>
-  </ul>
-  <button class="discard-comment hidden">Discard</button>
-  <button class="add-new-comment">Add Comment</button>
-  <form class="add-comment hidden">
-    <label class="comment-label">
-      <textarea name="comment[body]" rows="4" cols="50"></textarea>
-    </label>
-    <button class="submit-comment">Submit</button>
-  </form>
-</section>
+    <ul class="comments-list">
+      <% comments.each( function(comment) { %>
+        <li class="comments-list-item">
+          <h3 class="comment-author">
+            <a href="#users/<%= comment.escape('author_id')%>">
+              <%= comment.escape('author') %>
+            </a>
+            wrote:
+          </h3>
+          <p class="comment-body">
+            <%= comment.escape('body') %>
+          </p>
+          <p class="comment-date">
+            on <%= comment.escape('created_at') %>
+          </p>
+        </li>
+      <% }) %>
+    </ul>
+    <button class="discard-comment hidden">Discard</button>
+    <button class="add-new-comment">Add Comment</button>
+    <form class="add-comment hidden">
+      <label class="comment-label">
+        <textarea name="comment[body]" rows="4" cols="50"></textarea>
+      </label>
+      <button class="submit-comment">Submit</button>
+    </form>
+  </section>
+  </section>

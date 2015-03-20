@@ -3,6 +3,10 @@
 </h1>
   <button class="edit-blog-button">Edit Blog</button>
   <button class="discard-blog-changes hidden">Discard Changes</button>
+  <h2 class="blog-author">
+    by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
+    on <%= blog.escape('created_at') %>
+  </h2>
   <section class="blog-edit hidden">
     <form class="blog-form">
       <label class="blog-label">Title:
@@ -24,11 +28,12 @@
   </section>
 <% } else { %>
   </h1>
+  <h2 class="blog-author">
+    by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
+    on <%= blog.escape('created_at') %>
+  </h2>
 <% } %>
-<h2 class="blog-author">
-  by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
-  on <%= blog.escape('created_at') %>
-</h2>
+
 <section class="blog-show">
   <p class="blog-preview">
     <%= blog.escape('preview') %>
@@ -37,32 +42,34 @@
     <%= blog.escape('body') %>
   </p>
 </section>
-<h2 class="comments-header">Comments</h2>
-<section class="blog-comments">
-  <ul class="comments-list">
-    <% comments.each( function(comment) { %>
-      <li class="comments-list-item">
-        <h3 class="comment-author">
-          <a href="#users/<%= comment.escape('author_id')%>">
-            <%= comment.escape('author') %>
-          </a>
-          wrote:
-        </h3>
-        <p class="comment-body">
-          <%= comment.escape('body') %>
-        </p>
-        <p class="comment-date">
-          on <%= comment.escape('created_at') %>
-        </p>
-      </li>
-    <% }) %>
-  </ul>
-  <button class="discard-comment hidden">Discard</button>
-  <button class="add-new-comment">Add Comment</button>
-  <form class="add-comment hidden">
-    <label class="comment-label">
-      <textarea name="comment[body]" rows="4" cols="50"></textarea>
-    </label>
-    <button class="submit-comment">Submit</button>
-  </form>
+<section class="comments-wrapper">
+  <h2 class="comments-header">Comments</h2>
+  <section class="blog-comments">
+    <ul class="comments-list">
+      <% comments.each( function(comment) { %>
+        <li class="comments-list-item">
+          <h3 class="comment-author">
+            <a href="#users/<%= comment.escape('author_id')%>">
+              <%= comment.escape('author') %>
+            </a>
+            wrote:
+          </h3>
+          <p class="comment-body">
+            <%= comment.escape('body') %>
+          </p>
+          <p class="comment-date">
+            on <%= comment.escape('created_at') %>
+          </p>
+        </li>
+      <% }) %>
+    </ul>
+    <button class="discard-comment hidden">Discard</button>
+    <button class="add-new-comment">Add Comment</button>
+    <form class="add-comment hidden">
+      <label class="comment-label">
+        <textarea name="comment[body]" rows="4" cols="50"></textarea>
+      </label>
+      <button class="submit-comment">Submit</button>
+    </form>
+  </section>
 </section>

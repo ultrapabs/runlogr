@@ -48,6 +48,7 @@
   </ul>
 </section>
 
+<section class="user-feed-wrapper">
 <section class="blog-feed user">
   <h1 class="blog-feed-title">Recent Blogs</h1>
   <ul class="blog-feed-list user group">
@@ -87,24 +88,25 @@
   </section>
 </section>
 
-<section class="log-feed user">
-  <h1 class="log-feed-title">Recent Logs</h1>
-  <ul class="log-feed-list user group">
-    <% logs.each( function(log) { %>
-      <li class="log-feed-list-item">
-        <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
-        <p class="stats">
-          <%= log.escape('distance') %>mi -
-          <%= log.escape('duration') %> -
-          <%= log.escape('pace') %>/mi
-        </p>
-        <p class="user-date">
-          <a class="username" href="#users/<%= log.escape('user_id')%>">
-          <%= log.escape('username') %>
-          </a>
-          - <%= log.escape('date') %>
-        </p>
-      </li>
-    <% }) %>
-  </ul>
+  <section class="log-feed user">
+    <h1 class="log-feed-title">Recent Logs</h1>
+    <ul class="log-feed-list user group">
+      <% logs.each( function(log) { %>
+        <li class="log-feed-list-item">
+          <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
+          <p class="stats">
+            <%= log.escape('distance') %>mi -
+            <%= log.escape('duration') %> -
+            <%= log.escape('pace') %>/mi
+          </p>
+          <p class="user-date">
+            <a class="username" href="#users/<%= log.escape('user_id')%>">
+            <%= log.escape('username') %>
+            </a>
+            - <%= log.escape('date') %>
+          </p>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
 </section>

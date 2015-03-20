@@ -35,6 +35,7 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
     this.$el.find('.discard-blog-changes').removeClass('hidden');
     this.$el.find('.edit-blog-button').addClass('hidden');
     this.$el.find('.blog-show').addClass('hidden');
+    this.$el.find('.comments-wrapper').addClass('hidden');
   },
 
   saveChanges: function (event) {

@@ -1,4 +1,5 @@
-<h1>Sign In</h1>
+<section class="sign-in-main">
+<h1 class="session-title">Sign In</h1>
 <% unless flash[:error].nil? %>
   <ul class="errors">
     <% flash[:error].each do |message| %>
@@ -9,24 +10,17 @@
 <form class="sign-in" action="<%= sessions_url %>" method="post">
   <%= auth_token %>
   <label>
-    Username or Email: <input type="string" name="user[login]" value="">
+    Username or Email
+    <input class="new-session-input" type="string" name="user[login]" value="">
   </label>
-  <br>
   <label>
-    Password: <input type="password" name="user[password]" value="">
+    Password
+    <input class="new-session-input" type="password" name="user[password]" value="">
   </label>
-  <br>
-  <button>Sign In</button>
-
+  <button class="new-session-button">Sign In</button>
 </form>
-<br>
----------------------------------------
-<br>
-<a class="twitter-sign-in" href="/auth/twitter"><img src="/images/twitter/sign-in-twitter.png"></a>
-<br>
----------------------------------------
-<br>
-<h1>Sign Up</h1>
+
+<h1 class="session-title">Sign Up</h1>
 <% unless flash[:errors].nil? %>
   <ul class="errors">
     <% flash[:errors].each do |message| %>
@@ -37,17 +31,24 @@
 <form class="sign-up" action="<%= users_url %>" method="post">
   <%= auth_token %>
   <label>
-    Username: <input type="string" name="user[username]" value="<%= @user.username %>">
+    Username
+    <input class="new-session-input" type="string" name="user[username]" value="<%= @user.username %>">
   </label>
   <br>
   <label>
-    Email: <input type="string" name="user[email]" value="<%= @user.email %>">
+    Email
+    <input class="new-session-input" type="string" name="user[email]" value="<%= @user.email %>">
   </label>
   <br>
   <label>
-    Password: <input type="password" name="user[password]" value="">
+    Password
+    <input class="new-session-input" type="password" name="user[password]" value="">
   </label>
   <br>
-  <button>Sign Up</button>
-
+  <button class="new-session-button">Sign Up</button>
 </form>
+
+<a class="twitter-sign-in" href="/auth/twitter"><img src="/images/twitter/sign-in-twitter.png"></a>
+
+
+</section>

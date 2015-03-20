@@ -83,6 +83,58 @@ a:hover {
 
 /* SIGN UP / IN */
 
+.sign-in-main {
+  width: 500px;
+  height: 760px;
+  padding: 20px 200px;
+  margin: auto;
+  overflow: hidden;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.session-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sign-up, .sign-in {
+  text-align: center;
+  background: #8BCF7E;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.new-session-input {
+  margin: auto;
+}
+
+.twitter-sign-in {
+  display: block;
+  width: 158px;
+  margin: auto;
+}
+
+.twitter-sign-in:hover {
+  width: 180px;
+}
+
+.new-session-button {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+  margin: auto;
+}
+
+.new-session-button:hover {
+  background: #ACFC83;
+}
 
 
 /* FORMS SO STYLISH */
@@ -256,6 +308,7 @@ select {
   display: block;
   background: #8BCF7E;
   border-top: 1px solid #a0e;
+  height: 58px;
 }
 
 .footer-nav {
@@ -500,6 +553,28 @@ select {
 
 .blog-body {
   font-size: 20px;
+}
+
+.log-show-list-item {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.log-list-item-desc {
+  display: inline;
+  font-weight: normal;
+}
+
+.log-notes-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.log-notes {
+  font-size: 16px;
 }
 
 /* COMMENTS */

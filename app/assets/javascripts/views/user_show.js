@@ -47,6 +47,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     this.$el.find('.discard-changes').removeClass('hidden');
     this.$el.find('.edit-profile-button').addClass('hidden');
     this.$el.find('.view-user-profile').addClass('hidden');
+    this.$el.find('.user-feed-wrapper').addClass('hidden');
 
   },
 
