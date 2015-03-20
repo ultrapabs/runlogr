@@ -47,7 +47,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
     var url = "#logs/" + this.model.id;
     this.model.set(logAttrs);
     this.model.set({duration: newDuration});
-
+    debugger;
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
