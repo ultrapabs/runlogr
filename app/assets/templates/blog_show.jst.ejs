@@ -2,7 +2,7 @@
 <% if (blog.get('current_user_is_author')) { %>
 </h1>
   <button class="edit-blog-button">Edit Blog</button>
-  <button class="discard-changes hidden">Discard Changes</button>
+  <button class="discard-blog-changes hidden">Discard Changes</button>
   <section class="blog-edit hidden">
     <form class="blog-form">
       <label class="blog-label">Title:
@@ -25,22 +25,20 @@
 <% } else { %>
   </h1>
 <% } %>
+<h2 class="blog-author">
+  by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
+  on <%= blog.escape('created_at') %>
+</h2>
 <section class="blog-show">
-  <h2 class="blog-author">
-    by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
-    on <%= blog.escape('created_at') %>
-  </h2>
-  <p class="blog-body">
-  <%= blog.escape('body') %>
+  <p class="blog-preview">
+    <%= blog.escape('preview') %>
   </p>
-  <% if (blog.get('current_user_is_author')) { %>
-    <p class="blog-preview">
-      Preview: <%= blog.escape('preview') %>
-    </p>
-  <% } %>
+  <p class="blog-body">
+    <%= blog.escape('body') %>
+  </p>
 </section>
+<h2 class="comments-header">Comments</h2>
 <section class="blog-comments">
-  <h2 class="comments-header">Comments</h2>
   <ul class="comments-list">
     <% comments.each( function(comment) { %>
       <li class="comments-list-item">
@@ -48,22 +46,23 @@
           <a href="#users/<%= comment.escape('author_id')%>">
             <%= comment.escape('author') %>
           </a>
-           - <%= comment.escape('created_at') %>
+          wrote:
         </h3>
         <p class="comment-body">
           <%= comment.escape('body') %>
         </p>
+        <p class="comment-date">
+          on <%= comment.escape('created_at') %>
+        </p>
       </li>
     <% }) %>
   </ul>
-  <br>
   <button class="discard-comment hidden">Discard</button>
   <button class="add-new-comment">Add Comment</button>
   <form class="add-comment hidden">
     <label class="comment-label">
       <textarea name="comment[body]" rows="4" cols="50"></textarea>
     </label>
-    <br>
-    <button>Submit</button>
+    <button class="submit-comment">Submit</button>
   </form>
 </section>

@@ -16,7 +16,7 @@
 
 /* RESET */
  a, li, ul, body, html, section, form, label, textarea, input, select,
- h1, h2, p, nav, header, footer, br, button, div {
+ h1, h2, h3, p, nav, header, footer, br, button, div {
    background: transparent;
    font-style: inherit;
    color: inherit;
@@ -68,6 +68,10 @@ img {
   display: block;
 }
 
+a:hover {
+  color: #a0e;
+}
+
 
 /* CLEARFIX */
 
@@ -76,6 +80,10 @@ img {
   display: block;
   clear: both;
 }
+
+/* SIGN UP / IN */
+
+
 
 /* FORMS SO STYLISH */
 .log-form, .new-shoe, .blog-form {
@@ -295,6 +303,7 @@ select {
   height: 760px;
   padding: 20px;
   margin: auto;
+  overflow: hidden;
   border-left: 1px solid #a0e;
   border-right: 1px solid #a0e;
 }
@@ -374,13 +383,13 @@ select {
 }
 
 .username-profile {
-  display: block;
+  display: inline;
   font-size: 36px;
   font-weight: bold;
 }
 
 .edit-profile-button, .discard-changes, .follow {
-  display: block;
+  display: inline;
 }
 
 .save-changes {
@@ -450,12 +459,171 @@ select {
   display: inline;
 }
 
+/* BLOG / LOG SHOW */
+.log-title, .blog-title {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  display: inline;
+}
+
+.edit-blog-button, .edit-log-button,
+.discard-blog-changes, .discard-log-changes {
+  display: inline;
+}
+
+.blog-author, .log-user {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.blog-author > a, .log-user > a {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.blog-show, .log-show {
+  padding: 10px;
+  display: block;
+  border: 1px solid #a0e;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 300px;
+  background: #8BCF7E;
+  overflow-y: scroll;
+}
+
+.blog-preview {
+  font-style: italic;
+  margin-bottom:15px;
+}
+
+.blog-body {
+  font-size: 20px;
+}
+
+/* COMMENTS */
+.comments-header {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+
+.blog-comments, .log-comments {
+  display: block;
+  border: 1px solid #a0e;
+  padding: 10px;
+  border-radius: 10px;
+  height: 300px;
+  background: #8BCF7E;
+  overflow-y: scroll;
+}
+
+.submit-comment, .discard-comment, .add-new-comment {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.submit-comment {
+  margin-top: -10px;
+}
+
+.comments-list-item {
+  margin-bottom: 15px;
+}
+
+.comment-author, .comment-date {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.comment-author > a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comment-body {
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #A0ED91;
+}
+
+.submit-comment:hover, .discard-comment:hover, .add-new-comment:hover {
+  background: #ACFC83;
+}
+
+/* SEARCH PAGE */
+.search-title {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.search-users {
+  margin-top: 10px;
+  display: block;
+  padding: 10px;
+  border: 1px solid #a0e;
+  border-radius: 10px;
+  height: 680px;
+  background: #8BCF7E;
+  overflow-y: scroll;
+}
+
+.search-area {
+  display: block;
+  width: 330px;
+  margin: auto;
+}
+
+.search-users-form {
+  display: block;
+  float: left;
+}
+
+.search-users-form > label, .search-users-form > label > input, .search-users-form > button {
+  display: inline;
+}
+
+.all-users {
+  display: block;
+  float: left;
+}
+
+.all-users, .search-users-form > button {
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.all-users:hover, .search-users-form:hover > button {
+  background: #ACFC83;
+}
+
+.search-list {
+  display: block;
+  padding: 10px;
+}
+
+.search-list-item {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.search-list-item > a {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-list-item > p {
+}
+
 /* LAST ACTION */
 .hidden {
   display: none;
 }
-/*BLOG SHOW*/
-
-
-
-/*LOG SHOW*/

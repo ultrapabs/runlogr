@@ -1,8 +1,8 @@
 <h1 class="log-title"><%= log.escape('title') %>
   <% if (log.get('current_user_is_user')) { %>
-    <button class="edit-log-button">Edit Log</button>
-    <button class="discard-changes hidden">Discard Changes</button>
 </h1>
+    <button class="edit-log-button">Edit Log</button>
+    <button class="discard-log-changes hidden">Discard Changes</button>
     <section class="log-edit hidden">
       <form class="log-form">
         <label class="log-label">Title:
@@ -50,11 +50,11 @@
   <% } else { %>
 </h1>
   <% } %>
-<section class="log-show">
   <h2 class="log-user">
     <a href="#users/<%= log.escape('user_id') %>"><%= log.escape('username') %></a>
-    - <%= log.escape('date') %>
+    on <%= log.escape('date') %>
   </h2>
+<section class="log-show">
   <ul class="log-show">
     <li>Distance: <%= log.escape('distance') %>mi</li>
     <li>Duration: <%= log.escape('duration_string') %></li>
@@ -65,8 +65,9 @@
     <%= log.escape('notes') %>
   </p>
 </section>
+<h2 class="comments-header">Comments</h2>
 <section class="log-comments">
-  <h2 class="comments-header">Comments</h2>
+
   <ul class="comments-list">
     <% comments.each( function(comment) { %>
       <li class="comments-list-item">
@@ -74,22 +75,23 @@
           <a href="#users/<%= comment.escape('author_id')%>">
             <%= comment.escape('author') %>
           </a>
-           - <%= comment.escape('created_at') %>
+          wrote:
         </h3>
         <p class="comment-body">
           <%= comment.escape('body') %>
         </p>
+        <p class="comment-date">
+          on <%= comment.escape('created_at') %>
+        </p>
       </li>
     <% }) %>
   </ul>
-  <br>
   <button class="discard-comment hidden">Discard</button>
   <button class="add-new-comment">Add Comment</button>
   <form class="add-comment hidden">
     <label class="comment-label">
       <textarea name="comment[body]" rows="4" cols="50"></textarea>
     </label>
-    <br>
-    <button>Submit</button>
+    <button class="submit-comment">Submit</button>
   </form>
 </section>

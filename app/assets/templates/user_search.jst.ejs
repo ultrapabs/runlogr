@@ -1,15 +1,23 @@
-<h1>Find Users</h1>
-<form class="search-users">
-  <input type="text" class="query" value="<%= users._query %>">
-  <button>Search</button>
-</form>
-<br>
-<br>
-<button class="all-users">Show All</button>
-<ul>
-  <% users.each( function(user) { %>
-    <li><a href="#users/<%= user.id %>"><%= user.escape('username') %></a>
-    <br><%= user.escape('description') %>
-    </li>
-  <% }) %>
-</ul>
+<h1 class="search-title">Find Users</h1>
+<p class="search-desc">Search for users by their username or keywords in their description.</p>
+
+<section class="search-users group">
+  <section class="search-area group">
+    <form class="search-users-form">
+      <label>
+        <input type="text" class="query" value="<%= users._query %>">
+      </label>
+      <button>Search</button>
+    </form>
+    <button class="all-users">Show All</button>
+  </section>
+
+  <ul class="search-list group">
+    <% users.each( function(user) { %>
+      <li class="search-list-item">
+        <a href="#users/<%= user.id %>"><%= user.escape('username') %></a>
+        <p><%= user.escape('description') %></p>
+      </li>
+    <% }) %>
+  </ul>
+</section>

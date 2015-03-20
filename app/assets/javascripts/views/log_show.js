@@ -5,7 +5,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
   events: {
       "click .edit-log-button" : "editLog",
       "submit .log-form" : "saveChanges",
-      "click .discard-changes" : "discardChanges",
+      "click .discard-log-changes" : "discardChanges",
       "click .add-new-comment" : "addComment",
       "click .discard-comment" : "discardComment",
       "submit .add-comment" : "saveComment"
@@ -32,7 +32,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
 
     this.$el.find('.log-edit').removeClass('hidden');
     this.$el.find('.save-changes').removeClass('hidden');
-    this.$el.find('.discard-changes').removeClass('hidden');
+    this.$el.find('.discard-log-changes').removeClass('hidden');
     this.$el.find('.edit-log-button').addClass('hidden');
     this.$el.find('.log-show').addClass('hidden');
   },
