@@ -1,7 +1,7 @@
 class Shoe < ActiveRecord::Base
 
   validates :user_id, :name, :distance, presence: true
-  validates :name, length: { maximum: 30 }
+  validates :name, length: { maximum: 20 }
 
   before_destroy :remove_from_logs
 

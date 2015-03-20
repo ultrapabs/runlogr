@@ -16,7 +16,7 @@
 
 /* RESET */
  a, li, ul, body, html, section, form, textarea, input,
- h1, h2, p, nav, header, footer, br, button {
+ h1, h2, p, nav, header, footer, br, button, div {
    background: transparent;
    font-style: inherit;
    color: inherit;
@@ -66,6 +66,11 @@ img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+form {
+
+
 }
 
 /* CLEARFIX */
@@ -207,12 +212,12 @@ img {
 
 .blog-feed, .log-feed {
   width: 381px;
-  height: 720px;
+  height: 735px;
   display: block;
   background: #8BCF7E;
   border-radius: 10px;
   border: 1px solid #a0e;
-  padding: 19px;
+  padding: 19px 19px 0px 19px;
 }
 
 .blog-feed {
@@ -231,7 +236,7 @@ img {
 
 .blog-feed-list, .log-feed-list {
   padding: 0px 10px;
-  height: 656px;
+  height: 680px;
   overflow-y: scroll;
   background: #A0ED91;
   border-radius: 10px;
@@ -268,11 +273,15 @@ img {
 /* USER PROFILE */
 
 .blog-feed.user, .log-feed.user {
-  height: 406px;
+  height: 445px;
 }
 
-.blog-feed-list.user, .log-feed-list.user {
-  height: 342px;
+.blog-feed-list.user {
+  height: 200px;
+}
+
+.log-feed-list.user {
+  height: 390px;
 }
 
 .username-profile {
@@ -322,6 +331,34 @@ img {
   text-align: center;
   padding: 20px 0px;
   font-size: 24px;
+}
+
+.user-shoes-title {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+
+.user-shoes {
+  padding-top: 10px;
+  display: block;
+}
+
+.remove-shoes, .done-editing {
+  display: inline;
+}
+
+.user-shoes-list {
+  margin-top: 10px;
+  padding: 10px;
+  height: 125px;
+  overflow-y: scroll;
+  background: #A0ED91;
+  border-radius: 10px;
+}
+
+.delete-shoe, .delete-shoe-cancel, .delete-shoe-confirm {
+  display: inline;
 }
 
 /* LAST ACTION */

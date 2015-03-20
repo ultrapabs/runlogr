@@ -64,6 +64,27 @@
       </li>
     <% }) %>
   </ul>
+
+  <section class="user-shoes group">
+    <h1 class="user-shoes-title">Shoes</h1>
+    <% if (user.get('is_current_user')) { %>
+      <button class="remove-shoes">Edit</button>
+      <button class="done-editing hidden">Done Editing</button>
+    <% } %>
+    <ul class="user-shoes-list">
+      <% shoes.each( function(shoe) { %>
+        <li>
+          <%= shoe.escape('name')%> - <%= shoe.escape('total_distance') %>mi
+          <% if (user.get('is_current_user')) { %>
+            <button class="delete-shoe hidden" data-id="<%= shoe.escape('id') %>">Delete</button>
+            <button class="delete-shoe-cancel hidden" data-id="<%= shoe.escape('id') %>">Cancel</button>
+            <button class="delete-shoe-confirm hidden" data-id="<%= shoe.escape('id') %>">Confirm</button>
+          <% } %>
+        </li>
+        <br>
+      <% }) %>
+    </ul>
+  </section>
 </section>
 
 <section class="log-feed user">
@@ -84,29 +105,6 @@
           - <%= log.escape('date') %>
         </p>
       </li>
-    <% }) %>
-  </ul>
-</section>
-
-
-<section class="user-shoes">
-  <h1 class="user-shoes-title">Shoes
-    <% if (user.get('is_current_user')) { %>
-      <button class="remove-shoes">Edit Shoes</button>
-      <button class="done-editing hidden">Done Editing</button>
-    <% } %>
-  </h1>
-  <ul class="user-shoes-list">
-    <% shoes.each( function(shoe) { %>
-      <li>
-        <%= shoe.escape('name')%> - <%= shoe.escape('total_distance') %>mi
-        <% if (user.get('is_current_user')) { %>
-          <button class="delete-shoe hidden" data-id="<%= shoe.escape('id') %>">Delete</button>
-          <button class="delete-shoe-cancel hidden" data-id="<%= shoe.escape('id') %>">Cancel</button>
-          <button class="delete-shoe-confirm hidden" data-id="<%= shoe.escape('id') %>">Confirm</button>
-        <% } %>
-      </li>
-      <br>
     <% }) %>
   </ul>
 </section>

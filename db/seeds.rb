@@ -41,11 +41,11 @@ shoe2 = user1.shoes.create!(
   distance: 0
 )
 shoe3 = user1.shoes.create!(
-  name: "Asics Fuji Race v1 Purple",
+  name: "Asics Fuji Racer",
   distance: 0,
 )
 shoe4 = user2.shoes.create!(
-  name: "Hoka Conquestv1 Blue",
+  name: "Hoka Conquest Blue",
   distance: 0
 )
 
