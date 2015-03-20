@@ -1,35 +1,39 @@
 <section class="blog-feed">
   <h1 class="blog-feed-title">Recent Blogs</h1>
-  <ul class="blog-feed-list">
+  <ul class="blog-feed-list group">
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
-        <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
-        <br>
-        <%= blog.escape('preview') %>
-        <br>
-        <a href="#users/<%= blog.escape('author_id')%>"><%= blog.escape('author_name') %></a> -
-        <%= blog.escape('created_at') %>
+        <a class="entry-title" href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
+        <p class="preview"><%= blog.escape('preview') %><p>
+        <p class="user-date">
+          <a class="username" href="#users/<%= blog.escape('author_id')%>">
+          <%= blog.escape('author_name') %>
+          </a>
+          - <%= blog.escape('created_at') %>
+        </p>
       </li>
-      <br>
     <% }) %>
   </ul>
 </section>
 
 <section class="log-feed">
-  <h1 class="blog-feed-title">Recent Logs</h1>
+  <h1 class="log-feed-title">Recent Logs</h1>
   <ul class="log-feed-list">
     <% logs.each( function(log) { %>
       <li class="log-feed-list-item">
-        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
-        <br>
-        <%= log.escape('distance') %>mi -
-        <%= log.escape('duration_string') %> -
-        <%= log.escape('pace') %>/mi
-        <br>
-        <a href="#users/<%= log.escape('user_id')%>"><%= log.escape('username') %></a> -
-        <%= log.escape('date') %>
+        <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
+        <p class="stats">
+          <%= log.escape('distance') %>mi -
+          <%= log.escape('duration_string') %> -
+          <%= log.escape('pace') %>/mi
+        </p>
+        <p class="user-date">
+          <a class="username" href="#users/<%= log.escape('user_id')%>">
+          <%= log.escape('username') %>
+          </a>
+          - <%= log.escape('date') %>
+        </p>
       </li>
-      <br>
     <% }) %>
   </ul>
 </section>

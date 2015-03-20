@@ -1,9 +1,8 @@
-<h1 class="username"><%= user.escape('username') %>
+<h1 class="username-profile group"><%= user.escape('username') %>
 <% if (user.get('is_current_user')) { %>
+</h1>
   <button class="edit-profile-button">Edit Profile</button>
   <button class="discard-changes hidden">Discard Changes</button>
-</h1>
-  <br>
   <form class="edit-profile-form hidden">
     <label>Username:
       <input type="text" name="user[username]" value="<%= user.escape('username')%>">
@@ -30,54 +29,65 @@
       <textarea name="user[description]" rows="6" cols="50"><%= user.escape('description')%></textarea>
     </label>
     <br>
-    <button>Save Changes</button>
+    <button class="save-changes">Save Changes</button>
   </form>
 <% } else { %>
-  <button class="follow"></section>
 </h1>
+<button class="follow"></button>
 <% } %>
 
-<section class="view-user-profile">
-  <img src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+<section class="view-user-profile group">
+  <img class="user-pic" src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+
   <ul class="user-profile-list">
-    <li class="user-profile-list-item">Joined: <%= user.escape('join_month') %>/<%= user.escape('join_year') %></li>
-    <li class="user-profile-list-item"><%= user.escape('description') %></li>
-    <li class="user-profile-list-item">Total Miles Logged: <%= user.escape('total_distance') %></li>
+    <li class="user-description"><%= user.escape('description') %></li>
+    <li class="join-miles">
+      Joined: <%= user.escape('join_month') %>/<%= user.escape('join_year') %> -
+      Total Miles Logged: <%= user.escape('total_distance') %>
+    </li>
   </ul>
 </section>
 
-<section class="blog-feed">
+<section class="blog-feed user">
   <h1 class="blog-feed-title">Recent Blogs</h1>
-  <ul class="blog-feed-list">
+  <ul class="blog-feed-list user group">
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
-        <a href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
-        <br>
-        <%= blog.escape('preview') %>
-        <br>
-        <%= blog.escape('created_at') %>
+        <a class="entry-title" href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
+        <p class="preview"><%= blog.escape('preview') %><p>
+        <p class="user-date">
+          <a class="username" href="#users/<%= blog.escape('author_id')%>">
+          <%= blog.escape('author_name') %>
+          </a>
+          - <%= blog.escape('created_at') %>
+        </p>
       </li>
-      <br>
     <% }) %>
   </ul>
 </section>
 
-<section class="log-feed">
-  <h1 class="blog-feed-title">Recent Logs</h1>
-  <ul class="log-feed-list">
+<section class="log-feed user">
+  <h1 class="log-feed-title">Recent Logs</h1>
+  <ul class="log-feed-list user group">
     <% logs.each( function(log) { %>
       <li class="log-feed-list-item">
-        <a href="#logs/<%= log.id %>"><%= log.escape('title') %></a> -
-        <%= log.escape('date') %>
-        <br>
-        <%= log.escape('distance') %>mi -
-        <%= log.escape('duration') %> -
-        <%= log.escape('pace') %>/mi
+        <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
+        <p class="stats">
+          <%= log.escape('distance') %>mi -
+          <%= log.escape('duration') %> -
+          <%= log.escape('pace') %>/mi
+        </p>
+        <p class="user-date">
+          <a class="username" href="#users/<%= log.escape('user_id')%>">
+          <%= log.escape('username') %>
+          </a>
+          - <%= log.escape('date') %>
+        </p>
       </li>
-      <br>
     <% }) %>
   </ul>
 </section>
+
 
 <section class="user-shoes">
   <h1 class="user-shoes-title">Shoes

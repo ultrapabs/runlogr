@@ -14,6 +14,317 @@
  *= require_self
  */
 
+/* RESET */
+ a, li, ul, body, html, section, form, textarea, input,
+ h1, h2, p, nav, header, footer, br, button {
+   background: transparent;
+   font-style: inherit;
+   color: inherit;
+   font-size: inherit;
+   text-align: inherit;
+   vertical-align: inherit;
+   font-weight: inherit;
+   font-family: inherit;
+   text-decoration: none;
+   border: 0;
+   padding: 0;
+   outline: 0;
+   margin: 0;
+}
+
+::-webkit-scrollbar {
+   background: transparent;
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+button {
+  cursor: hand;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+}
+
+button:hover {
+  color: #a0e;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  background: #A0ED91;
+  font-family: sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CLEARFIX */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* SO STYLISH */
+
+
+/* HEADER NAV */
+.page-header {
+  font-family: sans-serif;
+  display: block;
+  background: #8BCF7E;
+  font-size: 16px;
+  border-bottom: 1px solid #a0e;
+}
+
+.header-nav {
+  display: block;
+  width: 900px;
+  margin: auto;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.header-logo {
+  display: block;
+  float: left;
+  padding: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  border-right: 1px solid #a0e;
+
+}
+
+.header-user {
+  display: block;
+  float: right;
+}
+
+.header-user > li {
+  display: block;
+  float: left;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header-user > li > img {
+  padding: 11px 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.header-user > li > a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  margin: 20px 5px 20px 15px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.header-user > li > form > button {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  margin: 20px 15px 20px 10px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.header-user > li > a:hover,
+.header-user > li > form > button:hover {
+  background: #ACFC83;
+  color: #a0e;
+}
+
+
+
+/* FOOTER NAV */
+.page-footer {
+  font-family: sans-serif;
+  display: block;
+  background: #8BCF7E;
+  border-top: 1px solid #a0e;
+}
+
+.footer-nav {
+  width: 900px;
+  margin: auto;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.footer-links-main {
+  display: block;
+  float: left;
+}
+
+.footer-links-add {
+    display: block;
+    float: right;
+}
+
+.footer-links-main > li,
+.footer-links-add > li {
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+.footer-links-add > li > a,
+.footer-links-main > li > a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.footer-links-add > li > a:hover,
+.footer-links-main > li > a:hover {
+  background: #ACFC83;
+  color: #a0e;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  width: 860px;
+  height: 760px;
+  padding: 20px;
+  margin: auto;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.blog-feed, .log-feed {
+  width: 381px;
+  height: 720px;
+  display: block;
+  background: #8BCF7E;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px;
+}
+
+.blog-feed {
+  float: left;
+}
+
+.log-feed {
+  float: right;
+}
+
+.blog-feed-title, .log-feed-title {
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blog-feed-list, .log-feed-list {
+  padding: 0px 10px;
+  height: 656px;
+  overflow-y: scroll;
+  background: #A0ED91;
+  border-radius: 10px;
+}
+
+.log-feed-list-item,
+.blog-feed-list-item {
+  padding: 10px 0px;
+}
+
+.log-feed-list-item > .entry-title,
+.blog-feed-list-item > .entry-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.log-feed-list-item > .user-date,
+.blog-feed-list-item > .user-date {
+  font-size: 12px;
+}
+
+.log-feed-list-item > .user-date > .username,
+.blog-feed-list-item > .user-date > .username {
+  font-weight: bold;
+}
+
+.log-feed-list-item > .entry-title:hover,
+.blog-feed-list-item > .entry-title:hover,
+.log-feed-list-item > .user-date > .username:hover,
+.blog-feed-list-item > .user-date > .username:hover {
+  color: #a0e;
+}
+
+/* USER PROFILE */
+
+.blog-feed.user, .log-feed.user {
+  height: 406px;
+}
+
+.blog-feed-list.user, .log-feed-list.user {
+  height: 342px;
+}
+
+.username-profile {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.edit-profile-button, .discard-changes, .follow {
+  display: block;
+}
+
+.save-changes {
+
+}
+
+.view-user-profile {
+  display: block;
+  height: 200px;
+  width: 860px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.user-profile-list {
+  display: block;
+  padding-top: 20px;
+}
+
+.user-pic {
+  display: block;
+  float: left;
+  width: 199px;
+  height: 199px;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+}
+
+.join-miles {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.user-description {
+  display: block;
+  text-align: center;
+  padding: 20px 0px;
+  font-size: 24px;
+}
+
+/* LAST ACTION */
 .hidden {
   display: none;
 }

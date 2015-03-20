@@ -6,41 +6,46 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<nav class="header">
-  <h1 class="app-title">Run(b)logr</h1>
-  <% if logged_in? %>
-    Welcome, <%= current_user.username %>
-    <br>
-    <form class="log-out" action="<%= sessions_url %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <button>Log Out</button>
-    </form>
-    <br>
-    <a href="#search">Find Users</a>
-    <br>
-  <% end %>
----------------------------------------
-
-</nav>
 <body>
+  <header class="page-header">
+    <nav class="header-nav group">
+      <h1 class="header-logo"><a href="#">Run(b)logr</a></h1>
+      <% if logged_in? %>
+      <ul class="header-user group">
+        <li>
+          <img src="<%= current_user.profile_pic(:feed) %>" alt="<%= current_user.username %>" />
+        </li>
+        <li>
+          <a href="#users/<%= current_user.id.to_s %>"><%= current_user.username %></a>
+        </li>
+        <li>
+          <form class="log-out" action="<%= sessions_url %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <%= auth_token %>
+            <button>Log Out</button>
+          </form>
+        </li>
+      </ul>
+      <% end %>
+    </nav>
+  </header>
+  
+  <%= yield %>
 
-<%= yield %>
-
+  <footer class="page-footer">
+    <nav class="footer-nav group">
+      <% if logged_in? %>
+        <ul class="footer-links-main">
+          <!-- <li><a href="#">Feed</a></li> -->
+          <li><a href="#search">Search Users</a></li>
+        </ul>
+        <ul class="footer-links-add group">
+          <li><a href="#logs/new">Add Log</a></li>
+          <li><a href="#blogs/new">Add Blog</a></li>
+          <li><a href="#shoes/new">Add Shoe</a></li>
+        </ul>
+      <% end %>
+    </nav>
+  </footer>
 </body>
-<nav class="footer">
-
----------------------------------------
-  <% if logged_in? %>
-    <ul class="footer-links-main">
-      <li><a href="#">Feed</a></li>
-      <li><a href="#users/<%= current_user.id.to_s %>">Profile</a></li>
-    </ul>
-    <ul class="footer-links-add">
-      <li><a href="#logs/new">Add Log</a></li>
-      <li><a href="#blogs/new">Add Blog</a></li>
-      <li><a href="#shoes/new">Add Shoe</a></li>
-    </ul>
-  <% end %>
-</nav>
 </html>
