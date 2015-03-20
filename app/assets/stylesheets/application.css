@@ -114,6 +114,10 @@ a:hover {
   margin: auto;
 }
 
+.twitter-sign-up-desc {
+  text-align: center;
+}
+
 .twitter-sign-in {
   display: block;
   width: 158px;

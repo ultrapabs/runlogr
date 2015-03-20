@@ -15,6 +15,12 @@ user2 = User.create!(
   password: 'password2',
   description: 'I run fast road races up to the marathon distance.'
 )
+user3 = User.create!(
+  email: 'user3@test.com',
+  username: 'kjornet',
+  password: 'password3',
+  description: 'I run trails and mountains, and race ultras.'
+)
 
 blog1 = user1.blogs.create!(
   title: "Hills",
@@ -46,6 +52,10 @@ shoe3 = user1.shoes.create!(
 )
 shoe4 = user2.shoes.create!(
   name: "Hoka Conquest Blue",
+  distance: 0
+)
+shoe5 = user3.shoes.create!(
+  name: "Inov8 TrailRoc 235",
   distance: 0
 )
 
@@ -111,4 +121,32 @@ log8 = user2.logs.create!(
   duration: (4.5 * 7.4 * 60),
   notes: "Prospect Park is great!",
   shoe_id: shoe4.id
+)
+
+log9 = user3.logs.create!(
+  title: "Tempo",
+  date: Date.new(2014, 8, 4),
+  distance: 9.1,
+  duration: (9.1 * 5.4 * 60),
+  shoe_id: shoe5.id
+)
+log10 = user3.logs.create!(
+  title: "Long Run",
+  date: Date.new(2014, 8, 6),
+  distance: 14.3,
+  duration: (14.3 * 7.6 * 60),
+  shoe_id: shoe5.id
+)
+log11 = user3.logs.create!(
+  title: "Alps",
+  date: Date.new(2014, 8, 8),
+  distance: 22,
+  duration: (22 * 9.3 * 60),
+  notes: "Snowy and cold.",
+  shoe_id: shoe5.id
+)
+log12 = user3.logs.create!(
+  date: Date.new(2014, 8, 10),
+  distance: 6.2,
+  duration: (6 * 7.4 * 60),
 )
