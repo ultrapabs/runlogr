@@ -3,6 +3,7 @@
 </h1>
   <button class="edit-profile-button">Edit Profile</button>
   <button class="discard-changes hidden">Discard Changes</button>
+  <button class="processing-changes hidden">Processing...</button>
   <form class="edit-profile-form hidden">
     <label>Username:
       <input type="text" name="user[username]" value="<%= user.escape('username')%>">
@@ -69,6 +70,7 @@
   <section class="user-shoes group">
     <h1 class="user-shoes-title">Shoes</h1>
     <% if (user.get('is_current_user')) { %>
+      <button class="add-shoe"><a href="#shoes/new">Add</a></button>
       <button class="remove-shoes">Edit</button>
       <button class="done-editing hidden">Cancel</button>
     <% } %>

@@ -53,10 +53,14 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
 
   saveChanges: function (event) {
     event.preventDefault();
+    this.$el.find('.edit-profile-form').addClass('hidden');
+    this.$el.find('.save-changes').addClass('hidden');
+    this.$el.find('.discard-changes').addClass('hidden');
 
+    this.$el.find('.processing-changes').removeClass('hidden');
     var userAttrs = $(event.currentTarget).serializeJSON().user;
-    var that = this;
-    var url = "#users/" + this.model.id;
+    // var that = this;
+    // var url = "#users/" + this.model.id;
 
     if (userAttrs.pw1.length > 0) {
       if (userAttrs.pw1 === userAttrs.pw2) {
@@ -72,8 +76,8 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
 
     this.model.save({}, {
       success: function () {
-        // that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate(url, { trigger: true });
+        // Backbone.history.navigate(url, { trigger: true });
+        window.location.reload();
       },
       error: function () {
         console.log("user save error");
@@ -141,6 +145,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     event.preventDefault();
     this.$el.find('.delete-shoe').removeClass('hidden');
     this.$el.find('.done-editing').removeClass('hidden');
+    this.$el.find('.add-shoe').addClass('hidden');
     this.$el.find('.remove-shoes').addClass('hidden');
   },
 
@@ -148,6 +153,8 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     event.preventDefault();
     this.$el.find('.delete-shoe').addClass('hidden');
     this.$el.find('.done-editing').addClass('hidden');
+    this.$el.find('.add-shoe').removeClass('hidden');
+
     this.$el.find('.remove-shoes').removeClass('hidden');
     this.$el.find('.delete-shoe-cancel').addClass('hidden');
     this.$el.find('.delete-shoe-confirm').addClass('hidden');

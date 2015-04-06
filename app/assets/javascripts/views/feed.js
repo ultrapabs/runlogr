@@ -17,6 +17,13 @@ Runlogr.Views.Feed = Backbone.View.extend ({
     var content = this.template({blogs: this.blogs, logs: this.logs})
     this.$el.html(content);
 
+    if (this.blogs.length === 0) {
+      this.$el.find('.blog-feed-empty').removeClass('hidden');
+    }
+    if (this.logs.length === 0) {
+      this.$el.find('.log-feed-empty').removeClass('hidden');
+    }
+
     return this;
   },
 

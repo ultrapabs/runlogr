@@ -16,7 +16,7 @@
 
 /* RESET */
  a, li, ul, body, html, section, form, label, textarea, input, select,
- h1, h2, h3, p, nav, header, footer, br, button, div {
+ h1, h2, h3, p, nav, header, footer, br, button, div, img {
    background: transparent;
    font-style: inherit;
    color: inherit;
@@ -33,13 +33,17 @@
    margin: 0;
 }
 
+textarea {
+   resize: none;
+}
+
 ::-webkit-scrollbar {
    background: transparent;
    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: #ddd;
   border-radius: 10px;
 }
 
@@ -207,13 +211,13 @@ select {
 
 .time-input, .distance-input {
   display: inline;
-  width: 55px;
+  /*width: 55px;*/
   text-align: right;
 }
 
 .time-input.minute, .time-input.hour {
   display: inline;
-  width: 35px;
+  /*width: 35px;*/
   text-align: right;
 }
 
@@ -259,11 +263,14 @@ select {
 .header-logo {
   display: block;
   float: left;
-  padding: 20px;
-  font-size: 36px;
-  font-weight: bold;
+  width: 200px;
+  padding: 10px;
   border-right: 1px solid #a0e;
 
+}
+
+.header-logo:hover {
+  background: #ACFC83;
 }
 
 .header-user {
@@ -280,28 +287,40 @@ select {
 
 .header-user > li > img {
   padding: 11px 0px;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
-.header-user > li > a {
+.header-chunk {
   display: block;
-  padding: 10px 5px 10px 5px;
-  margin: 20px 5px 20px 15px;
+  float: left;
+  text-align: center;
+}
+
+.header-chunk > li > a,
+.header-chunk > li > form > button,
+.user-search-header  {
+  display: block;
   border-radius: 25%;
   font-weight: bold;
 }
 
-.header-user > li > form > button {
-  display: block;
+.user-search-header {
+  float: left;
   padding: 10px 5px 10px 5px;
-  margin: 20px 15px 20px 10px;
-  border-radius: 25%;
-  font-weight: bold;
+  margin: 28px;
+  font-size: 20px;
 }
 
-.header-user > li > a:hover,
-.header-user > li > form > button:hover {
+.header-chunk > li > a,
+.header-chunk > li > form > button  {
+  padding: 10px 5px 10px 5px;
+  margin: 7px;
+}
+
+.header-chunk > li > a:hover,
+.header-chunk > li > form > button:hover,
+.user-search-header:hover {
   background: #ACFC83;
   color: #a0e;
 }
@@ -314,7 +333,6 @@ select {
   display: block;
   background: #8BCF7E;
   border-top: 1px solid #a0e;
-  height: 58px;
 }
 
 .footer-nav {
@@ -324,35 +342,14 @@ select {
   border-right: 1px solid #a0e;
 }
 
-.footer-links-main {
-  display: block;
-  float: left;
+.footer-nav > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
 }
 
-.footer-links-add {
-    display: block;
-    float: right;
-}
-
-.footer-links-main > li,
-.footer-links-add > li {
-  display: block;
-  float: left;
-  padding: 10px;
-}
-
-.footer-links-add > li > a,
-.footer-links-main > li > a {
-  display: block;
-  padding: 10px 5px 10px 5px;
-  border-radius: 25%;
+.footer-nav > p > a {
   font-weight: bold;
-}
-
-.footer-links-add > li > a:hover,
-.footer-links-main > li > a:hover {
-  background: #ACFC83;
-  color: #a0e;
 }
 
 /* MAIN CONTENT */
@@ -501,7 +498,7 @@ select {
   display: block;
 }
 
-.remove-shoes, .done-editing {
+.remove-shoes, .done-editing, .add-shoe {
   display: inline;
 }
 

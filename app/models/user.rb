@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :username, length: { maximum: 15 }
 
 
-  has_attached_file :profile_pic, styles: { main: "200x200", feed: "80x80" }, :default_url => "/images/:style/bears.png"
+  has_attached_file :profile_pic, styles: { main: "200x200#", feed: "80x80#" }, :default_url => "/images/:style/bears.png"
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
   attr_reader :password
 

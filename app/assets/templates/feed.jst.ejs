@@ -1,6 +1,9 @@
 <section class="blog-feed">
   <h1 class="blog-feed-title">Recent Blogs</h1>
   <ul class="blog-feed-list group">
+    <li class="blog-feed-list-item blog-feed-empty hidden">
+      <p class="preview">Nothing to read? Find users to follow!<p>
+    </li>
     <% blogs.each( function(blog) { %>
       <li class="blog-feed-list-item">
         <a class="entry-title" href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
@@ -19,6 +22,9 @@
 <section class="log-feed">
   <h1 class="log-feed-title">Recent Logs</h1>
   <ul class="log-feed-list">
+    <li class="log-feed-list-item log-feed-empty hidden">
+      <p class="preview">Nothing to read? Find users to follow!<p>
+    </li>
     <% logs.each( function(log) { %>
       <li class="log-feed-list-item">
         <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
