@@ -25,6 +25,7 @@
    vertical-align: inherit;
    font-weight: inherit;
    font-family: inherit;
+   line-height: inherit;
    text-decoration: none;
    border: 0;
    padding: 0;
@@ -59,7 +60,8 @@ ul, li {
 
 body {
   background: #A0ED91;
-  font-family: sans-serif;
+  font-family: arial;
+  line-height: 1;
 }
 
 img {
@@ -239,7 +241,7 @@ select {
 
 /* HEADER NAV */
 .page-header {
-  font-family: sans-serif;
+  font-family: arial;
   display: block;
   background: #8BCF7E;
   font-size: 16px;
@@ -308,7 +310,7 @@ select {
 
 /* FOOTER NAV */
 .page-footer {
-  font-family: sans-serif;
+  font-family: arial;
   display: block;
   background: #8BCF7E;
   border-top: 1px solid #a0e;

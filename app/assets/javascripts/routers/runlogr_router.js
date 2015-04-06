@@ -1,7 +1,7 @@
 Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
 
   routes: {
-    '' : 'runlogrHome',
+    'feed' : 'runlogrFeed',
     'blogs/new' : 'blogNew',
     'blogs/:id' : 'blogShow',
     'logs/new' : 'logNew',
@@ -20,7 +20,7 @@ Runlogr.Routers.RunlogrRouter = Backbone.Router.extend ({
     this.userShoes.fetch();
   },
 
-  runlogrHome: function () {
+  runlogrFeed: function () {
     var feedView = new Runlogr.Views.Feed();
     this._swapView(feedView);
   },

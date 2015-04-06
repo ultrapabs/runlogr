@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Run(b)logr</title>
+  <title>Runlogr</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body>
   <header class="page-header">
     <nav class="header-nav group">
-      <h1 class="header-logo"><a href="#">Run(b)logr</a></h1>
+      <h1 class="header-logo"><a href="#feed">runlogr</a></h1>
       <% if logged_in? %>
       <ul class="header-user group">
         <li>
@@ -29,7 +29,7 @@
       <% end %>
     </nav>
   </header>
-  
+
   <%= yield %>
 
   <footer class="page-footer">
