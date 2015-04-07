@@ -1,0 +1,64 @@
+
+
+/* SEARCH PAGE */
+.search-title {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.search-users {
+  margin-top: 10px;
+  display: block;
+  padding: 10px;
+  border: 1px solid #a0e;
+  border-radius: 10px;
+  height: 680px;
+  background: #8BCF7E;
+  overflow-y: scroll;
+}
+
+.search-area {
+  display: block;
+  width: 330px;
+  margin: auto;
+}
+
+.search-users-form {
+  display: block;
+  float: left;
+}
+
+.search-users-form > label, .search-users-form > label > input, .search-users-form > button {
+  display: inline;
+}
+
+.all-users {
+  display: block;
+  float: left;
+}
+
+.all-users, .search-users-form > button {
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.all-users:hover, .search-users-form > button:hover {
+  background: #ACFC83;
+}
+
+.search-list {
+  display: block;
+  padding: 10px;
+}
+
+.search-list-item {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.search-list-item > a {
+  font-size: 20px;
+  font-weight: bold;
+}

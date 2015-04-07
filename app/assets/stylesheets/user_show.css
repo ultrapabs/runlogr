@@ -1,0 +1,86 @@
+/* USER PROFILE */
+
+.blog-feed.user, .log-feed.user {
+  height: 445px;
+}
+
+.blog-feed-list.user {
+  height: 200px;
+}
+
+.log-feed-list.user {
+  height: 390px;
+}
+
+.username-profile {
+  display: inline;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.edit-profile-button, .discard-changes, .follow {
+  display: inline;
+}
+
+.view-user-profile {
+  display: block;
+  height: 200px;
+  width: 860px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.user-profile-list {
+  display: block;
+  padding-top: 20px;
+}
+
+.user-pic {
+  display: block;
+  float: left;
+  width: 199px;
+  height: 199px;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+}
+
+.join-miles {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.user-description {
+  display: block;
+  text-align: center;
+  padding: 20px 0px;
+  font-size: 24px;
+}
+
+.user-shoes-title {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+
+.user-shoes {
+  padding-top: 10px;
+  display: block;
+}
+
+.remove-shoes, .done-editing, .add-shoe {
+  display: inline;
+}
+
+.user-shoes-list {
+  margin-top: 10px;
+  padding: 10px;
+  height: 125px;
+  overflow-y: scroll;
+  background: #A0ED91;
+  border-radius: 10px;
+}
+
+.delete-shoe, .delete-shoe-cancel, .delete-shoe-confirm {
+  display: inline;
+}

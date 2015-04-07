@@ -1,0 +1,80 @@
+.page-header {
+  font-family: arial;
+  display: block;
+  background: #8BCF7E;
+  font-size: 16px;
+  border-bottom: 1px solid #a0e;
+}
+
+.header-nav {
+  display: block;
+  width: 900px;
+  margin: auto;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.header-logo {
+  display: block;
+  float: left;
+  width: 200px;
+  padding: 10px;
+  border-right: 1px solid #a0e;
+
+}
+
+.header-logo:hover {
+  background: #ACFC83;
+}
+
+.header-user {
+  display: block;
+  float: right;
+}
+
+.header-user > li {
+  display: block;
+  float: left;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header-user > li > img {
+  padding: 11px 0px;
+  width: 70px;
+  height: 70px;
+}
+
+.header-chunk {
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+.header-chunk > li > a,
+.header-chunk > li > form > button,
+.user-search-header > a  {
+  display: block;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.user-search-header > a {
+  float: left;
+  padding: 10px 5px 10px 5px;
+  margin: 28px;
+  font-size: 20px;
+}
+
+.header-chunk > li > a,
+.header-chunk > li > form > button  {
+  padding: 10px 5px 10px 5px;
+  margin: 7px;
+}
+
+.header-chunk > li > a:hover,
+.header-chunk > li > form > button:hover,
+.user-search-header > a:hover {
+  background: #ACFC83;
+  color: #a0e;
+}

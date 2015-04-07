@@ -1,0 +1,88 @@
+/* FORMS SO STYLISH */
+.log-form, .new-shoe, .blog-form {
+  background: #8BCF7E;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px;
+  display: block;
+}
+
+.log-form > button, .new-shoe > button, .blog-form > button {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.log-form > button:hover, .new-shoe > button:hover,
+.blog-form > button:hover {
+  background: #ACFC83;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-bottom:10px;
+}
+
+label > input, label > textarea, label > select {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 4px;
+  border: 1px solid #a0e;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+select {
+  display: inline;
+}
+
+.date-input {
+  display: inline;
+  width: 150px;
+  text-align: right;
+}
+
+.time-input, .distance-input {
+  display: inline;
+  text-align: right;
+}
+
+.time-input.minute, .time-input.hour {
+  display: inline;
+  text-align: right;
+}
+
+.title-input {
+  display: inline;
+}
+
+.input-desc {
+  display: inline;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.shoes-select {
+  display: inline;
+}
+
+.shoe-input {
+  display: inline;
+}
+
+.shoe-input.distance {
+  text-align: right;
+}

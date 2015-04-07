@@ -1,0 +1,23 @@
+.page-footer {
+  font-family: arial;
+  display: block;
+  background: #8BCF7E;
+  border-top: 1px solid #a0e;
+}
+
+.footer-nav {
+  width: 900px;
+  margin: auto;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.footer-nav > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+}
+
+.footer-nav > p > a {
+  font-weight: bold;
+}

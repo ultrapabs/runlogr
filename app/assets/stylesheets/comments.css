@@ -1,0 +1,53 @@
+.comments-header {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+
+.blog-comments, .log-comments {
+  display: block;
+  border: 1px solid #a0e;
+  padding: 10px;
+  border-radius: 10px;
+  height: 300px;
+  background: #8BCF7E;
+  overflow-y: scroll;
+}
+
+.submit-comment, .discard-comment, .add-new-comment {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+.submit-comment {
+  margin-top: -10px;
+}
+
+.comments-list-item {
+  margin-bottom: 15px;
+}
+
+.comment-author, .comment-date {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.comment-author > a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comment-body {
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #A0ED91;
+}
+
+.submit-comment:hover, .discard-comment:hover, .add-new-comment:hover {
+  background: #ACFC83;
+}

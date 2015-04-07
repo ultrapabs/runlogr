@@ -23,6 +23,8 @@ gem 'aws-sdk'
 
 gem 'omniauth-twitter'
 
+gem 'redcarpet'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'

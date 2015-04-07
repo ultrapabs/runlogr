@@ -1,0 +1,58 @@
+/* SIGN UP / IN */
+
+.sign-in-main {
+  width: 500px;
+  height: 760px;
+  padding: 20px 200px;
+  margin: auto;
+  overflow: hidden;
+  border-left: 1px solid #a0e;
+  border-right: 1px solid #a0e;
+}
+
+.session-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sign-up, .sign-in {
+  text-align: center;
+  background: #8BCF7E;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.new-session-input {
+  margin: auto;
+}
+
+.twitter-sign-up-desc {
+  text-align: center;
+}
+
+.twitter-sign-in {
+  display: block;
+  width: 158px;
+  margin: auto;
+}
+
+.twitter-sign-in:hover {
+  width: 180px;
+}
+
+.new-session-button {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 25%;
+  font-weight: bold;
+  margin: auto;
+}
+
+.new-session-button:hover {
+  background: #ACFC83;
+}

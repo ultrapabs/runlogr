@@ -1,0 +1,59 @@
+.blog-feed, .log-feed {
+  width: 381px;
+  height: 735px;
+  display: block;
+  background: #8BCF7E;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px 19px 0px 19px;
+}
+
+.blog-feed {
+  float: left;
+}
+
+.log-feed {
+  float: right;
+}
+
+.blog-feed-title, .log-feed-title {
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blog-feed-list, .log-feed-list {
+  padding: 0px 10px;
+  height: 680px;
+  overflow-y: scroll;
+  background: #A0ED91;
+  border-radius: 10px;
+}
+
+.log-feed-list-item,
+.blog-feed-list-item {
+  padding: 10px 0px;
+}
+
+.log-feed-list-item > .entry-title,
+.blog-feed-list-item > .entry-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.log-feed-list-item > .user-date,
+.blog-feed-list-item > .user-date {
+  font-size: 12px;
+}
+
+.log-feed-list-item > .user-date > .username,
+.blog-feed-list-item > .user-date > .username {
+  font-weight: bold;
+}
+
+.log-feed-list-item > .entry-title:hover,
+.blog-feed-list-item > .entry-title:hover,
+.log-feed-list-item > .user-date > .username:hover,
+.blog-feed-list-item > .user-date > .username:hover {
+  color: #a0e;
+}
