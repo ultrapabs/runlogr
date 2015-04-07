@@ -1,7 +1,9 @@
 Runlogr.Views.BlogNew = Backbone.View.extend ({
 
   events: {
-    "submit .blog-form": "createBlog"
+    "submit .blog-form": "createBlog",
+    "click .blog-help": "showMarkdown",
+    "click .help-done": "hideMarkdown",
   },
 
   template: JST['blog_new'],
@@ -27,6 +29,20 @@ Runlogr.Views.BlogNew = Backbone.View.extend ({
       error: function () { console.log('blog create error') }
     })
 
+  },
+
+  showMarkdown: function () {
+    this.$el.find('.blog-form').addClass('hidden');
+    this.$el.find('.blog-help').addClass('hidden');
+    this.$el.find('.markdown-example').removeClass('hidden');
+    this.$el.find('.help-done').removeClass('hidden');
+  },
+
+  hideMarkdown: function () {
+    this.$el.find('.markdown-example').addClass('hidden');
+    this.$el.find('.help-done').addClass('hidden');
+    this.$el.find('.blog-form').removeClass('hidden');
+    this.$el.find('.blog-help').removeClass('hidden');
   }
 
 });

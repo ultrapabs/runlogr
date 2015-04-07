@@ -34,7 +34,17 @@
 
 .blog-preview {
   font-style: italic;
-  margin-bottom:15px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.blog-body, .log-body {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 

@@ -65,7 +65,8 @@ Create landing page after sign in. User will see a feed of blogs and logs of the
 [phase5]: ./_proposal/docs/phases/phase5.md
 
 ### Bonus Features (TBD)
-- [ ] Users can sign in with Twitter
+- [X] Users can sign in with Twitter
+- [ ] Blog preview when creating post
 - [ ] Users create custom running maps/routes
 - [ ] Blog, log, and route tags
 - [ ] Blog, log, comment, and route "likes"

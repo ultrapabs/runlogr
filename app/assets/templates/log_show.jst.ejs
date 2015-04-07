@@ -64,25 +64,29 @@
   <% } %>
 
 <section class="log-show">
-  <ul class="log-show-list">
-    <li class="log-show-list-item">Distance:
-      <p class="log-list-item-desc"><%= log.escape('distance') %>mi</p>
-    </li>
-    <li class="log-show-list-item">Duration:
-      <p class="log-list-item-desc"><%= log.escape('duration_string') %></p>
-    </li>
-    <li class="log-show-list-item">Pace:
-      <p class="log-list-item-desc"><%= log.escape('pace') %>min/mi</p>
-    </li>
-    <li class="log-show-list-item">Shoe:
-      <p class="log-list-item-desc"><%= log.escape('shoe_name') %></p>
-    </li>
-  </ul>
+  <section class="log-body">
 
-  <h2 class="log-notes-title">Notes:</h2>
-  <p class="log-notes">
-    <%= log.escape('notes') %>
-  </p>
+
+    <ul class="log-show-list">
+      <li class="log-show-list-item">Distance:
+        <p class="log-list-item-desc"><%= log.escape('distance') %>mi</p>
+      </li>
+      <li class="log-show-list-item">Duration:
+        <p class="log-list-item-desc"><%= log.escape('duration_string') %></p>
+      </li>
+      <li class="log-show-list-item">Pace:
+        <p class="log-list-item-desc"><%= log.escape('pace') %>min/mi</p>
+      </li>
+      <li class="log-show-list-item">Shoe:
+        <p class="log-list-item-desc"><%= log.escape('shoe_name') %></p>
+      </li>
+    </ul>
+
+    <h2 class="log-notes-title">Notes:</h2>
+    <p class="log-notes">
+      <%= log.escape('notes') %>
+    </p>
+  </section>
 </section>
 <section class="comments-wrapper">
   <h2 class="comments-header">Comments</h2>

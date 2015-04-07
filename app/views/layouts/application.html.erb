@@ -26,15 +26,16 @@
           </a>
         </li>
         <section class="header-chunk">
-          <li>
-            <a href="#users/<%= current_user.id.to_s %>"><%= current_user.username %></a>
-          </li>
+
           <li>
             <form class="log-out" action="<%= sessions_url %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <%= auth_token %>
               <button>Log Out</button>
             </form>
+          </li>
+          <li>
+            <a href="#users/<%= current_user.id.to_s %>"><%= current_user.username %></a>
           </li>
         </section>
       </ul>

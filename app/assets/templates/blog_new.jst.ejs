@@ -1,4 +1,10 @@
-<h1 class="form-title">New Blog Post</h1>
+
+
+<h1 class="form-title">New Blog
+  <button class="blog-help">Formatting Help</button>
+<button class="help-done hidden">Back to Editing</button></h1>
+
+
 <form class="blog-form group">
   <label class="blog-label">Title:
     <input class="title-input" type="string" name="blog[title]">
@@ -14,3 +20,60 @@
 
   <button>Post Blog</button>
 </form>
+
+<section class="markdown-example hidden">
+  <section class="markdown-example-desc">
+      Blog bodies are formatted using Markdown. Below are examples of supported syntax.
+  </section>
+
+  <section class="markdown-plain">
+      #Header 1<br>
+      ## Header 2<br>
+      ###Header 3
+      <br><br>
+      ~~strikethrough~~
+      <br><br>
+      *italics*
+      <br><br>
+      **bold**
+      <br><br>
+      **bold and _italics_**
+      <br><br>
+      Ordered List
+      <br><br>
+      1. Item 1<br>
+      2. Item 2
+      <br><br>
+      Unordered List
+      <br><br>
+      * Item 1<br>
+      * Item 2
+      <br><br>
+      [Link](https://www.runlogr.com)
+      <br><br>
+      ![Inline Image Alt Text](http://www.runlogr.com/images/runlogr.png "Image Hover Title")
+  </section>
+
+  <section class="markdown-markdown blog-body">
+      <h1>Header 1</h1>
+      <h2>Header 2</h2>
+      <h3>Header 3</h3>
+      <p><del>strikethrough</del></p>
+      <p><em>italics</em></p>
+      <p><strong>bold</strong></p>
+      <p><strong>bold and <em>italics</em></strong></p>
+      <p>Ordered List</p>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ol>
+      <p>Unordered List</p>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+      <p><a href="https://www.runlogr.com">Link</a></p>
+      <p><img src="http://www.runlogr.com/images/runlogr.png" alt="Image Alt Text" title="Image Hover Title"></p>
+  </section>
+
+</section>

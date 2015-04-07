@@ -22,9 +22,6 @@
   font-weight: bold;
 }
 
-.submit-comment {
-  margin-top: -10px;
-}
 
 .comments-list-item {
   margin-bottom: 15px;
@@ -41,11 +38,11 @@
 }
 
 .comment-body {
-  font-size: 20px;
+  font-size: 16px;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
-  background: #A0ED91;
+  background: #fff;
 }
 
 .submit-comment:hover, .discard-comment:hover, .add-new-comment:hover {

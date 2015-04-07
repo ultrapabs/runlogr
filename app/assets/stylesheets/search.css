@@ -51,6 +51,9 @@
 .search-list {
   display: block;
   padding: 10px;
+  background: #A0ED91;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .search-list-item {

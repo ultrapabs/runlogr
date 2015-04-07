@@ -43,3 +43,57 @@
 .blog-body > ul > li > a {
   text-decoration: underline;
 }
+
+.markdown-example {
+
+}
+
+.markdown-example-desc {
+  width: 820px;
+  height: 16px;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px 19px 19px 19px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.markdown-plain, .markdown-markdown {
+  width: 381px;
+  height: 635px;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #a0e;
+  padding: 19px 19px 0px 19px;
+  margin: 0px;
+}
+
+.markdown-plain {
+  float: left;
+}
+
+.markdown-plain > p {
+  font-size: 16px;
+  display: block;
+}
+
+.markdown-markdown{
+  float: right;
+}
+
+.blog-help, .help-done {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  float: right;
+  padding: 2px;
+}
+
+.blog-help:hover, .help-done:hover {
+  color: #a0e;
+}
