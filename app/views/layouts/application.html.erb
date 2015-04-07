@@ -20,8 +20,10 @@
           <li><a href="#logs/new">Add Log</a></li>
         </section>
 
-        <li class="header-chunk">
-          <img src="<%= current_user.profile_pic(:feed) %>" alt="<%= current_user.username %>" />
+        <li class="header-chunk header-profile-pic">
+          <a href="#users/<%= current_user.id.to_s %>">
+            <img src="<%= current_user.profile_pic(:feed) %>" alt="<%= current_user.username %>" />
+          </a>
         </li>
         <section class="header-chunk">
           <li>

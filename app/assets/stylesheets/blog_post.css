@@ -1,0 +1,45 @@
+.blog-body > p {
+  font-size: 16px;
+  display: block;
+  margin: 16px 0px;
+}
+
+.blog-body > h1 {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 16px 0px;
+}
+
+.blog-body > h2 {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 16px 0px;
+}
+
+.blog-body > h3 {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 16px 0px;
+}
+
+.blog-body > ul > li {
+  list-style-type: square;
+  list-style-position: outside;
+  margin: 5px 30px;
+}
+
+.blog-body > ol > li {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin: 5px 30px;
+
+}
+
+.blog-body > p > a,
+.blog-body > ol > li > a,
+.blog-body > ul > li > a {
+  text-decoration: underline;
+}

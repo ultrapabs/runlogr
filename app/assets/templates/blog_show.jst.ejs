@@ -38,9 +38,9 @@
   <p class="blog-preview">
     <%= blog.escape('preview') %>
   </p>
-  <p class="blog-body">
-    <%= blog.escape('body') %>
-  </p>
+  <section class="blog-body">
+    <%= blog.get('markdown') %>
+  </section>
 </section>
 <section class="comments-wrapper">
   <h2 class="comments-header">Comments</h2>

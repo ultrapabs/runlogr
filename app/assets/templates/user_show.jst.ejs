@@ -38,7 +38,9 @@
 <% } %>
 
 <section class="view-user-profile group">
-  <img class="user-pic" src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+  <section class="user-pic">
+    <img src="<%= user.escape('photo_url') %>" alt="<%= user.escape('username') %>" />
+  </section>
 
   <ul class="user-profile-list">
     <li class="user-description"><%= user.escape('description') %></li>

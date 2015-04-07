@@ -78,3 +78,24 @@
   background: #ACFC83;
   color: #a0e;
 }
+
+
+.header-logo > a > img,
+.header-profile-pic > a > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header-profile-pic {
+  overflow: hidden;
+  width: 68px;
+  height: 68px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  margin: 12px 0px;
+}
+
+.header-profile-pic:hover {
+  border: 1px solid #a0e;
+}

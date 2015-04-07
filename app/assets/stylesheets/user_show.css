@@ -30,10 +30,13 @@
   padding-top: 20px;
 }
 
+
+
 .user-profile-list {
   display: block;
   padding-top: 20px;
 }
+
 
 .user-pic {
   display: block;
@@ -42,6 +45,13 @@
   height: 199px;
   border-radius: 10px;
   border: 1px solid #a0e;
+  overflow: hidden;
+}
+
+.user-pic > img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .join-miles {
