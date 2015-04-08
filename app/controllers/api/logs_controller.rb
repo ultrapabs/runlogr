@@ -38,6 +38,9 @@ class Api::LogsController < ApplicationController
   end
 
   def destroy
+    @log = current_user.logs.find(params[:id])
+    @log.destroy! unless @log.nil?
+    render :show
   end
 
   private

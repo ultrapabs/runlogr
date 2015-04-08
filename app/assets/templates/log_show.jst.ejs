@@ -1,8 +1,17 @@
+<section class="log-user-pic">
+  <a href="#users/<%= log.escape('user_id') %>">
+    <img src="<%= log.escape('user_pic') %>">
+  </a>
+</section>
+
 <h1 class="log-title"><%= log.escape('title') %>
   <% if (log.get('current_user_is_user')) { %>
 </h1>
     <button class="edit-log-button">Edit Log</button>
     <button class="discard-log-changes hidden">Discard Changes</button>
+    <button class="delete-log-button hidden">Delete Log</button>
+    <button class="confirm-delete-log-button hidden">Confirm Delete</button>
+    <button class="cancel-delete-log-button hidden">Cancel</button>
     <h2 class="log-user">
       <a href="#users/<%= log.escape('user_id') %>"><%= log.escape('username') %></a>
       on <%= log.escape('date') %>

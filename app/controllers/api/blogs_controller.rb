@@ -33,6 +33,9 @@ class Api::BlogsController < ApplicationController
   end
 
   def destroy
+    @blog = current_user.blogs.find(params[:id])
+    @blog.destroy! unless @blog.nil?
+    render :show
   end
 
   private

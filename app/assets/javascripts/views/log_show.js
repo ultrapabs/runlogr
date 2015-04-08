@@ -4,6 +4,9 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
 
   events: {
       "click .edit-log-button" : "editLog",
+      "click .delete-log-button" : "deleteLog",
+      "click .cancel-delete-log-button" : "deleteLogCancel",
+      "click .confirm-delete-log-button" : "deleteLogConfirm",
       "submit .log-form" : "saveChanges",
       "click .discard-log-changes" : "discardChanges",
       "click .add-new-comment" : "addComment",
@@ -33,6 +36,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
     this.$el.find('.log-edit').removeClass('hidden');
     this.$el.find('.save-changes').removeClass('hidden');
     this.$el.find('.discard-log-changes').removeClass('hidden');
+    this.$el.find('.delete-log-button').removeClass('hidden');
     this.$el.find('.edit-log-button').addClass('hidden');
     this.$el.find('.log-show').addClass('hidden');
     this.$el.find('.comments-wrapper').addClass('hidden');
@@ -47,7 +51,7 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
     var url = "#logs/" + this.model.id;
     this.model.set(logAttrs);
     this.model.set({duration: newDuration});
-    debugger;
+
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
@@ -93,6 +97,32 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
       },
       error: function () { console.log('comment save error'); }
     })
+  },
+
+  deleteLog: function () {
+    event.preventDefault();
+
+    this.$el.find('.cancel-delete-log-button').removeClass('hidden');
+    this.$el.find('.confirm-delete-log-button').removeClass('hidden');
+    this.$el.find('.delete-log-button').addClass('hidden');
+    this.$el.find('.discard-log-changes').addClass('hidden');
+  },
+
+  deleteLogCancel: function () {
+    event.preventDefault();
+
+    this.$el.find('.cancel-delete-log-button').addClass('hidden');
+    this.$el.find('.confirm-delete-log-button').addClass('hidden');
+    this.$el.find('.delete-log-button').removeClass('hidden');
+    this.$el.find('.discard-log-changes').removeClass('hidden');
+  },
+
+  deleteLogConfirm: function () {
+    event.preventDefault();
+    url = '#users/' + this.model.get('user_id')
+    this.model.destroy({
+      success: function () { Backbone.history.navigate(url, {trigger: true}) }
+    });
   }
 
 });

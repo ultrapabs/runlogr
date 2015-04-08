@@ -1,8 +1,17 @@
+
+<section class="blog-user-pic">
+  <a href="#users/<%= blog.escape('author_id') %>">
+    <img src="<%= blog.escape('author_pic') %>">
+  </a>
+</section>
 <h1 class="blog-title"><%= blog.escape('title') %>
 <% if (blog.get('current_user_is_author')) { %>
 </h1>
   <button class="edit-blog-button">Edit Blog</button>
   <button class="discard-blog-changes hidden">Discard Changes</button>
+  <button class="delete-blog-button hidden">Delete Blog</button>
+  <button class="confirm-delete-blog-button hidden">Confirm Delete</button>
+  <button class="cancel-delete-blog-button hidden">Cancel</button>
   <h2 class="blog-author">
     by <a href="#users/<%= blog.escape('author_id') %>"><%= blog.escape('author_name') %></a>
     on <%= blog.escape('created_at') %>

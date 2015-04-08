@@ -4,7 +4,7 @@ class Log < ActiveRecord::Base
   validates :notes, length: { maximum: 300 }
   validates :title, length: { maximum: 30 }
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   belongs_to(
     :user,

@@ -7,8 +7,12 @@
 }
 
 .edit-blog-button, .edit-log-button,
-.discard-blog-changes, .discard-log-changes {
+.discard-blog-changes, .discard-log-changes,
+.delete-blog-button, .delete-log-button,
+.cancel-delete-blog-button, .cancel-delete-log-button,
+.confirm-delete-blog-button, .confirm-delete-log-button {
   display: inline;
+  margin-right: 20px;
 }
 
 .blog-author, .log-user {
@@ -68,4 +72,26 @@
 
 .log-notes {
   font-size: 16px;
+}
+
+
+.blog-user-pic, .log-user-pic {
+  display: block;
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+  border: 1px solid transparent;
+  margin-right: 5px;
+}
+
+.blog-user-pic > a > img, .log-user-pic > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blog-user-pic:hover, .log-user-pic:hover {
+  border: 1px solid #a0e;
 }

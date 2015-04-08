@@ -4,6 +4,9 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
 
   events: {
     "click .edit-blog-button" : "editBlog",
+    "click .delete-blog-button" : "deleteBlog",
+    "click .cancel-delete-blog-button" : "deleteBlogCancel",
+    "click .confirm-delete-blog-button" : "deleteBlogConfirm",
     "submit .blog-form" : "saveChanges",
     "click .discard-blog-changes" : "discardChanges",
     "click .add-new-comment" : "addComment",
@@ -33,6 +36,7 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
     this.$el.find('.blog-edit').removeClass('hidden');
     this.$el.find('.save-changes').removeClass('hidden');
     this.$el.find('.discard-blog-changes').removeClass('hidden');
+    this.$el.find('.delete-blog-button').removeClass('hidden');
     this.$el.find('.edit-blog-button').addClass('hidden');
     this.$el.find('.blog-show').addClass('hidden');
     this.$el.find('.comments-wrapper').addClass('hidden');
@@ -90,6 +94,32 @@ Runlogr.Views.BlogShow = Backbone.View.extend ({
       },
       error: function () { console.log('comment save error'); }
     })
+  },
+
+  deleteBlog: function () {
+    event.preventDefault();
+
+    this.$el.find('.cancel-delete-blog-button').removeClass('hidden');
+    this.$el.find('.confirm-delete-blog-button').removeClass('hidden');
+    this.$el.find('.delete-blog-button').addClass('hidden');
+    this.$el.find('.discard-blog-changes').addClass('hidden');
+  },
+
+  deleteBlogCancel: function () {
+    event.preventDefault();
+
+    this.$el.find('.cancel-delete-blog-button').addClass('hidden');
+    this.$el.find('.confirm-delete-blog-button').addClass('hidden');
+    this.$el.find('.delete-blog-button').removeClass('hidden');
+    this.$el.find('.discard-blog-changes').removeClass('hidden');
+  },
+
+  deleteBlogConfirm: function () {
+    event.preventDefault();
+    url = '#users/' + this.model.get('author_id')
+    this.model.destroy({
+      success: function () { Backbone.history.navigate(url, {trigger: true}) }
+    });
   }
 
 });

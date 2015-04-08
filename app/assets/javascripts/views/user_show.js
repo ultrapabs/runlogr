@@ -184,8 +184,7 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     var userShoes = this.userShoes;
     shoe.destroy({
       success: function () { userShoes.remove(shoe); }
-    }
-    );
+    });
   }
 
 });
