@@ -5,7 +5,12 @@
       <p class="preview">Nothing to read? Find users to follow!<p>
     </li>
     <% blogs.each( function(blog) { %>
-      <li class="blog-feed-list-item">
+      <li class="blog-feed-list-item group">
+        <section class="blog-feed-pic">
+          <a href="#users/<%= blog.escape('author_id')%>">
+            <img src="<%= blog.escape('author_pic') %>">
+          </a>
+        </section>
         <a class="entry-title" href="#blogs/<%= blog.id %>"><%= blog.escape('title') %></a>
         <p class="preview"><%= blog.escape('preview') %><p>
         <p class="user-date">
@@ -26,7 +31,12 @@
       <p class="preview">Nothing to read? Find users to follow!<p>
     </li>
     <% logs.each( function(log) { %>
-      <li class="log-feed-list-item">
+      <li class="log-feed-list-item group">
+        <section class="log-feed-pic">
+          <a href="#users/<%= log.escape('user_id')%>">
+            <img src="<%= log.escape('user_pic') %>">
+          </a>
+        </section>
         <a class="entry-title" href="#logs/<%= log.id %>"><%= log.escape('title') %></a>
         <p class="stats">
           <%= log.escape('distance') %>mi -

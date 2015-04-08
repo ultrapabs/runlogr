@@ -24,6 +24,10 @@ class Log < ActiveRecord::Base
     self.user.username
   end
 
+  def user_pic
+    self.user.profile_pic(:feed)
+  end
+
   def duration_string
     time_remain = self.duration
 

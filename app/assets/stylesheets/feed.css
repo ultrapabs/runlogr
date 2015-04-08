@@ -57,3 +57,24 @@
 .blog-feed-list-item > .user-date > .username:hover {
   color: #a0e;
 }
+
+.blog-feed-pic, .log-feed-pic {
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+  border: 1px solid transparent;
+  margin-right: 5px;
+}
+
+.blog-feed-pic > a > img, .log-feed-pic > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blog-feed-pic:hover, .log-feed-pic:hover {
+  border: 1px solid #a0e;
+}

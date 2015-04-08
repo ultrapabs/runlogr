@@ -17,4 +17,8 @@ class Blog < ActiveRecord::Base
     self.author.username
   end
 
+  def author_pic
+    self.author.profile_pic(:feed)
+  end
+
 end
