@@ -19,14 +19,16 @@ Create an account to log training runs, track total mileage and mileage on shoes
 - [x] Comment on blogs and logs
 - [x] Search for users by username and description
 - [x] Upload profile pictures
+- [x] Seamlessly switch between editing/viewing a blog or log once created
 
 
 ## To-Do List
 - [ ] Manipulate log data into different views/charts
-- [ ] Export/Import log data as CSVs
+- [ ] Export/import log data as CSVs
 - [ ] Metric conversions
-- [ ] Blog preview when creating post
 - [ ] Allow browsing without an account
+- [ ] Search blogs and logs
+- [ ] User notifications
 
 ## Languages Used
 

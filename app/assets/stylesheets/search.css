@@ -61,7 +61,32 @@
   margin-bottom: 20px;
 }
 
-.search-list-item > a {
+.user-search-desc {
+  display: block;
+  margin-left: 70px;
+}
+
+.user-search-desc > a {
   font-size: 20px;
   font-weight: bold;
+}
+
+.user-search-image {
+  display: block;
+  width: 58px;
+  height: 58px;
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+  border: 1px solid transparent;
+}
+
+.user-search-image > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.user-search-image:hover {
+  border: 1px solid #a0e;
 }

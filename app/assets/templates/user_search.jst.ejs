@@ -19,9 +19,16 @@
           <p>No results to display.</p>
         </li>
       <% } %>
-      <li class="search-list-item">
-        <a href="#users/<%= user.id %>"><%= user.escape('username') %></a>
-        <p><%= user.escape('description') %></p>
+      <li class="search-list-item group">
+        <section class="user-search-image">
+          <a href="#users/<%= user.id %>">
+            <img src="<%= user.escape('pic') %>">
+          </a>
+        </section>
+        <section class="user-search-desc">
+          <a href="#users/<%= user.id %>"><%= user.escape('username') %></a>
+          <p><%= user.escape('description') %></p>
+        </section>
       </li>
     <% }) %>
   </ul>
