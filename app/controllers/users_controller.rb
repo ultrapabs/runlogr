@@ -12,13 +12,13 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in!(@user)
-      redirect_to root_url
+      redirect_to '#feed'
     else
       flash[:errors] = @user.errors.full_messages
       if @user.provider
         render 'sessions/omniauth'
       else
-        render 'sessions/new'
+        redirect_to new_sessions_url
       end
 
     end

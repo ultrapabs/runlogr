@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :description, length: { maximum: 100 }
   validates :username, length: { maximum: 15 }
-
+  validate :valid_email?
 
   has_attached_file :profile_pic, styles: { main: "200x200#", feed: "80x80#" }, :default_url => "/images/:style/bears.png"
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
@@ -115,6 +115,12 @@ class User < ActiveRecord::Base
 
   def followed_by?(user)
     self.followers.include?(user)
+  end
+
+  def valid_email?
+    unless (self.email.include?('@') && self.email.include?('.')) || self.email.empty?
+      errors.add(:invalid, "email")
+    end
   end
 
   private

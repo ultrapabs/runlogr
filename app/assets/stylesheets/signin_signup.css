@@ -1,6 +1,7 @@
 /* SIGN UP / IN */
 
 .sign-in-main {
+  positon: relative;
   width: 500px;
   height: 760px;
   padding: 20px 200px;
@@ -43,6 +44,12 @@
 
 .twitter-sign-in:hover {
   width: 180px;
+}
+
+.twitter-sign-in > img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .new-session-button {

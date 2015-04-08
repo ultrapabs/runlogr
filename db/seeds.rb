@@ -17,9 +17,9 @@ user2 = User.create!(
 )
 user3 = User.create!(
   email: 'user3@test.com',
-  username: 'kjornet',
+  username: 'mountainman',
   password: 'password3',
-  description: 'I run trails and mountains, and race ultras.'
+  description: 'I like hiking and running trails.'
 )
 
 blog1 = user1.blogs.create!(

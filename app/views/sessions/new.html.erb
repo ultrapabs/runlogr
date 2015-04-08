@@ -1,12 +1,6 @@
 <section class="sign-in-main">
 <h1 class="session-title">Sign In</h1>
-<% unless flash[:error].nil? %>
-  <ul class="errors">
-    <% flash[:error].each do |message| %>
-      <li class="error-message"><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+
 <form class="sign-in" action="<%= sessions_url %>" method="post">
   <%= auth_token %>
   <label>
@@ -19,15 +13,22 @@
   </label>
   <button class="new-session-button">Sign In</button>
 </form>
-
-<h1 class="session-title">Sign Up</h1>
+<% unless flash[:error].nil? %>
+  <ul class="sign-in-errors">
+    <% flash[:error].each do |message| %>
+      <li class="error-message"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <% unless flash[:errors].nil? %>
-  <ul class="errors">
+  <ul class="sign-up-errors">
     <% flash[:errors].each do |message| %>
       <li class="error-message"><%= message %></li>
     <% end %>
   </ul>
 <% end %>
+<h1 class="session-title">Sign Up</h1>
+
 <form class="sign-up" action="<%= users_url %>" method="post">
   <%= auth_token %>
   <label>

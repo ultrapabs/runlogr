@@ -1,0 +1,14 @@
+.sign-up-errors, .sign-in-errors  {
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #a0e;
+  width: 500px;
+  top: 320px;
+}
+
+.error-message {
+  display: inline;
+}
