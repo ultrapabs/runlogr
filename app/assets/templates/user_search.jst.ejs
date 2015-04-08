@@ -14,6 +14,11 @@
 
   <ul class="search-list group">
     <% users.each( function(user) { %>
+      <% if (user.get('no_results')) { %>
+        <li class="search-list-item">
+          <p>No results to display.</p>
+        </li>
+      <% } %>
       <li class="search-list-item">
         <a href="#users/<%= user.id %>"><%= user.escape('username') %></a>
         <p><%= user.escape('description') %></p>
