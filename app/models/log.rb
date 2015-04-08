@@ -3,6 +3,7 @@ class Log < ActiveRecord::Base
   validates :user_id, :date, :distance, :duration, presence: true
   validates :notes, length: { maximum: 300 }
   validates :title, length: { maximum: 30 }
+  validate :distance_great_than_zero
 
   has_many :comments, as: :commentable, dependent: :destroy
 
@@ -78,6 +79,12 @@ class Log < ActiveRecord::Base
     sec_string = sec.floor.to_i.to_s
     sec_string = "0" + sec_string if sec_string.length == 1
     min.floor.to_s + ":" + sec_string
+  end
+
+  def distance_great_than_zero
+    unless self.distance > 0
+      errors.add(:distance, "must be greater than 0")
+    end
   end
 
 end
