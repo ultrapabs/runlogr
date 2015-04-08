@@ -10,9 +10,6 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
   def comment_params
     params.require(:comment).permit(:body, :commentable_id, :commentable_type)

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :update]
     resources :follows, only: [:create, :destroy]
     resources :searches, only: [:index]
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
 
   get "/auth/:provider/callback", to: "sessions#omniauth"
