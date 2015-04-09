@@ -13,12 +13,13 @@
   </section>
 
   <ul class="search-list group">
+
     <% users.each( function(user) { %>
       <% if (user.get('no_results')) { %>
         <li class="search-list-item">
           <p>No results to display.</p>
         </li>
-      <% } %>
+      <% } else { %>
       <li class="search-list-item group">
         <section class="user-search-image">
           <a href="#users/<%= user.id %>">
@@ -30,6 +31,7 @@
           <p><%= user.escape('description') %></p>
         </section>
       </li>
+      <% } %>
     <% }) %>
   </ul>
 </section>

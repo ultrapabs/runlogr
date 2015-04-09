@@ -1,13 +1,6 @@
 <section class="sign-in-main">
 
 <h1 class="session-title">Sign Up</h1>
-<% unless flash[:errors].nil? %>
-  <ul class="errors">
-    <% flash[:errors].each do |message| %>
-      <li class="error-message"><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 <p class="twitter-sign-up-desc">
 Please fill in the missing information to continue.
 </p>
@@ -31,4 +24,12 @@ Please fill in the missing information to continue.
   <button class="new-session-button">Sign Up</button>
 
 </form>
+<% unless flash[:errors].nil? %>
+  <ul class="twitter-sign-up-errors">
+    <% flash[:errors].each do |message| %>
+      <li class="error-message"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 </section>
