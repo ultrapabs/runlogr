@@ -371,3 +371,137 @@ apr3.each do |day|
     shoe_id: u3s1.id
   )
 end
+
+
+u4 = User.create!(
+  email: 'user4@test.com',
+  username: 'EverydayEllen',
+  password: 'password4',
+  description: 'I run EVERY day.'
+)
+
+u5 = User.create!(
+  email: 'user5@test.com',
+  username: 'FairWeatherGuy',
+  password: 'password5',
+  description: 'I love running outside!'
+)
+
+u6 = User.create!(
+  email: 'user6@test.com',
+  username: 'RandomRunner22',
+  password: 'password6',
+  description: 'I run random days.'
+)
+
+s5 = u5.shoes.create!(
+  name: "Brooks Adrenaline",
+  distance: 0
+)
+
+mar4 = rand_days(31, 1, 1)
+mar5 = rand_days(31, 2, 5)
+mar6 = rand_days(31, 0, 7)
+
+apr4 = rand_days(9, 1, 1)
+apr5 = rand_days(9, 1, 2)
+apr6 = rand_days(9, 0, 7)
+
+mar4.each do |day|
+  distance = rand_dist(2, 5)
+  pace = rand_pace(7.5, 8.5)
+  title_notes = get_title_notes(distance, 2, 5, pace, 7.5, 8.5)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u4.logs.create!(
+    title: title,
+    date: Date.new(2015, 3, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: nil
+  )
+end
+apr4.each do |day|
+  distance = rand_dist(2, 5)
+  pace = rand_pace(7.5, 8.5)
+  title_notes = get_title_notes(distance, 2, 5, pace, 7.5, 8.5)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u4.logs.create!(
+    title: title,
+    date: Date.new(2015, 4, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: nil
+  )
+end
+
+mar5.each do |day|
+  distance = rand_dist(4, 12)
+  pace = rand_pace(9, 12)
+  title_notes = get_title_notes(distance, 4, 12, pace, 9, 12)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u5.logs.create!(
+    title: title,
+    date: Date.new(2015, 3, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: s5.id
+  )
+end
+apr5.each do |day|
+  distance = rand_dist(4, 12)
+  pace = rand_pace(9, 12)
+  title_notes = get_title_notes(distance, 4, 12, pace, 9, 12)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u5.logs.create!(
+    title: title,
+    date: Date.new(2015, 4, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: s5.id
+  )
+end
+
+mar6.each do |day|
+  distance = rand_dist(2, 30)
+  pace = rand_pace(6, 12)
+  title_notes = get_title_notes(distance, 2, 30, pace, 6, 12)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u6.logs.create!(
+    title: title,
+    date: Date.new(2015, 3, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: s5.id
+  )
+end
+apr6.each do |day|
+  distance = rand_dist(2, 30)
+  pace = rand_pace(6, 12)
+  title_notes = get_title_notes(distance, 2, 30, pace, 6, 12)
+  title, notes = title_notes[0], title_notes[1]
+  notes += notes_flavor(day)
+
+  u6.logs.create!(
+    title: title,
+    date: Date.new(2015, 4, day),
+    distance: distance,
+    duration: pace * 60 * distance,
+    notes: notes,
+    shoe_id: s5.id
+  )
+end

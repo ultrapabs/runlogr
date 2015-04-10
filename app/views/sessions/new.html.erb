@@ -53,10 +53,7 @@
 
 <form class="sign-in" action="<%= sessions_url %>" method="post">
   <%= auth_token %>
-  <label>
-    Username or Email
-    <input class="new-session-input" type="hidden" name="user[login]" value="Guest">
-  </label>
+  <input class="new-session-input" type="hidden" name="user[login]" value="Guest">
   <button class="new-session-button">Sign In as Guest</button>
 </form>
 

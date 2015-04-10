@@ -39,7 +39,9 @@
 .twitter-sign-in {
   display: block;
   width: 158px;
+  height: 40px;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .twitter-sign-in:hover {
