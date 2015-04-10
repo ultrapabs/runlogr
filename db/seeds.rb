@@ -82,11 +82,31 @@ u1 = User.create!(
   password: 'password1',
   description: 'I run trails and mountains, and race ultras.'
 )
-# u1.blogs.create!(
-#   title: "",
-#   body: "",
-#   preview: ""
-# )
+u1.blogs.create!(
+  title: "Traveling for Races",
+  body: "Source: [Trail Runner Magazine](http://www.trailrunnermag.com/training/trail-tips/1683-a-better-trip-makes-a-better-race)\r\n\r\n##
+        Four trail-running pros share their race-travel tips\r\n\r\nWhen preparing for a goal
+        race at a far-away destination, you do everything you can to maximize training. Then you
+        rest and try to stay healthy during your taper. But what do you do when it’s time to travel
+        to the big event? Ideally, you plan to make travel stress-free and you arrive 100-percent
+        race ready. Surprisingly, however, many of us don’t sweat the details of travel in our race
+        plans and encounter problems en route that can sabotage the physical conditioning and mental
+        equanimity we worked so hard to achieve. Trail Runner asked four pros and experienced travellers
+        for their advice on getting to the race in top shape.\r\n\r\n##Our panel of experts:\r\n\r\n*Ian
+        Sharman, Walnut Creek, California.*\r\n\r\n2013 Grand Slam of Ultrarunning record holder and
+        coach to other champions. Has raced in over 30 countries on six continents.\r\n\r\n*Amy Sproston,
+        Bend, Oregon.*\r\n\r\n2012 100K World Championship winner, who in the past two years raced
+        numerous ultras in South America, Europe and Asia. Her work for an international humanitarian
+        group takes her around the globe.\r\n\r\n*Scott Dunlap, Woodside, California.*\r\n\r\n2010 USA
+        Track & Field Master’s Ultrarunner of the Year, who in recent years raced throughout the United
+        States and Europe. Dunlap flies weekly as an executive and investor for tech
+        start-ups.\r\n\r\n*Stephanie Case, Vancouver, British Columbia.*\r\n\r\nPast winner of
+        several 250K desert-crossing self-supported stage races and the Vermont 100.
+        She travels frequently for her work for human-rights organizations, and was
+        recently stationed in the South Sudan and now in
+        Gaza.\r\n\r\n[Read More](http://www.trailrunnermag.com/training/trail-tips/1683-a-better-trip-makes-a-better-race)",
+  preview: "Repost"
+)
 u1s1 = u1.shoes.create!(
   name: "Hoka Huaka (grey)",
   distance: 0
@@ -173,11 +193,16 @@ u2 = User.create!(
   password: 'password2',
   description: 'I run fast road races up to the marathon distance.'
 )
-# u2.blogs.create!(
-#   title: "",
-#   body: "",
-#   preview: ""
-# )
+u2.blogs.create!(
+  title: "Running Exercises",
+  body: "I've found that these are the quickest/easiest exercises to do to supplement
+        running with strength training. Even if you only do them a small amount it will
+        help!\r\n\r\n* Planks\r\n* Lunges\r\n* Body-Weight Squats\r\n\r\nTry starting
+        with a 1min regular plank, then 1min on each side, followed by 20-30 lunges and
+        squats. Do this this 2-3 times a week, gradually increasing the duration of planks
+        and number of lunges/squats when you get comfortable with the current level.",
+  preview: "A few of my favorites."
+)
 u2s1 = u2.shoes.create!(
   name: "NB980v1 (orange)",
   distance: 0
@@ -262,11 +287,16 @@ u3 = User.create!(
   password: 'password3',
   description: 'I love running with friends and doing fun runs.'
 )
-# u3.blogs.create!(
-#   title: "",
-#   body: "",
-#   preview: ""
-# )
+u3.blogs.create!(
+  title: "First Half Marathon",
+  body: "I'm getting ready to do my first half! I've done a handful of 5Ks and
+  10Ks and they all went really well. I've never ran longer than 8 miles before
+  I'm excited to see what I can do beyond that. A few options I'm thinking
+  about:\r\n\r\n* Queens Half\r\n* Brooklyn Half\r\n* Paine to Pain (trail!!)\r\n*
+  Greenway Half\r\n* Long Island Half\r\n\r\nHas anyone done any of these?
+  Which one would you pick as your first?",
+  preview: "The next step."
+)
 u3s1 = u3.shoes.create!(
   name: "Nike Trainers",
   distance: 167
