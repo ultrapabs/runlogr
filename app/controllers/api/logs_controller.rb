@@ -1,7 +1,7 @@
 class Api::LogsController < ApplicationController
 
   def index
-    @logs = current_user.followed_logs.includes(:user)
+    @logs = current_user.followed_logs.includes(:user).limit(15)
     render :index
   end
 

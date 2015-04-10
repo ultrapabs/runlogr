@@ -53,14 +53,16 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
 
   saveChanges: function (event) {
     event.preventDefault();
-    this.$el.find('.edit-profile-form').addClass('hidden');
-    this.$el.find('.save-changes').addClass('hidden');
-    this.$el.find('.discard-changes').addClass('hidden');
+    var guest = false;
+    var that = this;
 
-    this.$el.find('.processing-changes').removeClass('hidden');
+    this.showProcessing();
+
     var userAttrs = $(event.currentTarget).serializeJSON().user;
-    // var that = this;
-    // var url = "#users/" + this.model.id;
+
+    if (this.model.get('username') === 'Guest') {
+      guest = true;
+    }
 
     if (userAttrs.pw1.length > 0) {
       if (userAttrs.pw1 === userAttrs.pw2) {
@@ -68,18 +70,28 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
         this.model.set({password: userAttrs.pw1});
       } else {
         console.log("passwords do not match");
+        this.hideProcessing();
         return;
       }
     } else {
       this.model.set(userAttrs);
     }
 
+    if (guest) {
+      this.model.set({
+        username: 'Guest',
+        password: 'password',
+        email: 'guest@runlogr.com',
+        description: 'Check out the intro blog post!'
+      });
+    }
+
     this.model.save({}, {
       success: function () {
-        // Backbone.history.navigate(url, { trigger: true });
         window.location.reload();
       },
       error: function () {
+        that.hideProcessing();
         console.log("user save error");
       }
     });
@@ -185,6 +197,23 @@ Runlogr.Views.UserShow = Backbone.View.extend ({
     shoe.destroy({
       success: function () { userShoes.remove(shoe); }
     });
+  },
+
+  showProcessing: function () {
+    this.$el.find('.edit-profile-form').addClass('hidden');
+    this.$el.find('.save-changes').addClass('hidden');
+    this.$el.find('.discard-changes').addClass('hidden');
+
+    this.$el.find('.processing-changes').removeClass('hidden');
+  },
+
+  hideProcessing: function () {
+    this.$el.find('.edit-profile-form').removeClass('hidden');
+    this.$el.find('.save-changes').removeClass('hidden');
+    this.$el.find('.discard-changes').removeClass('hidden');
+
+    this.$el.find('.processing-changes').addClass('hidden');
   }
+
 
 });

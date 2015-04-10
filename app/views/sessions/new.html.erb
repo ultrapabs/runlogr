@@ -51,5 +51,13 @@
 
 <a class="twitter-sign-in" href="/auth/twitter"><img src="/images/twitter/sign-in-twitter.png"></a>
 
+<form class="sign-in" action="<%= sessions_url %>" method="post">
+  <%= auth_token %>
+  <label>
+    Username or Email
+    <input class="new-session-input" type="hidden" name="user[login]" value="Guest">
+  </label>
+  <button class="new-session-button">Sign In as Guest</button>
+</form>
 
 </section>

@@ -22,6 +22,7 @@ Create an account to log training runs, track total mileage and mileage on shoes
 
 
 ## To-Do List
+- [ ] Helpful error messages
 - [ ] Manipulate log data into different views/charts
 - [ ] Export/import log data as CSVs
 - [ ] Metric conversions

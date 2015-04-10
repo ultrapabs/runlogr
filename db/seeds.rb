@@ -69,6 +69,13 @@ def notes_flavor(day)
   end
 end
 
+guest = User.create!(
+  email: 'guest@test.com',
+  username: 'Guest',
+  password: 'password',
+  description: 'Check out the intro blog post!'
+)
+
 u1 = User.create!(
   email: 'user1@test.com',
   username: 'TrailBro88',
@@ -229,7 +236,7 @@ mar2.each do |day|
     distance: distance,
     duration: pace * 60 * distance,
     notes: notes,
-    shoe_id: u2s1.id
+    shoe_id: u2s2.id
   )
 end
 apr2.each do |day|
