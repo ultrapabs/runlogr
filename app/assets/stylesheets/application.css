@@ -68,9 +68,12 @@ button:hover {
 
 
 body {
-  background: #A0ED91;
+  background: url(https://s3.amazonaws.com/runlogr/runlogrbg2.jpg);
+  background-position: center;
   font-family: arial;
   line-height: 1;
+  position: relative;
+  background-repeat: no-repeat;
 }
 
 
@@ -100,9 +103,11 @@ input, textarea, select {
   padding: 20px;
   margin: auto;
   overflow: hidden;
-  border-left: 1px solid #a0e;
-  border-right: 1px solid #a0e;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   position: relative;
+
+
 }
 
 /* LAST ACTION */

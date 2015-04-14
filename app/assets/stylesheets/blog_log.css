@@ -28,7 +28,7 @@
 .blog-show, .log-show {
   padding: 10px;
   display: block;
-  border: 1px solid #a0e;
+  border: 1px solid transparent;
   border-radius: 10px;
   margin-bottom: 20px;
   height: 300px;
@@ -93,5 +93,5 @@
 }
 
 .blog-user-pic:hover, .log-user-pic:hover {
-  border: 1px solid #a0e;
+  border: 1px solid transparent;
 }

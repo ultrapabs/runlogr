@@ -7,8 +7,8 @@
   padding: 20px 200px;
   margin: auto;
   overflow: hidden;
-  border-left: 1px solid #a0e;
-  border-right: 1px solid #a0e;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .session-title {
@@ -22,7 +22,7 @@
   text-align: center;
   background: #8BCF7E;
   border-radius: 10px;
-  border: 1px solid #a0e;
+  border: 1px solid transparent;
   padding: 19px;
   display: block;
   margin-bottom: 40px;

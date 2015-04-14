@@ -1,15 +1,15 @@
 .page-footer {
   font-family: arial;
   display: block;
-  background: #8BCF7E;
-  border-top: 1px solid #a0e;
+  border-top: 1px solid transparent;
+  color: #fff;
 }
 
 .footer-nav {
   width: 900px;
   margin: auto;
-  border-left: 1px solid #a0e;
-  border-right: 1px solid #a0e;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .footer-nav > p {

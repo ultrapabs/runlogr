@@ -2,7 +2,7 @@
 .log-form, .new-shoe, .blog-form {
   background: #8BCF7E;
   border-radius: 10px;
-  border: 1px solid #a0e;
+  border: 1px solid transparent;
   padding: 19px;
   display: block;
 }
@@ -40,7 +40,7 @@ label > input, label > textarea, label > select {
   font-size: 16px;
   font-weight: normal;
   padding: 4px;
-  border: 1px solid #a0e;
+  border: 1px solid #8BCF7E;
   border-radius: 10px;
   vertical-align: middle;
 }

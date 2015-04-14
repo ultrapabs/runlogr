@@ -1,17 +1,18 @@
 .page-header {
   font-family: arial;
   display: block;
-  background: #8BCF7E;
+  background: transparent;
   font-size: 16px;
-  border-bottom: 1px solid #a0e;
+  border-bottom: 1px solid transparent;
+  position: relative;
 }
 
 .header-nav {
   display: block;
   width: 900px;
   margin: auto;
-  border-left: 1px solid #a0e;
-  border-right: 1px solid #a0e;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .header-logo {
@@ -19,7 +20,8 @@
   float: left;
   width: 200px;
   padding: 10px;
-  border-right: 1px solid #a0e;
+  border-right: 1px solid transparent;
+  border-radius: 40px;
 
 }
 
@@ -97,5 +99,5 @@
 }
 
 .header-profile-pic:hover {
-  border: 1px solid #a0e;
+  border: 1px solid #fff;
 }

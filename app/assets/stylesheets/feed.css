@@ -4,7 +4,7 @@
   display: block;
   background: #8BCF7E;
   border-radius: 10px;
-  border: 1px solid #a0e;
+  border: 1px solid transparent;
   padding: 19px 19px 0px 19px;
 }
 
