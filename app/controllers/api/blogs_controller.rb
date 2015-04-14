@@ -1,8 +1,7 @@
 class Api::BlogsController < ApplicationController
 
   def index
-    @blogs = current_user.followed_blogs.includes(:author).limit(15)
-    render :index
+    @blogs = current_user.followed_blogs.includes(:author).order(created_at: :desc).limit(15)
   end
 
   def create
