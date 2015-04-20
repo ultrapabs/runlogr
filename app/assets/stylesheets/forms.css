@@ -1,5 +1,5 @@
 /* FORMS SO STYLISH */
-.log-form, .new-shoe, .blog-form {
+.log-form, .new-shoe, .blog-form, .edit-profile-form {
   background: #8BCF7E;
   border-radius: 10px;
   border: 1px solid transparent;
@@ -83,6 +83,6 @@ select {
   display: inline;
 }
 
-.shoe-input.distance {
+.shoe-input-distance {
   text-align: right;
 }
