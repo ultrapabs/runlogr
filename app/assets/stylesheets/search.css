@@ -20,22 +20,28 @@
 
 .search-area {
   display: block;
-  width: 330px;
+  width: 370px;
   margin: auto;
 }
 
 .search-users-form {
   display: block;
   float: left;
+  width: 260px;
 }
 
 .search-users-form > label, .search-users-form > label > input, .search-users-form > button {
   display: inline;
 }
 
+.search-users-form > label > input {
+  width: 170px;
+}
+
 .all-users {
   display: block;
   float: left;
+  width: 80px;
 }
 
 .all-users, .search-users-form > button {
