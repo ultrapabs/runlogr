@@ -26,7 +26,8 @@ Runlogr.Views.LogShow = Backbone.View.extend ({
       comments: this.model.comments()
     });
     this.$el.html(content);
-
+    this.$el.find(".date-input").datepicker( {dateFormat: "yy-mm-dd"} );
+    
     return this;
   },
 
