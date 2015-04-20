@@ -15,6 +15,7 @@ Runlogr.Views.LogNew = Backbone.View.extend ({
 
     var content = this.template({shoes: this.shoes});
     this.$el.html(content);
+    this.$el.find(".date-input").datepicker( {dateFormat: "yy-mm-dd"} );
 
     return this;
   },

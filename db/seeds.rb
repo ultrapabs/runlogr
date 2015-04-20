@@ -1,9 +1,9 @@
 # UNCOMENT TO RESET ALL DB
 
-User.destroy_all
-Blog.destroy_all
-Log.destroy_all
-Shoe.destroy_all
+# User.destroy_all
+# Blog.destroy_all
+# Log.destroy_all
+# Shoe.destroy_all
 
 def rand_dist(min, max)
   rand(min.to_f..max.to_f).round(1)

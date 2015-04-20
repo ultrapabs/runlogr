@@ -93,5 +93,5 @@
 }
 
 .blog-user-pic:hover, .log-user-pic:hover {
-  border: 1px solid transparent;
+  border: 1px solid white;
 }
