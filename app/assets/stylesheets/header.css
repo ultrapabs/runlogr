@@ -18,15 +18,50 @@
 .header-logo {
   display: block;
   float: left;
-  width: 200px;
-  padding: 10px;
-  border-right: 1px solid transparent;
+  width: 220px;
   border-radius: 40px;
+  font-size: 50px;
+  overflow: hidden;
+}
 
+.header-logo > a {
+  display: block;
+  width: 200px;
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-top: 20px;
+  padding-bottom: 23px;
+  text-align: center;
+  position: relative;
+
+}
+.header-logo > a > p {
+  display: block;
+  float: left;
+  border-color: inherit;
+}
+
+
+.logr {
+  margin-left: 105px;
+}
+
+.run {
+  border: 4px solid #000;
+  border-radius: 75%;
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  padding-left: 5px;
+  padding-top: 4px;
 }
 
 .header-logo:hover {
   background: #ACFC83;
+  color: #a0e;
+  border-color: #a0e;
 }
 
 .header-user {
@@ -81,8 +116,6 @@
   color: #a0e;
 }
 
-
-.header-logo > a > img,
 .header-profile-pic > a > img {
   width: 100%;
   height: auto;
