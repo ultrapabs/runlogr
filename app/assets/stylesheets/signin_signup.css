@@ -1,7 +1,21 @@
 /* SIGN UP / IN */
+.runlogr-note {
+  margin: auto;
+  font-family: arial;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  width: 900px;
+}
+
+.runlogr-note > a {
+  font-weight: bold;
+}
 
 .sign-in-main {
-  positon: relative;
+  position: relative;
   width: 500px;
   height: 760px;
   padding: 20px 200px;

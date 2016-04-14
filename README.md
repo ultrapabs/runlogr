@@ -2,7 +2,7 @@
 
 An app for tracking running. [Live Link][live]
 
-[live]: http://www.runlogr.com/
+[live]: http://runlogr-backbonejs.herokuapp.com/
 
 ## Summary
 
